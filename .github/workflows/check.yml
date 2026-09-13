@@ -1,0 +1,18 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  motor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Corpus, evidencia y motor
+        run: node --test "src/domain/*.test.ts"
+      - name: Puerta de calidad del dictamen
+        run: node scripts/check-decision.mjs

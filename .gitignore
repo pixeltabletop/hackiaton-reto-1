@@ -1,0 +1,21 @@
+# Dependencias
+node_modules/
+
+# Secretos y credenciales: nunca al repositorio
+.env
+.env.*
+.secrets/
+.vercel/
+*.token
+
+# Salidas de build
+dist/
+build/
+out/
+.next/
+coverage/
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+*.log

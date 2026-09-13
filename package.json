@@ -1,0 +1,13 @@
+{
+  "name": "preautorizacion-quirurgica",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Agente de pre-autorización quirúrgica. El modelo lee y cita; la póliza decide. Reto 1 del hackIAthon Panamá 2026.",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test \"src/domain/*.test.ts\"",
+    "check:decision": "node scripts/check-decision.mjs",
+    "check": "npm run test && npm run check:decision"
+  }
+}
