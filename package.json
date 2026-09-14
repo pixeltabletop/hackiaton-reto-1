@@ -6,8 +6,23 @@
   "description": "Agente de pre-autorización quirúrgica. El modelo lee y cita; la póliza decide. Reto 1 del hackIAthon Panamá 2026.",
   "engines": { "node": ">=24" },
   "scripts": {
-    "test": "node --test \"src/domain/*.test.ts\"",
-    "check:decision": "node scripts/check-decision.mjs",
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "test": "node --import ./scripts/registro-ts.mjs --test \"src/domain/*.test.ts\"",
+    "check:decision": "node --import ./scripts/registro-ts.mjs scripts/check-decision.mjs",
+    "notion:preparar": "node --import ./scripts/registro-ts.mjs scripts/notion-preparar.mjs",
     "check": "npm run test && npm run check:decision"
+  },
+  "dependencies": {
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.2"
   }
 }

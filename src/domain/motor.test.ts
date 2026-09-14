@@ -1,9 +1,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { CASOS } from '../data/casos.ts';
-import { planDe } from '../data/planes.ts';
-import { dictaminar } from './motor.ts';
-import { clausulaDe } from './poliza.ts';
+import { CASOS } from '../data/casos';
+import { planDe } from '../data/planes';
+import { dictaminar } from './motor';
+import { clausulaDe } from './poliza';
 
 test('los seis casos del corpus dan el dictamen esperado', () => {
   for (const caso of CASOS) {

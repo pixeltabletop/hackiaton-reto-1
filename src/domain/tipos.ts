@@ -1,5 +1,5 @@
-import type { Centavos } from './dinero.ts';
-import type { Evidencia } from './evidencia.ts';
+import type { Centavos } from './dinero';
+import type { Evidencia } from './evidencia';
 
 export type Caracter = 'electiva' | 'urgente' | 'emergencia';
 

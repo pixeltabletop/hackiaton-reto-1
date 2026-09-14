@@ -13,6 +13,6 @@ jobs:
         with:
           node-version: 24
       - name: Corpus, evidencia y motor
-        run: node --test "src/domain/*.test.ts"
+        run: npm test
       - name: Puerta de calidad del dictamen
-        run: node scripts/check-decision.mjs
+        run: npm run check:decision

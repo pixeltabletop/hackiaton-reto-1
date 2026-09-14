@@ -1,5 +1,5 @@
-import { formato, usd } from '../domain/dinero.ts';
-import type { Caso } from '../domain/tipos.ts';
+import { formato, usd } from '../domain/dinero';
+import type { Caso } from '../domain/tipos';
 
 /**
  * Seis casos quirúrgicos sintéticos, escritos como llegan de verdad: un informe

@@ -1,0 +1,579 @@
+:root {
+  --bg: #0a0f16;
+  --panel: #111a24;
+  --panel-2: #0d151e;
+  --border: #223040;
+  --border-suave: #1a2632;
+  --texto: #e9eff6;
+  --tenue: #94a7ba;
+  --acento: #4da3ff;
+  --aprobado: #35d07f;
+  --condiciones: #2fd1c5;
+  --faltantes: #ffc247;
+  --carencia: #ff9f45;
+  --no-cubierto: #ff6b6b;
+  --auditor: #b18cff;
+  --mono: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+  --radio: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1100px 500px at 12% -10%, #16283d 0%, transparent 60%),
+    var(--bg);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hoja {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ---------- cabecera ---------- */
+
+.ceja {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+h1 {
+  font-size: clamp(30px, 4.2vw, 46px);
+  line-height: 1.1;
+  margin: 12px 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.tesis {
+  font-size: 18px;
+  color: var(--tenue);
+  max-width: 70ch;
+  margin: 0 0 28px;
+}
+
+.tesis strong {
+  color: var(--texto);
+}
+
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1px;
+  background: var(--border-suave);
+  border: 1px solid var(--border-suave);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+
+.metricas div {
+  background: var(--panel-2);
+  padding: 16px 18px;
+}
+
+.metricas dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tenue);
+}
+
+.metricas dd {
+  margin: 6px 0 0;
+  font-family: var(--mono);
+  font-size: 22px;
+  color: var(--texto);
+}
+
+.metricas dd.cero {
+  color: var(--aprobado);
+}
+
+.metricas dd.palabra {
+  font-size: 19px;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- pared de casos ---------- */
+
+h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tenue);
+  margin: 44px 0 16px;
+  font-weight: 600;
+}
+
+.pared {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: 12px;
+}
+
+.tarjeta {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--estado, var(--acento));
+  border-radius: var(--radio);
+  padding: 16px 18px;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-2px);
+  border-color: var(--estado, var(--acento));
+}
+
+.tarjeta .slug {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--tenue);
+}
+
+.tarjeta h3 {
+  margin: 6px 0 8px;
+  font-size: 16px;
+  line-height: 1.3;
+  min-height: 2.6em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tarjeta .pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--tenue);
+}
+
+.tarjeta .pie span:last-child {
+  text-align: right;
+}
+
+.tarjeta .pista {
+  display: block;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-suave);
+  font-size: 12px;
+  color: var(--acento);
+  opacity: 0.8;
+}
+
+.aprobado { --estado: var(--aprobado); }
+.condiciones { --estado: var(--condiciones); }
+.faltantes { --estado: var(--faltantes); }
+.carencia { --estado: var(--carencia); }
+.no-cubierto { --estado: var(--no-cubierto); }
+.auditor { --estado: var(--auditor); }
+
+.chip {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--estado);
+  border: 1px solid color-mix(in srgb, var(--estado) 50%, transparent);
+  background: color-mix(in srgb, var(--estado) 14%, transparent);
+  border-radius: 999px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
+
+/* ---------- caso ---------- */
+
+.caso {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px 26px 30px;
+  margin-top: 26px;
+  border-top: 3px solid var(--estado, var(--acento));
+}
+
+.caso > header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.caso h3 {
+  margin: 8px 0 6px;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.caso .slug {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--tenue);
+}
+
+.caso .sub {
+  margin: 0;
+  color: var(--tenue);
+  font-size: 14px;
+  max-width: 68ch;
+}
+
+.veredicto {
+  text-align: right;
+}
+
+.veredicto .chip {
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+.veredicto .reloj {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--tenue);
+  margin-top: 10px;
+}
+
+.veredicto .reloj b {
+  color: #c8d6e4;
+  font-weight: 600;
+}
+
+.sin-reparto {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.no-aplica {
+  color: var(--tenue) !important;
+  font-style: italic;
+}
+
+.referencia {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--tenue);
+}
+
+.boton {
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #06121f;
+  background: var(--acento);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: filter 0.12s ease;
+}
+
+.boton:hover {
+  filter: brightness(1.12);
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+@media (max-width: 880px) {
+  .rejilla {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bloque {
+  background: var(--panel);
+  border: 1px solid var(--border-suave);
+  border-radius: var(--radio);
+  padding: 18px 20px;
+}
+
+/* El panel del dinero no se estira a la altura del "¿por qué?": se queda con su contenido. */
+.bloque.dinero {
+  align-self: start;
+}
+
+.bloque h4 {
+  margin: 0 0 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--tenue);
+}
+
+ol.motivos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: paso;
+}
+
+ol.motivos li {
+  counter-increment: paso;
+  padding: 0 0 14px 34px;
+  position: relative;
+}
+
+ol.motivos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--estado) 16%, transparent);
+  color: var(--estado);
+  font-family: var(--mono);
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+}
+
+ol.motivos li:last-child {
+  padding-bottom: 0;
+}
+
+.regla {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tenue);
+}
+
+ol.motivos p {
+  margin: 4px 0 8px;
+}
+
+blockquote {
+  margin: 0;
+  padding: 11px 15px;
+  border-left: 2px solid var(--border);
+  background: var(--panel-2);
+  border-radius: 0 10px 10px 0;
+  font-size: 14px;
+  color: #d3dee9;
+}
+
+blockquote .clausula {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--acento);
+  margin-bottom: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.dinero table td {
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--border-suave);
+}
+
+.dinero table td:last-child {
+  text-align: right;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.dinero tr.total td {
+  border-bottom: none;
+  padding-top: 12px;
+  font-size: 17px;
+  color: var(--aprobado);
+}
+
+.dinero tr.total td:first-child {
+  color: var(--texto);
+}
+
+.dinero tr.paciente td:last-child {
+  color: var(--faltantes);
+}
+
+.nota {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  color: var(--tenue);
+}
+
+.faltantes-lista {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.faltantes-lista li {
+  margin-bottom: 6px;
+}
+
+.contrafactual {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--aprobado) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--aprobado) 35%, transparent);
+  font-size: 14px;
+}
+
+.contrafactual b {
+  color: var(--aprobado);
+}
+
+details.bloque {
+  margin-top: 18px;
+}
+
+details.bloque > summary {
+  cursor: pointer;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--tenue);
+  list-style: none;
+}
+
+details.bloque > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.bloque > summary::after {
+  content: '▾';
+  color: var(--acento);
+  float: right;
+}
+
+details.bloque > summary:hover {
+  color: var(--texto);
+}
+
+details.bloque[open] > summary {
+  margin-bottom: 16px;
+}
+
+.documento {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  margin: 0;
+  padding: 16px;
+  background: var(--panel-2);
+  border: 1px solid var(--border-suave);
+  border-radius: 12px;
+  color: #cfdae6;
+  overflow-x: auto;
+}
+
+mark {
+  background: color-mix(in srgb, var(--acento) 26%, transparent);
+  color: #ffffff;
+  border-bottom: 1px solid var(--acento);
+  border-radius: 3px;
+  padding: 1px 2px;
+}
+
+.campos {
+  margin-top: 16px;
+}
+
+.campos th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tenue);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.campos td {
+  padding: 7px 10px 7px 0;
+  border-bottom: 1px dashed var(--border-suave);
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.campos td:nth-child(1) {
+  font-family: var(--mono);
+  color: var(--acento);
+  white-space: nowrap;
+}
+
+.campos td:nth-child(3) {
+  font-family: var(--mono);
+  color: var(--tenue);
+}
+
+.clausulas {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clausulas li {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--border-suave);
+  font-size: 14px;
+  color: #cbd7e3;
+}
+
+.clausulas li:last-child {
+  border-bottom: none;
+}
+
+.clausulas .id {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--acento);
+  display: block;
+  margin-bottom: 4px;
+}
+
+footer {
+  margin-top: 60px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-suave);
+  color: var(--tenue);
+  font-size: 13px;
+}
+
+footer code {
+  font-family: var(--mono);
+  color: #cbd7e3;
+}

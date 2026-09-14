@@ -1,10 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { PLANES, planDe } from '../data/planes.ts';
-import { CASOS } from '../data/casos.ts';
-import { evidenciaDelCaso } from './motor.ts';
-import { clausulaDe } from './poliza.ts';
-import { procedimientoDe } from '../data/catalogo.ts';
+import { PLANES, planDe } from '../data/planes';
+import { CASOS } from '../data/casos';
+import { evidenciaDelCaso } from './motor';
+import { clausulaDe } from './poliza';
+import { procedimientoDe } from '../data/catalogo';
 
 const miles = (centavos: number): string =>
   (centavos / 100).toLocaleString('en-US', {

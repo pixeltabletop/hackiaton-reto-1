@@ -10,11 +10,11 @@
  * Es el equivalente de `check-auditoria.mjs` en MAM: el hallazgo queda congelado
  * como comprobación permanente.
  */
-import { CASOS } from '../src/data/casos.ts';
-import { planDe } from '../src/data/planes.ts';
-import { dictaminar } from '../src/domain/motor.ts';
-import { clausulaDe } from '../src/domain/poliza.ts';
-import { formato } from '../src/domain/dinero.ts';
+import { CASOS } from '../src/data/casos';
+import { planDe } from '../src/data/planes';
+import { dictaminar } from '../src/domain/motor';
+import { clausulaDe } from '../src/domain/poliza';
+import { formato } from '../src/domain/dinero';
 
 let fallos = 0;
 const filas = [];

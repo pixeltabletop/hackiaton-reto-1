@@ -1,4 +1,4 @@
-import type { Clausula } from './tipos.ts';
+import type { Clausula } from './tipos';
 
 /**
  * Compilador de pólizas: el texto legal en lenguaje natural se convierte en

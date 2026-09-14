@@ -6,6 +6,7 @@ node_modules/
 .env.*
 .secrets/
 .vercel/
+notion.config.json
 *.token
 
 # Salidas de build

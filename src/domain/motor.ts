@@ -1,7 +1,7 @@
-import { formato, menos, min, porcentaje } from './dinero.ts';
-import { evidenciaDe, sinVerificar, type Evidencia } from './evidencia.ts';
-import { clausulaDe } from './poliza.ts';
-import type { Caso, Decision, Estado, Faltante, Motivo, Plan, Requisito } from './tipos.ts';
+import { formato, menos, min, porcentaje } from './dinero';
+import { evidenciaDe, sinVerificar, type Evidencia } from './evidencia';
+import { clausulaDe } from './poliza';
+import type { Caso, Decision, Estado, Faltante, Motivo, Plan, Requisito } from './tipos';
 
 /**
  * Motor de decisión. Determinista y sin IA a propósito: la cobertura la decide la
@@ -176,7 +176,7 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
   motivos.push(
     motivo(
       'cobertura',
-      `Cubierto: ${procedimiento.nombre} (CUPS ${procedimiento.cups})`,
+      `Figura en el tarifario del plan: ${procedimiento.nombre} (CUPS ${procedimiento.cups})`,
       procedimiento.clausula,
       cita('procedimientoCups'),
     ),
@@ -210,7 +210,7 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
     );
     motivos.push(
       motivo(
-        'preexistencias',
+        'aplicación de la carencia',
         `Cumplirá la carencia de preexistencias el ${sumarMeses(caso.fechaAfiliacion, plan.carencias.preexistenciasMeses)}`,
         '3.2',
         null,
@@ -231,7 +231,7 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
     );
     motivos.push(
       motivo(
-        'carencias',
+        'aplicación de la carencia',
         `Aplicará desde el ${sumarMeses(caso.fechaAfiliacion, plan.carencias.cirugiaElectivaMeses)}`,
         '3.1',
         null,
@@ -262,7 +262,7 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
       const simulado = dictaminar({ ...caso, documentosAdjuntos: completos }, plan, {
         contrafactual: true,
       });
-      contrafactual = `Con ${faltantes.map((f) => f.documento).join(' y ')}, el caso pasa a ${simulado.estado} y la aseguradora responde ${formato(simulado.pagaAseguradora)}.`;
+      contrafactual = `Con esos documentos, el caso pasa a ${simulado.estado} y la aseguradora responde ${formato(simulado.pagaAseguradora)}.`;
     }
     return cerrar('DOCUMENTOS_FALTANTES', { contrafactual });
   }

@@ -1,4 +1,4 @@
-import { usd, type Centavos } from '../domain/dinero.ts';
+import { usd, type Centavos } from '../domain/dinero';
 
 /**
  * Tarifario de referencia. En el producto real estos valores salen del contrato

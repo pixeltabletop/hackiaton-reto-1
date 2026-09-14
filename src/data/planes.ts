@@ -1,7 +1,7 @@
-import { compilarPoliza } from '../domain/poliza.ts';
-import { usd, type Centavos } from '../domain/dinero.ts';
-import type { Caracter, Carencias, Hospital, Plan } from '../domain/tipos.ts';
-import { procedimientoDe } from './catalogo.ts';
+import { compilarPoliza } from '../domain/poliza';
+import { usd, type Centavos } from '../domain/dinero';
+import type { Caracter, Carencias, Hospital, Plan } from '../domain/tipos';
+import { procedimientoDe } from './catalogo';
 
 /**
  * Las tres pólizas del corpus son sintéticas, pero están escritas como una póliza
