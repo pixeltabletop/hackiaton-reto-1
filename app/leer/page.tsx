@@ -52,6 +52,11 @@ export default async function PaginaLeer({
 
       <form className="bloque" method="get" action="/leer" style={{ marginTop: 22 }}>
         <h4>Informe del hospital</h4>
+        <p className="nota" style={{ marginTop: 0, marginBottom: 12 }}>
+          Borre este ejemplo y pegue su propio informe, o pulse uno de los casos del final de la
+          página. Se lee tal cual está escrito: cada dato que el agente use tiene que aparecer aquí,
+          con esas palabras.
+        </p>
         <textarea
           className="entrada"
           name="informe"
