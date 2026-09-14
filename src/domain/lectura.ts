@@ -28,7 +28,7 @@ const REGLAS = {
   preexistencias: /Preexistencias declaradas:\s*([^\n]+)/i,
 };
 
-const NOMBRES_DE_DOCUMENTO: { id: string; pistas: RegExp }[] = [
+export const NOMBRES_DE_DOCUMENTO: { id: string; pistas: RegExp }[] = [
   { id: 'R1', pistas: /informe del cirujano/i },
   { id: 'R2', pistas: /estudio de imagen/i },
   { id: 'R3', pistas: /orden de anestesiolog/i },
@@ -130,6 +130,8 @@ export function leerInforme(
   const caracter: Caracter =
     lineaCaracter === 'urgente' || lineaCaracter === 'emergencia' ? lineaCaracter : 'electiva';
   if (!lineaCaracter) avisos.push('No se encontró el carácter del procedimiento; se asume electiva');
+  // Con cita registrada, el modelo no puede pisar un carácter que las reglas ya leyeron.
+  else citas.caracter = lineaCaracter;
 
   const lineaDocumentos = buscar(informe, REGLAS.documentos);
   const documentosAdjuntos = NOMBRES_DE_DOCUMENTO.filter((d) => d.pistas.test(lineaDocumentos)).map(

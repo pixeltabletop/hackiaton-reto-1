@@ -24,7 +24,7 @@ cláusula que lo sostiene** — o la lista exacta de lo que falta y qué pasa si
 ```bash
 npm ci
 npm run dev            # la web en http://localhost:3000
-npm test               # 22 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo
+npm test               # 30 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo
 npm run check:decision # dictamina los seis casos y audita el contrato
 npm run check          # las dos anteriores
 ```
@@ -49,7 +49,9 @@ pasa a `PRE_APROBADO` y la aseguradora responde $ 2,400.00»*.
 2. **Sin cita textual no hay dato.** Cada campo que el agente usa tiene que existir literalmente en
    el documento. Si no se puede citar, el caso no se aprueba.
 3. **El modelo no puede inventar.** Su respuesta se acepta campo por campo y solo si el fragmento
-   que cita aparece en el informe; y nunca pisa lo que la lectura por reglas ya resolvió.
+   que cita aparece en el informe **y el valor sale de ese fragmento**: un monto de $ 1,000.00 que
+   cita la línea de $ 4,200.00 se descarta. El carácter tiene que estar en el catálogo, los documentos
+   también se citan uno por uno, y el modelo nunca pisa lo que la lectura por reglas ya resolvió.
 4. **Todo en centavos enteros**, y deducible + coaseguro + aseguradora tiene que cuadrar contra lo
    facturado. Lo verifica la puerta de calidad en cada push.
 

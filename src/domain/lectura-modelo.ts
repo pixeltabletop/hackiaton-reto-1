@@ -1,6 +1,6 @@
 import { usd } from './dinero';
-import { verificarCita } from './evidencia';
-import { leerInforme, type Lectura } from './lectura';
+import { valorRespaldadoPorCita, verificarCita } from './evidencia';
+import { leerInforme, NOMBRES_DE_DOCUMENTO, type Lectura } from './lectura';
 import type { Caso, Caracter, Plan } from './tipos';
 
 /**
@@ -35,6 +35,7 @@ export const CAMPOS = [
 ] as const;
 
 const CAMPOS_VALIDOS = new Set<string>([...CAMPOS, 'documentos', 'preexistencias']);
+const CARACTERES = new Set<string>(['electiva', 'urgente', 'emergencia']);
 
 export function instruccionDeLectura(informe: string): string {
   return `Eres el lector de informes médicos de un agente de pre-autorización de seguros.
@@ -46,7 +47,10 @@ Devuelve SOLO un objeto JSON con esta forma:
     { "campo": "procedimientoCups", "valor": "512301", "cita": "CUPS 512301" },
     { "campo": "montoEstimado", "valor": "$ 4,200.00", "cita": "Monto estimado del procedimiento: $ 4,200.00" }
   ],
-  "documentos": ["R1", "R2"],
+  "documentos": [
+    { "id": "R1", "cita": "informe del cirujano" },
+    { "id": "R2", "cita": "estudio de imagen" }
+  ],
   "preexistencias": ["Hipertensión arterial diagnosticada en 2024"]
 }
 
@@ -56,9 +60,11 @@ Reglas estrictas:
 - Campos escalares válidos: ${CAMPOS.join(', ')}.
 - "edad" es un número. "caracter" es uno de: electiva, urgente, emergencia.
 - "montoEstimado" es el texto del monto tal como aparece, con su símbolo.
-- "documentos" solo puede contener identificadores de esta lista:
+- El "valor" tiene que salir de su "cita": si la cita dice 4,200.00, el valor no puede ser otro.
+- "documentos" es una lista de objetos { "id", "cita" }. El id solo puede ser uno de:
   R1 = informe del cirujano, R2 = estudio de imagen, R3 = orden de anestesiología,
   R4 = consentimiento informado, R5 = informe de urgencias.
+  La cita es el fragmento literal que nombra ese documento como adjunto.
   Incluye únicamente los que el informe diga que están adjuntos.
 - No inventes datos. Si algo no está en el informe, omítelo.
 
@@ -110,15 +116,39 @@ export function aceptarDelModelo(respuesta: string, informe: string, citasDeRegl
       descartados.push(`${campo}: la cita no aparece en el informe`);
       continue;
     }
+    if (campo === 'caracter' && !CARACTERES.has(valor.toLowerCase())) {
+      descartados.push(`${campo}: «${valor}» no está en el catálogo (electiva, urgente, emergencia)`);
+      continue;
+    }
+    if (!valorRespaldadoPorCita(campo, valor, cita)) {
+      descartados.push(`${campo}: el valor «${valor}» no sale de la cita`);
+      continue;
+    }
     if (citasDeReglas[campo]) {
       continue; // las reglas ya lo tenían resuelto; el modelo no pisa lo determinista
     }
     aceptados.push({ campo, valor, cita });
   }
 
-  const documentos = (Array.isArray(datos.documentos) ? datos.documentos : [])
-    .map((d: unknown) => String(d).trim().toUpperCase())
-    .filter((d: string) => ['R1', 'R2', 'R3', 'R4', 'R5'].includes(d));
+  // Un documento cuenta solo con una cita literal que exista en el informe y que
+  // nombre ese mismo documento. Un id suelto no es evidencia.
+  const documentos: string[] = [];
+  for (const crudo of Array.isArray(datos.documentos) ? datos.documentos : []) {
+    const id = String(typeof crudo === 'object' && crudo !== null ? crudo.id : crudo).trim().toUpperCase();
+    const cita = typeof crudo === 'object' && crudo !== null ? String(crudo.cita ?? '').trim() : '';
+    const nombre = NOMBRES_DE_DOCUMENTO.find((d) => d.id === id);
+    if (!nombre) {
+      descartados.push(`documento ${id || '(sin id)'}: no está en el catálogo`);
+    } else if (!cita) {
+      descartados.push(`documento ${id}: sin cita`);
+    } else if (!verificarCita(informe, cita).verificado) {
+      descartados.push(`documento ${id}: la cita no aparece en el informe`);
+    } else if (!nombre.pistas.test(cita)) {
+      descartados.push(`documento ${id}: la cita no nombra ese documento`);
+    } else if (!documentos.includes(id)) {
+      documentos.push(id);
+    }
+  }
 
   const preexistencias = (Array.isArray(datos.preexistencias) ? datos.preexistencias : [])
     .map((p: unknown) => String(p).trim())
@@ -187,22 +217,25 @@ export async function leerInformeConModelo(
       }
     }
 
+    // Lo que el modelo aporta tiene que verse en la nota, también si no es un campo.
+    const aportes = aceptados.map((a) => a.campo);
     if (documentos.length > 0 && caso.documentosAdjuntos.length === 0) {
       caso.documentosAdjuntos = documentos;
+      aportes.push(`documentos ${documentos.join(', ')}`);
     }
     if (preexistencias.length > 0) {
       caso.preexistenciasDeclaradas = preexistencias;
+      aportes.push('preexistencias');
     }
 
-    const nuevos = aceptados.map((a) => a.campo);
     return {
       campos: base.campos,
       caso,
       avisos: base.avisos,
-      origen: aceptados.length > 0 ? 'modelo' : 'reglas',
+      origen: aportes.length > 0 ? 'modelo' : 'reglas',
       nota:
-        aceptados.length > 0
-          ? `${proveedor.nombre} completó ${aceptados.length} campo(s) que las reglas no encontraban: ${nuevos.join(', ')}.`
+        aportes.length > 0
+          ? `${proveedor.nombre} completó lo que las reglas no encontraban: ${aportes.join('; ')}.`
           : `${proveedor.nombre} no aportó nada nuevo; la lectura por reglas ya estaba completa.`,
       descartados,
     };

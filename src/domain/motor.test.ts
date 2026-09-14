@@ -84,3 +84,15 @@ test('la urgencia fuera de la red se aprueba con condiciones, no se rechaza', ()
     'la urgencia fuera de red debería aplicar el coaseguro de fuera de red',
   );
 });
+
+
+test('un campo cuya cita no respalda su valor tumba la aprobación', () => {
+  const caso = CASOS[0];
+  const plan = planDe(caso.planId);
+  const decision = dictaminar(
+    { ...caso, montoEstimado: 100000, citas: { montoEstimado: 'Monto estimado del procedimiento: $ 4,200.00' } },
+    plan,
+  );
+  assert.equal(decision.estado, 'DOCUMENTOS_FALTANTES');
+  assert.equal(decision.motivos[0].regla, 'evidencia');
+});

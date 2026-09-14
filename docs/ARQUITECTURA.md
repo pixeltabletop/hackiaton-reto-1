@@ -26,7 +26,7 @@ código decide**.
 | `poliza.ts` | Convierte el texto legal en cláusulas con id y offset | No entiende el derecho: solo indexa |
 | `motor.ts` | Aplica las reglas en orden y cierra el caso en el primer paso que falla | No llama a ningún modelo |
 | `lectura.ts` | Lee el informe con expresiones regulares y devuelve un caso con citas | No decide cobertura |
-| `lectura-modelo.ts` | Pide los campos a un modelo, acepta solo lo que se puede citar y cae a reglas si falla | No confía en el modelo |
+| `lectura-modelo.ts` | Pide los campos a un modelo, acepta solo lo que se puede citar (cita en el informe **y** valor que sale de la cita; carácter dentro del catálogo; documentos con su propia cita) y cae a reglas si falla | No confía en el modelo |
 | `presentacion.ts` | Arma lo que la web pinta (segmentos con marcas, cláusulas usadas) | No calcula nada del dictamen |
 | `notion/cliente.ts` | `fetch` contra la API de Notion (`2026-03-11`) | No conoce el dominio |
 | `notion/mapeo.ts` | Traduce fila ↔ póliza/caso/decisión | No decide nada |
@@ -48,7 +48,7 @@ faltantes o condiciones.
 ## Los invariantes (esto es lo que hay que proteger)
 
 - Ninguna decisión sale sin al menos un motivo con cláusula citada.
-- Todo campo que una regla usa tiene cita textual verificada como subcadena del documento.
+- Todo campo que una regla usa tiene cita textual verificada como subcadena del documento, y su valor sale de esa cita.
 - Un campo sin cita no puede sostener un `PRE_APROBADO`: el caso cae a `DOCUMENTOS_FALTANTES`.
 - El mismo caso, corrido dos veces, da la misma decisión (motor determinista).
 - Los montos de una aprobación cuadran contra lo facturado.
@@ -73,4 +73,4 @@ faltantes o condiciones.
 | `corpus.test.ts` | Que el corpus sea coherente y que todo dato estructurado esté en el texto legal |
 | `motor.test.ts` | Los seis dictámenes, la determinación, el cuadre de montos y el contrafactual |
 | `lectura.test.ts` | Que el lector por reglas reconstruya cada caso del corpus campo por campo |
-| `lectura-modelo.test.ts` | Que el modelo no pueda inventar: cita no verificable ⇒ se descarta |
+| `lectura-modelo.test.ts` | Que el modelo no pueda inventar: cita no verificable, valor que no sale de su cita, carácter fuera del catálogo o documento sin cita ⇒ se descarta |

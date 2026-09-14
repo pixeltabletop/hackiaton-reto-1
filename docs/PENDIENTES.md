@@ -9,7 +9,7 @@ git clone https://github.com/pixeltabletop/preautorizacion-quirurgica
 cd preautorizacion-quirurgica
 npm ci                 # versiones fijadas por package-lock.json
 npm run dev            # http://localhost:3000
-npm test               # 22 pruebas, sin dependencias extra
+npm test               # 30 pruebas, sin dependencias extra
 npm run check          # pruebas + puerta de calidad del dictamen
 ```
 

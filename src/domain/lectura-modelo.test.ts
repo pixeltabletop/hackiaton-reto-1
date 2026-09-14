@@ -95,3 +95,98 @@ test('con el modelo sano, los seis casos del corpus siguen dictando lo mismo', a
     );
   }
 });
+
+
+/* ---------- H-01: el valor tiene que salir de su cita ---------- */
+
+const artroscopia = CASOS.find((c) => c.id === 'PR-2026-0518')!;
+
+test('un carácter fuera del catálogo se descarta y no se salta la carencia', async () => {
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'caracter', valor: 'programada', cita: 'Carácter: electiva' }],
+  });
+  const lectura = await leerInformeConModelo(artroscopia.informeTexto, plan, proveedor(respuesta));
+  assert.equal(lectura.caso.caracter, 'electiva');
+  assert.ok(
+    lectura.descartados.some((d) => d.startsWith('caracter') && d.includes('no está en el catálogo')),
+    'debería descartar el carácter diciendo que no está en el catálogo',
+  );
+  assert.equal(dictaminar(lectura.caso, plan).estado, 'CARENCIA_NO_CUMPLIDA');
+});
+
+test('el modelo no pisa el carácter que las reglas ya leyeron', async () => {
+  const conMencion = informeSano.replace('Antecedentes:', 'Antecedentes: consulta urgente previa descartada.');
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'caracter', valor: 'urgente', cita: 'consulta urgente' }],
+  });
+  const lectura = await leerInformeConModelo(conMencion, plan, proveedor(respuesta));
+  assert.equal(lectura.caso.caracter, 'electiva');
+});
+
+test('un monto cuyo valor no sale de su cita se descarta', async () => {
+  const enDolares = informeSano.replace('$ 4,200.00', 'USD 4,200.00');
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'montoEstimado', valor: '$ 1,000.00', cita: 'Monto estimado del procedimiento: USD 4,200.00' }],
+  });
+  const lectura = await leerInformeConModelo(enDolares, plan, proveedor(respuesta));
+  assert.ok(lectura.descartados.some((d) => d.startsWith('montoEstimado')), 'debería descartar el monto');
+  assert.equal(lectura.caso.montoEstimado, 0);
+  assert.equal(dictaminar(lectura.caso, plan).estado, 'DOCUMENTOS_FALTANTES');
+});
+
+test('un monto que sí sale de su cita se acepta aunque las reglas no lo leyeran', async () => {
+  const enDolares = informeSano.replace('$ 4,200.00', 'USD 4,200.00');
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'montoEstimado', valor: 'USD 4,200.00', cita: 'Monto estimado del procedimiento: USD 4,200.00' }],
+  });
+  const lectura = await leerInformeConModelo(enDolares, plan, proveedor(respuesta));
+  assert.equal(lectura.caso.montoEstimado, 420000);
+  assert.equal(dictaminar(lectura.caso, plan).estado, 'PRE_APROBADO');
+});
+
+/* ---------- H-02: los documentos del modelo exigen cita ---------- */
+
+const sinDocumentos = CASOS.find((c) => c.id === 'PR-2026-0701')!;
+const informeSinLista = sinDocumentos.informeTexto.replace(
+  'Documentos adjuntos: informe del cirujano y consentimiento informado\n',
+  '',
+);
+
+test('los documentos que el modelo declara sin cita no cuentan', async () => {
+  const respuesta = JSON.stringify({ campos: [], documentos: ['R1', 'R2', 'R3', 'R4'] });
+  const lectura = await leerInformeConModelo(informeSinLista, plan, proveedor(respuesta));
+  assert.deepEqual(lectura.caso.documentosAdjuntos, []);
+  assert.equal(
+    lectura.descartados.filter((d) => d.startsWith('documento') && d.endsWith('sin cita')).length,
+    4,
+    'debería descartar los cuatro documentos por no traer cita',
+  );
+  assert.equal(dictaminar(lectura.caso, plan).estado, 'DOCUMENTOS_FALTANTES');
+});
+
+test('un documento con cita verificada que lo nombra sí cuenta', async () => {
+  const conProsa = informeSinLista.replace(
+    'Antecedentes:',
+    'Se adjuntan el informe del cirujano, el estudio de imagen, la orden de anestesiología y el consentimiento informado.\nAntecedentes:',
+  );
+  const respuesta = JSON.stringify({
+    campos: [],
+    documentos: [
+      { id: 'R1', cita: 'el informe del cirujano' },
+      { id: 'R2', cita: 'el estudio de imagen' },
+      { id: 'R3', cita: 'la orden de anestesiología' },
+      { id: 'R4', cita: 'el consentimiento informado' },
+    ],
+  });
+  const lectura = await leerInformeConModelo(conProsa, plan, proveedor(respuesta));
+  assert.deepEqual([...lectura.caso.documentosAdjuntos].sort(), ['R1', 'R2', 'R3', 'R4']);
+  assert.equal(lectura.origen, 'modelo');
+  assert.match(lectura.nota, /documento/);
+});
+
+test('un documento cuya cita nombra otro documento no cuenta', async () => {
+  const conProsa = informeSinLista.replace('Antecedentes:', 'Se adjunta el informe del cirujano.\nAntecedentes:');
+  const respuesta = JSON.stringify({ campos: [], documentos: [{ id: 'R2', cita: 'el informe del cirujano' }] });
+  const lectura = await leerInformeConModelo(conProsa, plan, proveedor(respuesta));
+  assert.deepEqual(lectura.caso.documentosAdjuntos, []);
+});
