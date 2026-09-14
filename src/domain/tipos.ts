@@ -95,6 +95,12 @@ export interface Caso {
   preexistenciasDeclaradas: string[];
   informeTexto: string;
   planId: string;
+  /**
+   * Cita textual exacta de la que salió cada campo, cuando quien leyó el informe
+   * conoce el fragmento literal (el lector por reglas o el modelo). Si falta, el
+   * motor busca el propio valor como cita.
+   */
+  citas?: Record<string, string>;
   // Lo que el corpus espera que el motor dicte. Es una prueba, no una promesa.
   estadoEsperado: Estado;
 }

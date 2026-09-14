@@ -59,16 +59,37 @@ export function calcularMontos(caso: Caso, plan: Plan, enRed: boolean): Montos {
 }
 
 export function evidenciaDelCaso(caso: Caso): Evidencia[] {
+  const cita = (campo: string, porDefecto: string) => caso.citas?.[campo] ?? porDefecto;
   return [
-    evidenciaDe('pacienteRef', caso.pacienteRef, caso.informeTexto),
-    evidenciaDe('edad', String(caso.edad), caso.informeTexto),
-    evidenciaDe('hospital', caso.hospital, caso.informeTexto),
-    evidenciaDe('fecha', caso.fecha, caso.informeTexto),
-    evidenciaDe('fechaAfiliacion', caso.fechaAfiliacion, caso.informeTexto),
-    evidenciaDe('diagnosticoCie10', caso.diagnosticoCie10, caso.informeTexto),
-    evidenciaDe('procedimientoCups', caso.procedimientoCups, caso.informeTexto),
-    evidenciaDe('cirujano', caso.cirujano, caso.informeTexto),
-    evidenciaDe('montoEstimado', formato(caso.montoEstimado), caso.informeTexto),
+    evidenciaDe('pacienteRef', caso.pacienteRef, caso.informeTexto, cita('pacienteRef', caso.pacienteRef)),
+    evidenciaDe('edad', String(caso.edad), caso.informeTexto, cita('edad', String(caso.edad))),
+    evidenciaDe('hospital', caso.hospital, caso.informeTexto, cita('hospital', caso.hospital)),
+    evidenciaDe('fecha', caso.fecha, caso.informeTexto, cita('fecha', caso.fecha)),
+    evidenciaDe(
+      'fechaAfiliacion',
+      caso.fechaAfiliacion,
+      caso.informeTexto,
+      cita('fechaAfiliacion', caso.fechaAfiliacion),
+    ),
+    evidenciaDe(
+      'diagnosticoCie10',
+      caso.diagnosticoCie10,
+      caso.informeTexto,
+      cita('diagnosticoCie10', caso.diagnosticoCie10),
+    ),
+    evidenciaDe(
+      'procedimientoCups',
+      caso.procedimientoCups,
+      caso.informeTexto,
+      cita('procedimientoCups', caso.procedimientoCups),
+    ),
+    evidenciaDe('cirujano', caso.cirujano, caso.informeTexto, cita('cirujano', caso.cirujano)),
+    evidenciaDe(
+      'montoEstimado',
+      formato(caso.montoEstimado),
+      caso.informeTexto,
+      cita('montoEstimado', formato(caso.montoEstimado)),
+    ),
   ];
 }
 

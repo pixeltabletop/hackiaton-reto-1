@@ -86,12 +86,14 @@ export function leerInforme(
 ): Lectura {
   const avisos: string[] = [];
   const campos: Evidencia[] = [];
+  const citas: Record<string, string> = {};
 
   const anotar = (campo: string, valor: string, cita: string) => {
     if (!valor) {
       avisos.push(`No se encontró el campo ${campo} en el informe`);
       return;
     }
+    if (cita) citas[campo] = cita;
     campos.push(evidenciaDe(campo, valor, informe, cita));
   };
 
@@ -168,6 +170,7 @@ export function leerInforme(
     preexistenciasDeclaradas,
     informeTexto: informe,
     planId,
+    citas,
     estadoEsperado: 'PRE_APROBADO',
   };
 

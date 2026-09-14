@@ -3,8 +3,11 @@ import { Caso } from '../components/Caso';
 import { CASOS } from '../../src/data/casos';
 import { PLANES, planDe } from '../../src/data/planes';
 import { formato } from '../../src/domain/dinero';
-import { leerInforme, resumenLectura } from '../../src/domain/lectura';
+import { leerInforme, resumenLectura, type Lectura } from '../../src/domain/lectura';
+import { leerInformeConModelo, proveedorDeEntorno } from '../../src/domain/lectura-modelo';
 import { armarVista } from '../../src/domain/presentacion';
+
+type LecturaUI = Lectura & { nota?: string; descartados?: string[] };
 
 export const dynamic = 'force-dynamic';
 
@@ -31,13 +34,16 @@ export default async function PaginaLeer({
   const informe = (parametros.informe ?? '').trim();
   const planId = parametros.plan ?? 'PLAN-A';
   const plan = planDe(planId);
+  const proveedor = informe ? proveedorDeEntorno() : null;
 
-  const lectura = informe
-    ? leerInforme(
-        informe,
-        planId,
-        plan.red.map((h) => h.hospital),
-      )
+  const lectura: LecturaUI | null = informe
+    ? proveedor
+      ? await leerInformeConModelo(informe, plan, proveedor)
+      : leerInforme(
+          informe,
+          planId,
+          plan.red.map((h) => h.hospital),
+        )
     : null;
 
   return (
@@ -87,6 +93,18 @@ export default async function PaginaLeer({
           <div className="bloque" style={{ marginTop: 18 }}>
             <h4>Qué leyó el agente</h4>
             <p style={{ marginTop: 0 }}>{resumenLectura(lectura)}</p>
+            {lectura.nota && (
+              <p className="nota" style={{ marginTop: 0 }}>
+                {lectura.nota}
+              </p>
+            )}
+            {lectura.descartados && lectura.descartados.length > 0 && (
+              <ul className="faltantes-lista">
+                {lectura.descartados.map((descartado) => (
+                  <li key={descartado}>Descartado del modelo — {descartado}</li>
+                ))}
+              </ul>
+            )}
             {lectura.avisos.length > 0 ? (
               <ul className="faltantes-lista">
                 {lectura.avisos.map((aviso) => (
