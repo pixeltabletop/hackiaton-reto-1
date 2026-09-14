@@ -1,5 +1,6 @@
 import { usd } from './dinero';
 import { valorRespaldadoPorCita, verificarCita } from './evidencia';
+import { evidenciaDelCaso } from './motor';
 import { leerInforme, NOMBRES_DE_DOCUMENTO, resolverHospital, type Lectura } from './lectura';
 import type { Caso, Caracter, Plan } from './tipos';
 
@@ -211,6 +212,7 @@ export async function leerInformeConModelo(
           break;
         case 'pacienteRef':
           caso.pacienteRef = valor;
+          if (caso.id === 'LEÍDO-SIN-ID') caso.id = valor;
           break;
         case 'hospital':
           // Igual que en las reglas: el nombre se resuelve contra la red del plan.
@@ -238,13 +240,22 @@ export async function leerInformeConModelo(
     }
     if (preexistencias.length > 0) {
       caso.preexistenciasDeclaradas = preexistencias;
+      caso.preexistenciasSinDeclarar = false;
       aportes.push('preexistencias');
     }
 
     return {
-      campos: base.campos,
+      // Evidencia y avisos se recalculan: lo que completó el modelo ya no figura como faltante.
+      campos: evidenciaDelCaso(caso),
       caso,
-      avisos: base.avisos,
+      avisos: base.avisos.filter((aviso) => {
+        if (aceptados.some((a) => aviso === `No se encontró el campo ${a.campo} en el informe`)) return false;
+        if (aviso.startsWith('No se encontró el monto') && aceptados.some((a) => a.campo === 'montoEstimado')) return false;
+        if (aviso.startsWith('El informe no declara si') && caso.caracterSinDeclarar === false) return false;
+        if (aviso.startsWith('No se encontró la lista de documentos') && caso.documentosAdjuntos.length > 0) return false;
+        if (aviso.startsWith('El informe no declara preexistencias') && caso.preexistenciasSinDeclarar === false) return false;
+        return true;
+      }),
       conflictos: base.conflictos,
       origen: aportes.length > 0 ? 'modelo' : 'reglas',
       nota:
@@ -314,7 +325,77 @@ export function proveedorCompatible(
   };
 }
 
+/** Esquema de la lectura: los catálogos van en `enum`, no solo en la instrucción. */
+export const ESQUEMA_LECTURA = {
+  type: 'object',
+  additionalProperties: false,
+  required: ['campos', 'documentos', 'preexistencias'],
+  properties: {
+    campos: {
+      type: 'array',
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        required: ['campo', 'valor', 'cita'],
+        properties: {
+          campo: { type: 'string', enum: [...CAMPOS] },
+          valor: { type: 'string' },
+          cita: { type: 'string' },
+        },
+      },
+    },
+    documentos: {
+      type: 'array',
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        required: ['id', 'cita'],
+        properties: { id: { type: 'string', enum: ['R1', 'R2', 'R3', 'R4', 'R5'] }, cita: { type: 'string' } },
+      },
+    },
+    preexistencias: { type: 'array', items: { type: 'string' } },
+  },
+} as const;
+
+interface ClienteMensajes {
+  messages: { create: (peticion: any) => Promise<any> };
+}
+
+/**
+ * Claude (Sonnet 5 por defecto) con el SDK oficial. Elegido con el banco de la revisión
+ * de Josué: 36/36 y 0 aprobaciones indebidas en 36 informes, mediana de 5 s con
+ * esfuerzo bajo. Salida estructurada con el esquema de lectura; Sonnet 5 no acepta
+ * `temperature`. Una negativa del modelo o un error lanza, y la lectura cae a reglas.
+ */
+export function proveedorAnthropic(
+  clave: string,
+  { modelo = 'claude-sonnet-5', esfuerzo = 'low', cliente }: { modelo?: string; esfuerzo?: string; cliente?: ClienteMensajes } = {},
+): ProveedorModelo {
+  let anthropic: ClienteMensajes | undefined = cliente;
+  return {
+    nombre: `Claude ${modelo}`,
+    completar: async (instruccion) => {
+      // Import diferido: el SDK solo se carga si hay clave, y las pruebas inyectan un cliente.
+      anthropic ??= new (await import('@anthropic-ai/sdk')).default({ apiKey: clave, timeout: 30_000, maxRetries: 2 });
+      const respuesta = await anthropic.messages.create({
+        model: modelo,
+        max_tokens: 4000,
+        messages: [{ role: 'user', content: instruccion }],
+        output_config: { effort: esfuerzo, format: { type: 'json_schema', schema: ESQUEMA_LECTURA } },
+      });
+      if (respuesta.stop_reason === 'refusal') throw new Error('el modelo se negó a responder');
+      return respuesta.content
+        .filter((bloque: any) => bloque.type === 'text')
+        .map((bloque: any) => bloque.text)
+        .join('');
+    },
+  };
+}
+
 export function proveedorDeEntorno(): ProveedorModelo | null {
+  if (process.env.ANTHROPIC_API_KEY) {
+    return proveedorAnthropic(process.env.ANTHROPIC_API_KEY, { modelo: process.env.MODELO_LECTURA ?? 'claude-sonnet-5' });
+  }
   if (process.env.GOOGLE_API_KEY) {
     return proveedorGemini(process.env.GOOGLE_API_KEY, process.env.MODELO_LECTURA ?? 'gemini-2.5-flash');
   }
@@ -338,5 +419,7 @@ export function proveedorDeEntorno(): ProveedorModelo | null {
 }
 
 export function hayProveedor(): boolean {
-  return Boolean(process.env.GOOGLE_API_KEY || process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY);
+  return Boolean(
+    process.env.ANTHROPIC_API_KEY || process.env.GOOGLE_API_KEY || process.env.GROQ_API_KEY || process.env.OPENAI_API_KEY,
+  );
 }

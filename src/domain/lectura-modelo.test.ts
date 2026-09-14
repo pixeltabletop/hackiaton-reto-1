@@ -3,7 +3,14 @@ import assert from 'node:assert/strict';
 import { CASOS } from '../data/casos';
 import { planDe } from '../data/planes';
 import { dictaminar } from './motor';
-import { leerInformeConModelo, type ProveedorModelo } from './lectura-modelo';
+import {
+  CAMPOS,
+  hayProveedor,
+  leerInformeConModelo,
+  proveedorAnthropic,
+  proveedorDeEntorno,
+  type ProveedorModelo,
+} from './lectura-modelo';
 
 const plan = planDe('PLAN-A');
 const original = CASOS[0];
@@ -240,4 +247,87 @@ test('el modelo no llena un campo que las reglas dejaron vacío porque el inform
   const lectura = await leerInformeConModelo(dosMontos, plan, proveedor(respuesta));
   assert.ok(lectura.descartados.some((d) => d.startsWith('montoEstimado') && d.includes('contradice')));
   assert.notEqual(dictaminar(lectura.caso, plan).estado, 'PRE_APROBADO');
+});
+
+/* ---------- proveedor Anthropic (Claude Sonnet 5) ---------- */
+
+function conEntorno<T>(variables: Record<string, string | undefined>, fn: () => T): T {
+  const previas = Object.fromEntries(Object.keys(variables).map((k) => [k, process.env[k]]));
+  for (const [k, v] of Object.entries(variables)) {
+    if (v === undefined) delete process.env[k];
+    else process.env[k] = v;
+  }
+  try {
+    return fn();
+  } finally {
+    for (const [k, v] of Object.entries(previas)) {
+      if (v === undefined) delete process.env[k];
+      else process.env[k] = v;
+    }
+  }
+}
+
+test('con ANTHROPIC_API_KEY el agente lee con Claude Sonnet 5, antes que con Gemini', () => {
+  const proveedorElegido = conEntorno(
+    { ANTHROPIC_API_KEY: 'clave-de-prueba', GOOGLE_API_KEY: 'otra-clave', MODELO_LECTURA: undefined },
+    () => proveedorDeEntorno(),
+  );
+  assert.ok(proveedorElegido, 'debería haber proveedor');
+  assert.match(proveedorElegido.nombre, /claude-sonnet-5/);
+  assert.equal(conEntorno({ ANTHROPIC_API_KEY: 'x', GOOGLE_API_KEY: undefined, GROQ_API_KEY: undefined, OPENAI_API_KEY: undefined }, () => hayProveedor()), true);
+});
+
+test('el proveedor Anthropic pide salida estructurada con el esquema de lectura y esfuerzo bajo', async () => {
+  let peticion: any = null;
+  const cliente = {
+    messages: {
+      create: async (p: any) => {
+        peticion = p;
+        return { stop_reason: 'end_turn', content: [{ type: 'text', text: '{"campos":[],"documentos":[],"preexistencias":[]}' }] };
+      },
+    },
+  };
+  const claude = proveedorAnthropic('clave-de-prueba', { cliente });
+  const texto = await claude.completar('instrucción');
+  assert.equal(texto, '{"campos":[],"documentos":[],"preexistencias":[]}');
+  assert.equal(peticion.model, 'claude-sonnet-5');
+  assert.equal(peticion.output_config.effort, 'low');
+  assert.equal(peticion.output_config.format.type, 'json_schema');
+  assert.deepEqual(peticion.output_config.format.schema.properties.campos.items.properties.campo.enum, [...CAMPOS]);
+  assert.equal('temperature' in peticion, false, 'Sonnet 5 rechaza temperature');
+});
+
+test('si Claude se niega a responder, la lectura cae a reglas y el dictamen sale igual', async () => {
+  const cliente = { messages: { create: async () => ({ stop_reason: 'refusal', content: [] }) } };
+  const lectura = await leerInformeConModelo(informeSano, plan, proveedorAnthropic('clave', { cliente }));
+  assert.equal(lectura.origen, 'reglas');
+  assert.match(lectura.nota, /no respondió/);
+  assert.equal(dictaminar(lectura.caso, plan).estado, original.estadoEsperado);
+});
+
+/* ---------- lo que se ve en pantalla cuenta lo que pasó (prueba en vivo con Sonnet 5) ---------- */
+
+const enProsaSinRotulos = `Hospital Nacional de Panamá, 2026-09-12. La paciente AF-5520, de 48 años, afiliada desde 2025-07-01, presenta hernia inguinal (K40.90). El Dr. Ignacio Sáez indica hernioplastia CUPS 452101, electiva, por $ 2,300.00. Se adjuntan informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado.`;
+const respuestaCompleta = JSON.stringify({
+  campos: [
+    { campo: 'pacienteRef', valor: 'AF-5520', cita: 'La paciente AF-5520' },
+    { campo: 'cirujano', valor: 'Dr. Ignacio Sáez', cita: 'El Dr. Ignacio Sáez' },
+  ],
+});
+
+test('lo que completa el modelo ya no aparece como «no se encontró»', async () => {
+  const lectura = await leerInformeConModelo(enProsaSinRotulos, planDe('PLAN-B'), proveedor(respuestaCompleta));
+  assert.ok(!lectura.avisos.some((a) => a.includes('pacienteRef')), 'pacienteRef ya lo leyó el modelo');
+  assert.ok(!lectura.avisos.some((a) => a.includes('cirujano')), 'cirujano ya lo leyó el modelo');
+});
+
+test('el caso toma la referencia del paciente que leyó el modelo', async () => {
+  const lectura = await leerInformeConModelo(enProsaSinRotulos, planDe('PLAN-B'), proveedor(respuestaCompleta));
+  assert.equal(lectura.caso.id, 'AF-5520');
+});
+
+test('el resumen cuenta también los campos que citó el modelo', async () => {
+  const lectura = await leerInformeConModelo(enProsaSinRotulos, planDe('PLAN-B'), proveedor(respuestaCompleta));
+  const citados = lectura.campos.filter((c) => c.verificado).map((c) => c.campo);
+  assert.ok(citados.includes('pacienteRef') && citados.includes('cirujano'));
 });

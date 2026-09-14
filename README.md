@@ -100,7 +100,9 @@ Más detalle en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) y lo que falta po
 La web se publica en Vercel. Variables de entorno (nunca en el repositorio):
 
 ```
-GOOGLE_API_KEY              # opcional: lectura con modelo (Gemini). Sin ella, lee por reglas.
+ANTHROPIC_API_KEY           # lectura con Claude Sonnet 5 (elegido con el banco de la revisión). Tiene prioridad.
+MODELO_LECTURA              # opcional: otro modelo del mismo proveedor (por defecto claude-sonnet-5)
+GOOGLE_API_KEY              # alternativa: lectura con Gemini. Sin ninguna clave, lee por reglas.
 NOTION_TOKEN                # opcional: integración de Notion
 NOTION_FUENTE_CASOS         # id de la fuente de datos de la base Casos
 NOTION_FUENTE_POLIZAS       # id de la base Pólizas

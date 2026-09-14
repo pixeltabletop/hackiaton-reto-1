@@ -14,7 +14,7 @@ npm run check          # pruebas + puerta del dictamen + informes trampa
 npm run check:trampas -- --estricto   # lo que falta arreglar del lector (hoy 0 casos en deuda)
 ```
 
-**No hace falta ninguna clave para trabajar**: sin `GOOGLE_API_KEY` el sistema lee por reglas y sin
+**No hace falta ninguna clave para trabajar**: sin `ANTHROPIC_API_KEY` (ni `GOOGLE_API_KEY`) el sistema lee por reglas y sin
 `NOTION_TOKEN` la web dictamina con el corpus. Las claves solo encienden funciones extra.
 
 Ramas sugeridas, para no pisarnos:
@@ -62,7 +62,8 @@ Después de eso, `/notion` lee los casos pendientes en vivo y escribe la decisi�
 
 ### 3. Clave de modelo (opcional, recomendada)
 
-- Google AI Studio (gratis) → guardar como `GOOGLE_API_KEY` en `.env.local`.
+- **Elegido: Claude Sonnet 5** con esfuerzo bajo (banco de la revisión: 36/36, 0 aprobaciones indebidas, unos 5 s por informe, USD 0.009 por informe). Guardar la clave como `ANTHROPIC_API_KEY` en `.env.local` y en Vercel.
+- Alternativa: Google AI Studio (gratis) → `GOOGLE_API_KEY`. Sin medir en el banco.
 - Sin la clave, `/leer` funciona con el lector por reglas (determinista, sin costo, sin red).
 - Con la clave, el modelo completa los campos que las reglas no encuentran, **y solo los acepta si
   puede citar textualmente** el fragmento del informe. Si el modelo falla, cae a reglas: nunca deja
