@@ -1,0 +1,23 @@
+
+LECTURA CON MODELO SIMULADO — sin red, sin clave
+
+FALLA MS-01  Carácter con valor distinto a su cita: "programada" citando "Carácter: electiva"
+        esperado CARENCIA_NO_CUMPLIDA · obtenido PRE_APROBADO
+        lector: modelo simulado completó 1 campo(s) que las reglas no encontraban: caracter.
+FALLA MS-02  Carácter "urgente" citando "Carácter: electiva", en hospital fuera de la red
+        esperado NO_CUBIERTO · obtenido DOCUMENTOS_FALTANTES
+        lector: modelo simulado completó 1 campo(s) que las reglas no encontraban: caracter.
+FALLA MS-03  Documentos que el modelo da por adjuntos sin cita, en un informe sin esa línea
+        esperado DOCUMENTOS_FALTANTES · obtenido PRE_APROBADO
+        lector: modelo simulado no aportó nada nuevo; la lectura por reglas ya estaba completa.
+FALLA MS-04  Monto con valor distinto a su cita, cuando las reglas no lo leyeron ("USD")
+        esperado PRE_APROBADO o DOCUMENTOS_FALTANTES · obtenido PRE_APROBADO · aprueba sobre $ 1,000.00 y el informe dice $ 4,200.00
+        lector: modelo simulado completó 1 campo(s) que las reglas no encontraban: montoEstimado.
+OK    MS-05  Control: campo con cita que no existe en el informe
+        esperado PRE_APROBADO · obtenido PRE_APROBADO
+        lector: modelo simulado no aportó nada nuevo; la lectura por reglas ya estaba completa. · descartó: cirujano: la cita no aparece en el informe
+OK    MS-06  Control: el modelo omite la preexistencia que las reglas sí leyeron
+        esperado DERIVAR_A_MEDICO_AUDITOR · obtenido DERIVAR_A_MEDICO_AUDITOR
+        lector: modelo simulado no aportó nada nuevo; la lectura por reglas ya estaba completa.
+
+RESULTADO: 2/6 correctos

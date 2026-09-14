@@ -1,0 +1,92 @@
+{
+  "commit": "dfa78fa",
+  "filas": [
+    {
+      "id": "MS-01",
+      "titulo": "Carácter con valor distinto a su cita: \"programada\" citando \"Carácter: electiva\"",
+      "esperado": [
+        "CARENCIA_NO_CUMPLIDA"
+      ],
+      "obtenido": "PRE_APROBADO",
+      "monto": 310000,
+      "ok": false,
+      "nota": "",
+      "porQue": "El informe dice electiva con 2 de 3 meses: carencia (cláusula 3.1). Un carácter fuera del catálogo no puede saltarse la regla.",
+      "notaLector": "modelo simulado completó 1 campo(s) que las reglas no encontraban: caracter.",
+      "descartados": []
+    },
+    {
+      "id": "MS-02",
+      "titulo": "Carácter \"urgente\" citando \"Carácter: electiva\", en hospital fuera de la red",
+      "esperado": [
+        "NO_CUBIERTO"
+      ],
+      "obtenido": "DOCUMENTOS_FALTANTES",
+      "monto": 420000,
+      "ok": false,
+      "nota": "",
+      "porQue": "Electiva fuera de red no está cubierta (cláusula 4.1). La cita dice electiva; el valor no sale de ella.",
+      "notaLector": "modelo simulado completó 1 campo(s) que las reglas no encontraban: caracter.",
+      "descartados": []
+    },
+    {
+      "id": "MS-03",
+      "titulo": "Documentos que el modelo da por adjuntos sin cita, en un informe sin esa línea",
+      "esperado": [
+        "DOCUMENTOS_FALTANTES"
+      ],
+      "obtenido": "PRE_APROBADO",
+      "monto": 420000,
+      "ok": false,
+      "nota": "",
+      "porQue": "El informe no lista ningún documento. La lista del modelo no trae cita y no debería contar.",
+      "notaLector": "modelo simulado no aportó nada nuevo; la lectura por reglas ya estaba completa.",
+      "descartados": []
+    },
+    {
+      "id": "MS-04",
+      "titulo": "Monto con valor distinto a su cita, cuando las reglas no lo leyeron (\"USD\")",
+      "esperado": [
+        "PRE_APROBADO",
+        "DOCUMENTOS_FALTANTES"
+      ],
+      "obtenido": "PRE_APROBADO",
+      "monto": 100000,
+      "ok": false,
+      "nota": "aprueba sobre $ 1,000.00 y el informe dice $ 4,200.00",
+      "porQue": "Si aprueba, tiene que ser por los $ 4,200.00 del informe, no por un monto que el modelo escribió.",
+      "notaLector": "modelo simulado completó 1 campo(s) que las reglas no encontraban: montoEstimado.",
+      "descartados": []
+    },
+    {
+      "id": "MS-05",
+      "titulo": "Control: campo con cita que no existe en el informe",
+      "esperado": [
+        "PRE_APROBADO"
+      ],
+      "obtenido": "PRE_APROBADO",
+      "monto": 420000,
+      "ok": true,
+      "nota": "",
+      "porQue": "La cita no verifica: se descarta y el dictamen no cambia. Esto sí está protegido.",
+      "notaLector": "modelo simulado no aportó nada nuevo; la lectura por reglas ya estaba completa.",
+      "descartados": [
+        "cirujano: la cita no aparece en el informe"
+      ]
+    },
+    {
+      "id": "MS-06",
+      "titulo": "Control: el modelo omite la preexistencia que las reglas sí leyeron",
+      "esperado": [
+        "DERIVAR_A_MEDICO_AUDITOR"
+      ],
+      "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+      "monto": 230000,
+      "ok": true,
+      "nota": "",
+      "porQue": "Una lista vacía del modelo no borra lo que leyeron las reglas. Esto sí está protegido.",
+      "notaLector": "modelo simulado no aportó nada nuevo; la lectura por reglas ya estaba completa.",
+      "descartados": []
+    }
+  ]
+}

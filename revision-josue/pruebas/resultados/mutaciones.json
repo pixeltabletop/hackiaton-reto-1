@@ -1,0 +1,53 @@
+{
+  "commit": "dfa78fa",
+  "filas": [
+    {
+      "id": "M1",
+      "nombre": "quitar la vigencia",
+      "detectaCheckMain": false,
+      "detectaTrampas": true
+    },
+    {
+      "id": "M2",
+      "nombre": "quitar el umbral de auditoría",
+      "detectaCheckMain": false,
+      "detectaTrampas": true
+    },
+    {
+      "id": "M3",
+      "nombre": "quitar el tope anual",
+      "detectaCheckMain": false,
+      "detectaTrampas": false
+    },
+    {
+      "id": "M4",
+      "nombre": "quitar las exclusiones",
+      "detectaCheckMain": true,
+      "detectaTrampas": false
+    },
+    {
+      "id": "M5",
+      "nombre": "cubrir electivas fuera de red",
+      "detectaCheckMain": false,
+      "detectaTrampas": true
+    },
+    {
+      "id": "M6",
+      "nombre": "quitar la regla de evidencia",
+      "detectaCheckMain": true,
+      "detectaTrampas": true
+    },
+    {
+      "id": "M7",
+      "nombre": "no aplicar el deducible",
+      "detectaCheckMain": false,
+      "detectaTrampas": false
+    },
+    {
+      "id": "M8",
+      "nombre": "preexistencias a 12 meses en vez de 24",
+      "detectaCheckMain": true,
+      "detectaTrampas": false
+    }
+  ]
+}

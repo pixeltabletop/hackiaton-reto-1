@@ -1,0 +1,13 @@
+
+MUTACIONES DEL MOTOR
+
+M1  check de main: NO VE    · con trampas: detecta  · quitar la vigencia
+M2  check de main: NO VE    · con trampas: detecta  · quitar el umbral de auditoría
+M3  check de main: NO VE    · con trampas: NO VE    · quitar el tope anual
+M4  check de main: detecta  · con trampas: detecta  · quitar las exclusiones
+M5  check de main: NO VE    · con trampas: detecta  · cubrir electivas fuera de red
+M6  check de main: detecta  · con trampas: detecta  · quitar la regla de evidencia
+M7  check de main: NO VE    · con trampas: NO VE    · no aplicar el deducible
+M8  check de main: detecta  · con trampas: detecta  · preexistencias a 12 meses en vez de 24
+
+Detectadas por npm run check: 3/8 · sumando las trampas: 6/8

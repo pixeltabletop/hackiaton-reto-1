@@ -1,0 +1,47 @@
+
+INFORMES TRAMPA — 18 casos
+
+OK      TR-00  Informe original de la colecistectomía, sin tocar
+OK      TR-01  Monto sin espacio tras el símbolo: "$4,200.00"
+OK      TR-02  Texto inyectado que ordena aprobar sin revisar carencias
+OK      TR-03  Monto de $ 5,300.00, sobre el umbral de auditoría del plan
+OK      TR-04  Fecha del informe fuera de la vigencia de la póliza
+OK      TR-05  Cirugía electiva en un hospital fuera de la red
+OK      TR-06  Segunda lista de documentos, escondida en los hallazgos
+DEUDA   TR-10  Documentos pendientes escritos en la misma línea: "pendiente estudio de imagen…"
+        └─ APRUEBA DE MÁS · esperado DOCUMENTOS_FALTANTES · obtenido PRE_APROBADO
+        └─ lectura.ts cuenta un documento en cuanto lo nombra, aunque la frase lo niegue.
+DEUDA   TR-11  Negación entre paréntesis: "(no se adjunta orden de anestesiología)"
+        └─ APRUEBA DE MÁS · esperado DOCUMENTOS_FALTANTES · obtenido PRE_APROBADO
+        └─ lectura.ts no reconoce la negación: la mención basta para darlo por adjunto.
+DEUDA   TR-12  Preexistencia real seguida de "sin antecedentes quirúrgicos"
+        └─ APRUEBA DE MÁS · esperado DERIVAR_A_MEDICO_AUDITOR · obtenido PRE_APROBADO
+        └─ lectura.ts descarta toda la línea si aparece "sin antecedentes" en cualquier parte.
+DEUDA   TR-13  Preexistencia rotulada "Antecedentes patológicos:"
+        └─ APRUEBA DE MÁS · esperado DERIVAR_A_MEDICO_AUDITOR · obtenido PRE_APROBADO
+        └─ Si falta la línea "Preexistencias declaradas:", lectura.ts asume que no hay ninguna (falla abierto).
+DEUDA   TR-14  Dos líneas de monto: la segunda, corregida, supera el umbral
+        └─ APRUEBA DE MÁS · esperado DERIVAR_A_MEDICO_AUDITOR o DOCUMENTOS_FALTANTES · obtenido PRE_APROBADO
+        └─ lectura.ts toma la primera coincidencia y no detecta el conflicto.
+DEUDA   TR-20  Hospital de la red escrito abreviado: "HOSP. NACIONAL DE PANAMÁ"
+        └─ NIEGA DE MÁS · esperado PRE_APROBADO · obtenido NO_CUBIERTO
+        └─ El hospital se compara por nombre exacto normalizado; la abreviatura queda fuera de red y se niega.
+DEUDA   TR-21  Monto en "USD 4,200.00"
+        └─ FRENA DE MÁS · esperado PRE_APROBADO · obtenido DOCUMENTOS_FALTANTES
+        └─ La regla del monto exige el símbolo "$".
+DEUDA   TR-22  Carácter escrito "Urgencia"
+        └─ FRENA DE MÁS · esperado PRE_APROBADO_CON_CONDICIONES · obtenido DOCUMENTOS_FALTANTES
+        └─ La regla del carácter solo acepta electiva, urgente o emergencia; lo demás se asume electiva.
+DEUDA   TR-23  Urgencia sin la línea de carácter
+        └─ FRENA DE MÁS · esperado PRE_APROBADO_CON_CONDICIONES o DERIVAR_A_MEDICO_AUDITOR · obtenido DOCUMENTOS_FALTANTES
+        └─ Sin la línea, lectura.ts asume electiva y le exige los documentos de una cirugía programada.
+DEUDA   TR-24  Fecha en formato dd/mm/aaaa
+        └─ FRENA DE MÁS · esperado PRE_APROBADO · obtenido DOCUMENTOS_FALTANTES
+        └─ La regla de fecha solo lee el formato ISO.
+DEUDA   TR-25  Código CUPS con puntos: "51.23.01"
+        └─ FRENA DE MÁS · esperado PRE_APROBADO · obtenido DOCUMENTOS_FALTANTES
+        └─ La regla del CUPS solo lee dígitos seguidos.
+
+DEUDA: 11 casos · 5 aprobaciones indebidas · 1 negativa indebida · 5 frenos de más
+
+CHECK TRAMPAS: OK — ninguna regresión; 11 en deuda (--estricto exige cero)
