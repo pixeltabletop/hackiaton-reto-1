@@ -13,6 +13,10 @@ su dictamen correcto. No es parte del producto: es la evidencia de [`../decision
 
 ## Correr
 
+**El banco importa el lector y el motor del producto**, así que evalúa el código que tenga al lado.
+Para reproducir estos resultados, copia `revision-josue/` sobre un checkout de la rama
+`josue/lectura-modelo`. Sobre `main` las variantes V2 y V3 no cargan, porque usan funciones nuevas.
+
 Desde la raíz del repositorio. El banco tiene su propio `npm install`, solo para el SDK de
 Anthropic.
 

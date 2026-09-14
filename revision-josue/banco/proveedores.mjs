@@ -3,7 +3,7 @@
  * { texto, ms, entrada, salida, modelo }. `esquema` es opcional: si el proveedor
  * admite salida estructurada, se usa; si no, se confía en el prompt.
  */
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -65,7 +65,10 @@ export function proveedorOllama(modelo, { conEsquema = true } = {}) {
   };
 }
 
-const CODEX_JS = 'C:/Users/Josue Carrillo/AppData/Roaming/npm/node_modules/@openai/codex/bin/codex.js';
+// La CLI de Codex instalada con npm -g. Se invoca el .js con node para no pasar el prompt por un shell.
+const CODEX_JS =
+  process.env.CODEX_JS ??
+  join(spawnSync('npm', ['root', '-g'], { encoding: 'utf8', shell: true }).stdout.trim(), '@openai/codex/bin/codex.js');
 
 /** Codex por la CLI de la suscripción: sin clave de API, pero con el arranque del agente. */
 export function proveedorCodex() {
