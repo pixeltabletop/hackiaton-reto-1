@@ -2,6 +2,30 @@
 
 Estado al lunes 14 de septiembre. Vence el **miércoles 16 a las 9:57 a.m.** (3 días desde el correo).
 
+## Para empezar en tu máquina (Josué, Juanchi)
+
+```bash
+git clone https://github.com/pixeltabletop/preautorizacion-quirurgica
+cd preautorizacion-quirurgica
+npm ci                 # versiones fijadas por package-lock.json
+npm run dev            # http://localhost:3000
+npm test               # 22 pruebas, sin dependencias extra
+npm run check          # pruebas + puerta de calidad del dictamen
+```
+
+**No hace falta ninguna clave para trabajar**: sin `GOOGLE_API_KEY` el sistema lee por reglas y sin
+`NOTION_TOKEN` la web dictamina con el corpus. Las claves solo encienden funciones extra.
+
+Ramas sugeridas, para no pisarnos:
+
+- `josue/lectura-modelo` — tu terreno (ver `docs/ARQUITECTURA.md`, sección «Dónde se engancha lo que falta»).
+- `juanchi/web-notion` — la web y la integración de Notion.
+- `main` se queda con lo que ya está verde en CI.
+
+Antes de subir: `npm run check` tiene que salir 0. La puerta de calidad falla si algún caso cambia de
+dictamen, si una decisión sale sin cláusula citada o si los montos no cuadran. Si una prueba se pone
+roja, **no ajustes la prueba sin decirlo**: puede ser un hallazgo real.
+
 ## Entregables (solo dos, los del correo)
 
 | Entregable | Estado |
