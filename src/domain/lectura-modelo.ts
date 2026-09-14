@@ -1,6 +1,6 @@
 import { usd } from './dinero';
 import { valorRespaldadoPorCita, verificarCita } from './evidencia';
-import { leerInforme, NOMBRES_DE_DOCUMENTO, type Lectura } from './lectura';
+import { leerInforme, NOMBRES_DE_DOCUMENTO, resolverHospital, type Lectura } from './lectura';
 import type { Caso, Caracter, Plan } from './tipos';
 
 /**
@@ -94,7 +94,12 @@ interface Aceptado {
   cita: string;
 }
 
-export function aceptarDelModelo(respuesta: string, informe: string, citasDeReglas: Record<string, string>) {
+export function aceptarDelModelo(
+  respuesta: string,
+  informe: string,
+  citasDeReglas: Record<string, string>,
+  enConflicto: string[] = [],
+) {
   const datos = extraerJson(respuesta);
   const aceptados: Aceptado[] = [];
   const descartados: string[] = [];
@@ -122,6 +127,10 @@ export function aceptarDelModelo(respuesta: string, informe: string, citasDeRegl
     }
     if (!valorRespaldadoPorCita(campo, valor, cita)) {
       descartados.push(`${campo}: el valor «${valor}» no sale de la cita`);
+      continue;
+    }
+    if (enConflicto.includes(campo)) {
+      descartados.push(`${campo}: el informe se contradice en este dato; no lo resuelve el modelo`);
       continue;
     }
     if (citasDeReglas[campo]) {
@@ -174,6 +183,7 @@ export async function leerInformeConModelo(
       respuesta,
       informe,
       base.caso.citas ?? {},
+      base.conflictos,
     );
 
     const caso: Caso = { ...base.caso, citas: { ...(base.caso.citas ?? {}) } };
@@ -185,10 +195,12 @@ export async function leerInformeConModelo(
           break;
         case 'caracter':
           caso.caracter = valor.toLowerCase() as Caracter;
+          caso.caracterSinDeclarar = false;
           break;
         case 'montoEstimado': {
-          const numeros = valor.replace(/[^\d.]/g, '');
-          caso.montoEstimado = usd(Number(numeros) || 0);
+          // Solo la cifra: en «B/. 4,200.00» el punto del símbolo no es decimal.
+          const cifra = valor.match(/[\d,]+(?:\.\d{1,2})?/)?.[0] ?? '';
+          caso.montoEstimado = usd(Number(cifra.replace(/,/g, '')) || 0);
           break;
         }
         case 'procedimientoCups':
@@ -201,7 +213,8 @@ export async function leerInformeConModelo(
           caso.pacienteRef = valor;
           break;
         case 'hospital':
-          caso.hospital = valor;
+          // Igual que en las reglas: el nombre se resuelve contra la red del plan.
+          caso.hospital = resolverHospital(valor, plan.red.map((h) => h.hospital));
           break;
         case 'fecha':
           caso.fecha = valor;
@@ -232,6 +245,7 @@ export async function leerInformeConModelo(
       campos: base.campos,
       caso,
       avisos: base.avisos,
+      conflictos: base.conflictos,
       origen: aportes.length > 0 ? 'modelo' : 'reglas',
       nota:
         aportes.length > 0

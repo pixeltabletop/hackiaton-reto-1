@@ -30,17 +30,20 @@ código decide**.
 | `presentacion.ts` | Arma lo que la web pinta (segmentos con marcas, cláusulas usadas) | No calcula nada del dictamen |
 | `notion/cliente.ts` | `fetch` contra la API de Notion (`2026-03-11`) | No conoce el dominio |
 | `notion/mapeo.ts` | Traduce fila ↔ póliza/caso/decisión | No decide nada |
+| `notion/seguridad.ts` | Antes de escribir en Notion: petición del mismo sitio, página de la base Casos y caso pendiente | No reemplaza una autenticación real |
 
 ## El orden del motor (no cambiar sin actualizar el contrato)
 
 1. **evidencia** — ¿cada campo que se va a usar tiene cita textual verificada?
 2. **vigencia** — ¿la póliza estaba vigente el día del informe?
 3. **cobertura y exclusiones** — ¿el procedimiento está en el tarifario? ¿es una exclusión?
+   - **3b. carácter** — si el informe no dice si es electiva o urgencia, deriva al auditor: de eso dependen los pasos 4, 6 y 7
 4. **red** — la atención programada fuera de la red no está cubierta (la urgencia sí)
 5. **preexistencias** — carencia de 24 meses declarada
 6. **carencia de cirugía electiva** — 3 meses
 7. **requisitos documentales** — por carácter del procedimiento, y aquí nace el contrafactual
-8. **montos, tope y umbral** — y con ellos el reparto entre aseguradora y paciente
+   - **7b. preexistencias sin declarar** — si el informe no las declara ni dice que no haya, y la afiliación no cubre esa carencia, deriva al auditor
+8. **tope anual, después umbral de auditoría** — el tope va primero: si fuera después, el umbral (siempre menor) derivaría antes y el tope nunca se citaría. Luego el reparto entre aseguradora y paciente
 
 El primer paso que falla **cierra** el caso. Los posteriores no se adivinan: se informan como
 faltantes o condiciones.
@@ -74,4 +77,5 @@ faltantes o condiciones.
 | `motor.test.ts` | Los seis dictámenes, la determinación, el cuadre de montos y el contrafactual |
 | `lectura.test.ts` | Que el lector por reglas reconstruya cada caso del corpus campo por campo |
 | `lectura-modelo.test.ts` | Que el modelo no pueda inventar: cita no verificable, valor que no sale de su cita, carácter fuera del catálogo o documento sin cita ⇒ se descarta |
+| `notion/seguridad.test.ts` | Que la escritura rechace otro sitio, otra base y un caso ya dictaminado |
 | `scripts/check-informes-trampa.mjs` | Que variaciones reales del informe (negaciones, rótulos distintos, montos corregidos) no cambien el dictamen correcto. Casos en `src/data/trampas.ts`; los defectos sin arreglar van con `deuda` y la lista solo puede bajar |

@@ -24,7 +24,7 @@ cláusula que lo sostiene** — o la lista exacta de lo que falta y qué pasa si
 ```bash
 npm ci
 npm run dev            # la web en http://localhost:3000
-npm test               # 30 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo
+npm test               # 48 pruebas: corpus, evidencia, motor, lectura, modelo y escritura en Notion
 npm run check:decision # dictamina los seis casos y audita el contrato
 npm run check:trampas  # informes trampa: variaciones reales que no pueden cambiar el dictamen
 npm run check          # las tres anteriores
@@ -42,6 +42,7 @@ con 1 si alguna da un dictamen distinto. Los defectos conocidos y todavía sin a
 campo `deuda`: la puerta los imprime, pero no frena el CI. **La deuda solo puede bajar**: cuando
 una trampa en deuda empieza a pasar, la puerta falla hasta que se le quita la marca.
 `npm run check:trampas -- --estricto` exige cero deuda; es la verificación para antes de entregar.
+Hoy son 24 trampas y ninguna en deuda.
 
 ## Los seis casos (corpus sintético)
 
@@ -61,12 +62,16 @@ pasa a `PRE_APROBADO` y la aseguradora responde $ 2,400.00»*.
 
 1. **El modelo lee y cita; el código decide.** La cobertura la resuelve la póliza, no un LLM.
 2. **Sin cita textual no hay dato.** Cada campo que el agente usa tiene que existir literalmente en
-   el documento. Si no se puede citar, el caso no se aprueba.
+   el documento, y su valor tiene que salir de esa cita. Si no se puede citar, el caso no se aprueba.
+   Si el informe se contradice (dos montos distintos), ese dato no se usa.
 3. **El modelo no puede inventar.** Su respuesta se acepta campo por campo y solo si el fragmento
    que cita aparece en el informe **y el valor sale de ese fragmento**: un monto de $ 1,000.00 que
    cita la línea de $ 4,200.00 se descarta. El carácter tiene que estar en el catálogo, los documentos
    también se citan uno por uno, y el modelo nunca pisa lo que la lectura por reglas ya resolvió.
-4. **Todo en centavos enteros**, y deducible + coaseguro + aseguradora tiene que cuadrar contra lo
+4. **Lo que el informe no declara no se adivina.** Sin carácter (electiva o urgencia) o sin
+   declaración de preexistencias dentro de su carencia, el caso deriva al médico auditor en vez
+   de asumir lo favorable. Un documento negado («pendiente estudio de imagen») no cuenta.
+5. **Todo en centavos enteros**, y deducible + coaseguro + aseguradora tiene que cuadrar contra lo
    facturado. Lo verifica la puerta de calidad en cada push.
 
 ## Arquitectura
@@ -82,7 +87,7 @@ src/domain/   dinero.ts      todo el dinero en centavos (el modelo nunca toca un
               presentacion.ts    todo lo que la web necesita, ya resuelto
 src/data/     corpus sintético: 3 pólizas (con su texto legal), 6 casos, tarifario
 src/notion/   cliente.ts (fetch, sin SDK, API 2026-03-11) y mapeo.ts (Notion ↔ motor)
-app/          Next.js, todo renderizado en el servidor: cero JavaScript en el cliente
+app/          Next.js en el servidor; /leer envía el informe por POST (acción de servidor), nunca en la URL
 scripts/      check-decision.mjs (puerta de calidad), check-informes-trampa.mjs (informes trampa)
               y notion-preparar.mjs (crea las bases)
 ```

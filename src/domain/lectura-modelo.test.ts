@@ -124,9 +124,9 @@ test('el modelo no pisa el carácter que las reglas ya leyeron', async () => {
 });
 
 test('un monto cuyo valor no sale de su cita se descarta', async () => {
-  const enDolares = informeSano.replace('$ 4,200.00', 'USD 4,200.00');
+  const enDolares = informeSano.replace('$ 4,200.00', '4,200.00 dólares');
   const respuesta = JSON.stringify({
-    campos: [{ campo: 'montoEstimado', valor: '$ 1,000.00', cita: 'Monto estimado del procedimiento: USD 4,200.00' }],
+    campos: [{ campo: 'montoEstimado', valor: '$ 1,000.00', cita: 'Monto estimado del procedimiento: 4,200.00 dólares' }],
   });
   const lectura = await leerInformeConModelo(enDolares, plan, proveedor(respuesta));
   assert.ok(lectura.descartados.some((d) => d.startsWith('montoEstimado')), 'debería descartar el monto');
@@ -134,10 +134,10 @@ test('un monto cuyo valor no sale de su cita se descarta', async () => {
   assert.equal(dictaminar(lectura.caso, plan).estado, 'DOCUMENTOS_FALTANTES');
 });
 
-test('un monto que sí sale de su cita se acepta aunque las reglas no lo leyeran', async () => {
-  const enDolares = informeSano.replace('$ 4,200.00', 'USD 4,200.00');
+test('un monto que sí sale de su cita se acepta aunque las reglas no lo lean', async () => {
+  const enDolares = informeSano.replace('$ 4,200.00', '4,200.00 dólares');
   const respuesta = JSON.stringify({
-    campos: [{ campo: 'montoEstimado', valor: 'USD 4,200.00', cita: 'Monto estimado del procedimiento: USD 4,200.00' }],
+    campos: [{ campo: 'montoEstimado', valor: '4,200.00 dólares', cita: 'Monto estimado del procedimiento: 4,200.00 dólares' }],
   });
   const lectura = await leerInformeConModelo(enDolares, plan, proveedor(respuesta));
   assert.equal(lectura.caso.montoEstimado, 420000);
@@ -189,4 +189,55 @@ test('un documento cuya cita nombra otro documento no cuenta', async () => {
   const respuesta = JSON.stringify({ campos: [], documentos: [{ id: 'R2', cita: 'el informe del cirujano' }] });
   const lectura = await leerInformeConModelo(conProsa, plan, proveedor(respuesta));
   assert.deepEqual(lectura.caso.documentosAdjuntos, []);
+});
+
+/* ---------- lo que aporta el modelo se integra igual que lo de las reglas ---------- */
+
+test('el hospital que lee el modelo se compara contra la red, con abreviaturas', async () => {
+  const sinEncabezado = informeSano.replace(
+    'HOSPITAL NACIONAL DE PANAMÁ — SERVICIO DE CIRUGÍA GENERAL',
+    'Atendida en el HOSP. NACIONAL DE PANAMÁ, servicio de cirugía general.',
+  );
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'hospital', valor: 'HOSP. NACIONAL DE PANAMÁ', cita: 'HOSP. NACIONAL DE PANAMÁ' }],
+  });
+  const lectura = await leerInformeConModelo(sinEncabezado, plan, proveedor(respuesta));
+  assert.equal(lectura.caso.hospital, 'Hospital Nacional de Panamá');
+  assert.equal(dictaminar(lectura.caso, plan).estado, 'PRE_APROBADO');
+});
+
+test('si el modelo cita el carácter que faltaba, el caso ya no deriva por falta de carácter', async () => {
+  const urgencia = CASOS.find((c) => c.id === 'PR-2026-0790')!;
+  const sinCaracter = urgencia.informeTexto.replace('Carácter: urgente\n', '');
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'caracter', valor: 'emergencia', cita: 'SERVICIO DE EMERGENCIAS' }],
+  });
+  const lectura = await leerInformeConModelo(sinCaracter, planDe(urgencia.planId), proveedor(respuesta));
+  assert.equal(lectura.caso.caracterSinDeclarar, false);
+  assert.equal(dictaminar(lectura.caso, planDe(urgencia.planId)).estado, 'PRE_APROBADO_CON_CONDICIONES');
+});
+
+/* ---------- hallazgos del banco de pruebas ---------- */
+
+test('un monto en balboas que lee el modelo se convierte bien', async () => {
+  const enProsa = informeSano.replace('Monto estimado del procedimiento: $ 4,200.00', 'Valor estimado: B/. 4,200.00');
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'montoEstimado', valor: 'B/. 4,200.00', cita: 'Valor estimado: B/. 4,200.00' }],
+  });
+  const lectura = await leerInformeConModelo(enProsa, plan, proveedor(respuesta));
+  assert.equal(lectura.caso.montoEstimado, 420000);
+  assert.equal(dictaminar(lectura.caso, plan).estado, 'PRE_APROBADO');
+});
+
+test('el modelo no llena un campo que las reglas dejaron vacío porque el informe se contradice', async () => {
+  const dosMontos = informeSano.replace(
+    'Monto estimado del procedimiento: $ 4,200.00',
+    'Monto estimado del procedimiento: $ 4,200.00\nMonto estimado del procedimiento: $ 9,800.00 (corregido)',
+  );
+  const respuesta = JSON.stringify({
+    campos: [{ campo: 'montoEstimado', valor: '$ 4,200.00', cita: 'Monto estimado del procedimiento: $ 4,200.00' }],
+  });
+  const lectura = await leerInformeConModelo(dosMontos, plan, proveedor(respuesta));
+  assert.ok(lectura.descartados.some((d) => d.startsWith('montoEstimado') && d.includes('contradice')));
+  assert.notEqual(dictaminar(lectura.caso, plan).estado, 'PRE_APROBADO');
 });

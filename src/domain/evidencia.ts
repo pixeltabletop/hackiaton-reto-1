@@ -62,12 +62,40 @@ function montosEn(texto: string): number[] {
   );
 }
 
-/** Raíz que tiene que aparecer en la cita para cada carácter del catálogo. */
-const RAIZ_DEL_CARACTER: Record<string, string> = {
-  electiva: 'electiv',
-  urgente: 'urgen',
-  emergencia: 'emergen',
+/** Raíces que pueden aparecer en la cita para cada carácter del catálogo. */
+const RAICES_DEL_CARACTER: Record<string, string[]> = {
+  electiva: ['electiv', 'programad'],
+  urgente: ['urgen'],
+  emergencia: ['emergen'],
 };
+
+const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+const dos = (n: number | string): string => String(n).padStart(2, '0');
+
+/**
+ * Fechas escritas en un texto, en ISO: «2026-09-10», «10/09/2026», «10-09-2026» y
+ * «10 de septiembre de 2026». Día antes que mes, como se escribe en Panamá.
+ */
+export function fechasEn(texto: string): string[] {
+  const t = plano(texto).replace(/setiembre/g, 'septiembre');
+  const fechas: string[] = [];
+  for (const m of t.matchAll(/(\d{4})-(\d{2})-(\d{2})/g)) fechas.push(`${m[1]}-${m[2]}-${m[3]}`);
+  for (const m of t.matchAll(/\b(\d{1,2})[/-](\d{1,2})[/-](\d{4})\b/g)) fechas.push(`${m[3]}-${dos(m[2])}-${dos(m[1])}`);
+  for (const m of t.matchAll(new RegExp(`\\b(\\d{1,2}) de (${MESES.join('|')}) (?:de|del) (\\d{4})`, 'g'))) {
+    fechas.push(`${m[3]}-${dos(MESES.indexOf(m[2]) + 1)}-${dos(m[1])}`);
+  }
+  return fechas;
+}
+
+/** «HOSP. NACIONAL DE PANAMÁ» y «Hospital Nacional de Panamá» se comparan igual. */
+export function normalizarHospital(texto: string): string {
+  return plano(texto)
+    .replace(/\bhosp\b\.?/g, 'hospital')
+    .replace(/\bclin\b\.?/g, 'clinica')
+    .replace(/[.,]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 /**
  * Que la cita exista no basta: el VALOR tiene que salir de ella. Sin esto, una
@@ -88,9 +116,16 @@ export function valorRespaldadoPorCita(campo: string, valor: string, cita: strin
       return digitos.length > 0 && cita.replace(/\D/g, '').includes(digitos);
     }
     case 'caracter': {
-      const raiz = RAIZ_DEL_CARACTER[plano(valor)];
-      return raiz !== undefined && plano(cita).includes(raiz);
+      const raices = RAICES_DEL_CARACTER[plano(valor)];
+      return raices !== undefined && raices.some((raiz) => plano(cita).includes(raiz));
     }
+    case 'fecha':
+    case 'fechaAfiliacion': {
+      const [fecha] = fechasEn(valor);
+      return fecha !== undefined && fechasEn(cita).includes(fecha);
+    }
+    case 'hospital':
+      return normalizarHospital(cita).includes(normalizarHospital(valor));
     default:
       return plano(cita).includes(plano(valor));
   }

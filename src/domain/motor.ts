@@ -203,6 +203,20 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
     ),
   );
 
+  // 3b. Carácter sin declarar: la red, la carencia y los documentos dependen de si es
+  // electiva o de urgencia. No se adivina «electiva»: decide una persona.
+  if (caso.caracterSinDeclarar) {
+    motivos.push(
+      motivo(
+        'carácter',
+        'El informe no declara si el procedimiento es electivo o de urgencia; de eso dependen la red, la carencia y los documentos exigidos',
+        '2.2',
+        null,
+      ),
+    );
+    return cerrar('DERIVAR_A_MEDICO_AUDITOR');
+  }
+
   // 4. Red (la atención programada fuera de la red no está cubierta; la urgencia, sí)
   if (procedimiento.soloRed && !enRed && caso.caracter === 'electiva') {
     motivos.push(
@@ -288,7 +302,31 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
     return cerrar('DOCUMENTOS_FALTANTES', { contrafactual });
   }
 
-  // 8. Umbral de auditoría
+  // 7b. Preexistencias sin declarar: si la afiliación no cubre la carencia de
+  // preexistencias, no se puede descartar una y el caso no se aprueba solo. Va después
+  // de carencias y documentos para no tapar un motivo más concreto.
+  if (caso.preexistenciasSinDeclarar && mesesAfiliado < plan.carencias.preexistenciasMeses) {
+    motivos.push(
+      motivo(
+        'preexistencias',
+        `El informe no declara preexistencias ni dice que no las haya, y la afiliación (${mesesAfiliado} de ${plan.carencias.preexistenciasMeses} meses) no cubre esa carencia`,
+        '3.2',
+        cita('fechaAfiliacion'),
+      ),
+    );
+    return cerrar('DERIVAR_A_MEDICO_AUDITOR');
+  }
+
+  // 8a. Tope anual, antes que el umbral: si va después, el umbral (siempre menor en
+  // los planes) deriva primero y el tope nunca se aplica ni se cita.
+  if (caso.montoEstimado > plan.topeAnual) {
+    motivos.push(
+      motivo('tope', `Monto sobre el tope anual de ${formato(plan.topeAnual)}`, '7.3', cita('montoEstimado')),
+    );
+    return cerrar('DERIVAR_A_MEDICO_AUDITOR');
+  }
+
+  // 8b. Umbral de auditoría
   if (caso.montoEstimado > plan.umbralAuditoria) {
     motivos.push(
       motivo(
@@ -309,13 +347,6 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
       cita('montoEstimado'),
     ),
   );
-
-  if (caso.montoEstimado > plan.topeAnual) {
-    motivos.push(
-      motivo('tope', `Monto sobre el tope anual de ${formato(plan.topeAnual)}`, '7.3', cita('montoEstimado')),
-    );
-    return cerrar('DERIVAR_A_MEDICO_AUDITOR');
-  }
 
   // 9. Urgencia fuera de la red: se cubre, con las condiciones de fuera de red
   if (!enRed) {

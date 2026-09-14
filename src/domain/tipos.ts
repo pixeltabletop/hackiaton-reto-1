@@ -101,6 +101,16 @@ export interface Caso {
    * motor busca el propio valor como cita.
    */
   citas?: Record<string, string>;
+  /**
+   * El informe no dice si es electiva o de urgencia. De eso dependen la red, la
+   * carencia y los documentos exigidos, así que no se adivina: deriva al auditor.
+   */
+  caracterSinDeclarar?: boolean;
+  /**
+   * El informe no declara preexistencias ni dice que no las haya. Si la afiliación
+   * no cubre la carencia de preexistencias, el caso no se aprueba solo.
+   */
+  preexistenciasSinDeclarar?: boolean;
   // Lo que el corpus espera que el motor dicte. Es una prueba, no una promesa.
   estadoEsperado: Estado;
 }

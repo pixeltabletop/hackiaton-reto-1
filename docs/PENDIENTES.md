@@ -9,9 +9,9 @@ git clone https://github.com/pixeltabletop/preautorizacion-quirurgica
 cd preautorizacion-quirurgica
 npm ci                 # versiones fijadas por package-lock.json
 npm run dev            # http://localhost:3000
-npm test               # 30 pruebas, sin dependencias extra
+npm test               # 48 pruebas, sin dependencias extra
 npm run check          # pruebas + puerta del dictamen + informes trampa
-npm run check:trampas -- --estricto   # lo que falta arreglar del lector (hoy 11 casos en deuda)
+npm run check:trampas -- --estricto   # lo que falta arreglar del lector (hoy 0 casos en deuda)
 ```
 
 **No hace falta ninguna clave para trabajar**: sin `GOOGLE_API_KEY` el sistema lee por reglas y sin

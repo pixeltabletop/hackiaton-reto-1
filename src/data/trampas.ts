@@ -99,6 +99,60 @@ export const TRAMPAS: Trampa[] = [
     esperado: ['DOCUMENTOS_FALTANTES', 'DERIVAR_A_MEDICO_AUDITOR'],
     porQue: 'Dos listas que se contradicen no pueden sostener una aprobación.',
   },
+  /* ---------- fallar cerrado, sin frenar lo que está bien ---------- */
+  {
+    id: 'TR-15',
+    titulo: 'Documento negado con «sin»: «…; sin orden de anestesiología»',
+    casoBase: 'PR-2026-0417',
+    cambios: [
+      [
+        'Documentos adjuntos: informe del cirujano, estudio de imagen, orden de anestesiología, consentimiento informado',
+        'Documentos adjuntos: informe del cirujano, estudio de imagen, consentimiento informado; sin orden de anestesiología',
+      ],
+    ],
+    esperado: 'DOCUMENTOS_FALTANTES',
+    porQue: 'Cláusula 6.1: falta la orden de anestesiología.',
+  },
+  {
+    id: 'TR-16',
+    titulo: 'Informe que no dice nada sobre preexistencias, con 14 de 24 meses de afiliación',
+    casoBase: 'PR-2026-0744',
+    cambios: [['Preexistencias declaradas: Hipertensión arterial diagnosticada en 2024, en tratamiento desde entonces.\n', '']],
+    esperado: 'DERIVAR_A_MEDICO_AUDITOR',
+    porQue: 'Cláusula 3.2: sin declaración no se puede descartar una preexistencia dentro de la carencia; no se aprueba solo.',
+  },
+  {
+    id: 'TR-17',
+    titulo: 'Control: «Preexistencias declaradas: ninguna», con 14 de 24 meses',
+    casoBase: 'PR-2026-0744',
+    cambios: [['Preexistencias declaradas: Hipertensión arterial diagnosticada en 2024, en tratamiento desde entonces.', 'Preexistencias declaradas: ninguna.']],
+    esperado: 'PRE_APROBADO',
+    porQue: 'Declaró que no hay preexistencias: en red, carencia electiva cumplida, documentos completos y bajo el umbral del plan B.',
+  },
+  {
+    id: 'TR-28',
+    titulo: 'Encabezado sin guion largo: «Hospital Nacional de Panamá. Servicio de Cirugía General»',
+    casoBase: 'PR-2026-0417',
+    cambios: [['HOSPITAL NACIONAL DE PANAMÁ — SERVICIO DE CIRUGÍA GENERAL', 'Hospital Nacional de Panamá. Servicio de Cirugía General']],
+    esperado: ['PRE_APROBADO', 'DOCUMENTOS_FALTANTES'],
+    porQue: 'Nunca NO_CUBIERTO: la regla del hospital tomaba «Diagnóstico: K80.20 — …» como hospital y lo daba por fuera de red.',
+  },
+  {
+    id: 'TR-26',
+    titulo: 'Control: carácter escrito «programada»',
+    casoBase: 'PR-2026-0417',
+    cambios: [['Carácter: electiva', 'Carácter: programada']],
+    esperado: 'PRE_APROBADO',
+    porQue: 'Programada es electiva: mismo dictamen que el informe original.',
+  },
+  {
+    id: 'TR-27',
+    titulo: 'Control: monto en balboas «B/. 4,200.00»',
+    casoBase: 'PR-2026-0417',
+    cambios: [['$ 4,200.00', 'B/. 4,200.00']],
+    esperado: 'PRE_APROBADO',
+    porQue: 'El balboa circula a la par del dólar: mismo monto.',
+  },
 
   /* ---------- aprueban de más: el error grave, paga lo que no debía ---------- */
   {
@@ -113,7 +167,6 @@ export const TRAMPAS: Trampa[] = [
     ],
     esperado: 'DOCUMENTOS_FALTANTES',
     porQue: 'Cláusula 6.1: faltan el estudio de imagen y la orden de anestesiología.',
-    deuda: 'lectura.ts cuenta un documento en cuanto lo nombra, aunque la frase lo niegue.',
   },
   {
     id: 'TR-11',
@@ -127,7 +180,6 @@ export const TRAMPAS: Trampa[] = [
     ],
     esperado: 'DOCUMENTOS_FALTANTES',
     porQue: 'Cláusula 6.1: falta la orden de anestesiología.',
-    deuda: 'lectura.ts no reconoce la negación: la mención basta para darlo por adjunto.',
   },
   {
     id: 'TR-12',
@@ -141,7 +193,6 @@ export const TRAMPAS: Trampa[] = [
     ],
     esperado: 'DERIVAR_A_MEDICO_AUDITOR',
     porQue: 'Cláusula 3.2: hay una preexistencia declarada con 14 de 24 meses.',
-    deuda: 'lectura.ts descarta toda la línea si aparece "sin antecedentes" en cualquier parte.',
   },
   {
     id: 'TR-13',
@@ -150,7 +201,6 @@ export const TRAMPAS: Trampa[] = [
     cambios: [['Preexistencias declaradas: ', 'Antecedentes patológicos: ']],
     esperado: 'DERIVAR_A_MEDICO_AUDITOR',
     porQue: 'Cláusula 3.2: es la misma preexistencia con otro rótulo habitual.',
-    deuda: 'Si falta la línea "Preexistencias declaradas:", lectura.ts asume que no hay ninguna (falla abierto).',
   },
   {
     id: 'TR-14',
@@ -164,7 +214,6 @@ export const TRAMPAS: Trampa[] = [
     ],
     esperado: ['DERIVAR_A_MEDICO_AUDITOR', 'DOCUMENTOS_FALTANTES'],
     porQue: 'Con dos montos en conflicto no se aprueba; y el corregido pasa el umbral de la cláusula 8.1.',
-    deuda: 'lectura.ts toma la primera coincidencia y no detecta el conflicto.',
   },
 
   /* ---------- niegan o frenan de más: seguros, pero molestos ---------- */
@@ -175,7 +224,6 @@ export const TRAMPAS: Trampa[] = [
     cambios: [['HOSPITAL NACIONAL DE PANAMÁ — ', 'HOSP. NACIONAL DE PANAMÁ — ']],
     esperado: 'PRE_APROBADO',
     porQue: 'Es un hospital de la red: la abreviatura no lo saca de ella.',
-    deuda: 'El hospital se compara por nombre exacto normalizado; la abreviatura queda fuera de red y se niega.',
   },
   {
     id: 'TR-21',
@@ -184,7 +232,6 @@ export const TRAMPAS: Trampa[] = [
     cambios: [['$ 4,200.00', 'USD 4,200.00']],
     esperado: 'PRE_APROBADO',
     porQue: 'Mismo monto con el código de moneda.',
-    deuda: 'La regla del monto exige el símbolo "$".',
   },
   {
     id: 'TR-22',
@@ -193,7 +240,6 @@ export const TRAMPAS: Trampa[] = [
     cambios: [['Carácter: urgente', 'Carácter: Urgencia']],
     esperado: 'PRE_APROBADO_CON_CONDICIONES',
     porQue: 'Cláusula 2.2: es una urgencia fuera de red.',
-    deuda: 'La regla del carácter solo acepta electiva, urgente o emergencia; lo demás se asume electiva.',
   },
   {
     id: 'TR-23',
@@ -202,7 +248,6 @@ export const TRAMPAS: Trampa[] = [
     cambios: [['Carácter: urgente\n', '']],
     esperado: ['PRE_APROBADO_CON_CONDICIONES', 'DERIVAR_A_MEDICO_AUDITOR'],
     porQue: 'El informe viene del servicio de emergencias y dice "riesgo para la vida": no es electiva.',
-    deuda: 'Sin la línea, lectura.ts asume electiva y le exige los documentos de una cirugía programada.',
   },
   {
     id: 'TR-24',
@@ -211,7 +256,6 @@ export const TRAMPAS: Trampa[] = [
     cambios: [['Fecha: 2026-09-10', 'Fecha: 10/09/2026']],
     esperado: 'PRE_APROBADO',
     porQue: 'Es la forma habitual de escribir la fecha en Panamá.',
-    deuda: 'La regla de fecha solo lee el formato ISO.',
   },
   {
     id: 'TR-25',
@@ -220,6 +264,5 @@ export const TRAMPAS: Trampa[] = [
     cambios: [['CUPS 512301', 'CUPS 51.23.01']],
     esperado: 'PRE_APROBADO',
     porQue: 'Es el mismo código con la separación habitual.',
-    deuda: 'La regla del CUPS solo lee dígitos seguidos.',
   },
 ];
