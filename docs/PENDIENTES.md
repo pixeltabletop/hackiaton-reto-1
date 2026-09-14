@@ -56,9 +56,28 @@ Después de eso, `/notion` lee los casos pendientes en vivo y escribe la decisi�
 
 ### 2. Vercel — bloquea el segundo entregable
 
-1. Crear cuenta en `vercel.com` entrando con GitHub.
-2. *Settings → Tokens* → crear uno y guardarlo en `.secrets/vercel-token.txt`.
-3. Avisar. Con eso se despliega y queda la URL pública, más las variables del punto 1 y 3.
+**Ahora: solo la cuenta.** (Diego.) Entrar a `vercel.com` con **Continue with GitHub** y autorizar.
+Plan Hobby (gratis, sin tarjeta). No importar el proyecto todavía: importarlo dispara el primer
+despliegue, y eso se hace cuando el momento llegue.
+
+**El momento** (cuando Josué diga que ya subió al repo), dos minutos, sin decisiones pendientes:
+
+1. Vercel → *Add New… → Project → Import Git Repository* → `pixeltabletop/preautorizacion-quirurgica`.
+   Si no aparece: *Adjust GitHub App Permissions* y dar acceso a ese repo. Framework: Next.js
+   (lo detecta solo). Root Directory: la raíz.
+2. Antes de pulsar Deploy, *Environment Variables* (Production y Preview):
+   `ANTHROPIC_API_KEY` y, si ya corrió el script de Notion, `NOTION_TOKEN`,
+   `NOTION_FUENTE_CASOS`, `NOTION_FUENTE_POLIZAS`, `NOTION_FUENTE_DECISIONES`.
+3. Deploy (1–2 minutos) y copiar la URL de producción.
+4. Dos comprobaciones en el panel, que son las trampas típicas:
+   - *Settings → General → Node.js Version*: **24.x** (el repo declara `engines: >=24`).
+   - *Settings → Deployment Protection*: **desactivado en Production**. Si queda activo, el jurado
+     ve un inicio de sesión de Vercel en vez del agente.
+5. Verificar la URL desde afuera, sin sesión: `/`, `/leer` y `/notion` tienen que responder, y el
+   formulario de `/leer` tiene que dictaminar de verdad.
+
+Desde el primer despliegue, cada push a `main` publica solo: lo que suba Josué queda en línea sin
+que nadie toque el panel.
 
 ### 3. Clave de modelo (opcional, recomendada)
 
