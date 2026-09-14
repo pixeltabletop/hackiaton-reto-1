@@ -9,7 +9,7 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start --port 3000",
-    "test": "node --import ./scripts/registro-ts.mjs --test \"src/domain/*.test.ts\"",
+    "test": "node --import ./scripts/registro-ts.mjs --test \"src/**/*.test.ts\"",
     "check:decision": "node --import ./scripts/registro-ts.mjs scripts/check-decision.mjs",
     "check:trampas": "node --import ./scripts/registro-ts.mjs scripts/check-informes-trampa.mjs",
     "notion:preparar": "node --import ./scripts/registro-ts.mjs scripts/notion-preparar.mjs",

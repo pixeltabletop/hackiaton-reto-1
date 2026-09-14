@@ -7,6 +7,7 @@ import {
   seleccion,
 } from '../../../src/notion/cliente';
 import { casoDesdeFila, planDesdeFila, propiedadesDeDecision } from '../../../src/notion/mapeo';
+import { validarEscritura, validarOrigen } from '../../../src/notion/seguridad';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,10 +29,24 @@ export async function POST(peticion: Request) {
     return Response.redirect(destino, 303);
   }
 
+  const host = peticion.headers.get('x-forwarded-host') ?? peticion.headers.get('host');
+  const deOrigen = validarOrigen(peticion.headers.get('origin'), host);
+  if (!deOrigen.ok) {
+    destino.searchParams.set('error', deOrigen.motivo);
+    return Response.redirect(destino, 303);
+  }
+
   try {
     const fuenteDecisiones = process.env.NOTION_FUENTE_DECISIONES;
 
     const filaCaso = await leerPagina(paginaCaso);
+    const permiso = validarEscritura({
+      origen: peticion.headers.get('origin'),
+      host,
+      fuenteCasos: process.env.NOTION_FUENTE_CASOS,
+      fila: filaCaso,
+    });
+    if (!permiso.ok) throw new Error(permiso.motivo);
     const caso = casoDesdeFila(filaCaso);
 
     const paginaPoliza = leerRelacion(filaCaso.properties['Póliza'])[0];

@@ -1,20 +1,56 @@
+/*
+ * Identidad «Petróleo clínico» (revisión de Josué, 2026-09-14). El petróleo queda entre el
+ * verde del hospital y el azul de la aseguradora. Tema claro por defecto y oscuro según el
+ * sistema. Contraste de todos los pares medido en WCAG AA (mínimo 5.6:1 declarado).
+ * Tipografía de tres voces: sans = lo que dice el agente, serif = lo que dice la póliza,
+ * mono = lo que dice el informe (citas, códigos y montos).
+ */
 :root {
-  --bg: #0a0f16;
-  --panel: #111a24;
-  --panel-2: #0d151e;
-  --border: #223040;
-  --border-suave: #1a2632;
-  --texto: #e9eff6;
-  --tenue: #94a7ba;
-  --acento: #4da3ff;
-  --aprobado: #35d07f;
-  --condiciones: #2fd1c5;
-  --faltantes: #ffc247;
-  --carencia: #ff9f45;
-  --no-cubierto: #ff6b6b;
-  --auditor: #b18cff;
-  --mono: ui-monospace, 'Cascadia Mono', 'JetBrains Mono', Consolas, 'Courier New', monospace;
+  --bg: #f4f7f7;
+  --panel: #ffffff;
+  --panel-2: #eaf0f1;
+  --border: #d3dee0;
+  --border-suave: #e2eaeb;
+  --texto: #10262d;
+  --texto-suave: #2b434a;
+  --tenue: #4d6269;
+  --acento: #0b5f6e;
+  --sobre-acento: #ffffff;
+  --resaltado: #d4ebee;
+  --aprobado: #1d6b3f;
+  --condiciones: #1f5a9e;
+  --faltantes: #7a5200;
+  --carencia: #8f3f0c;
+  --no-cubierto: #a8201a;
+  --auditor: #5a3e9e;
+  --sans: var(--fuente-sans, 'Atkinson Hyperlegible Next'), 'Segoe UI', system-ui, sans-serif;
+  --serif: var(--fuente-serif, 'Source Serif 4'), Georgia, 'Times New Roman', serif;
+  --mono: var(--fuente-mono, 'Atkinson Hyperlegible Mono'), ui-monospace, Consolas, 'Courier New', monospace;
   --radio: 14px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1a1e;
+    --panel: #132429;
+    --panel-2: #0f2025;
+    --border: #24393f;
+    --border-suave: #1c2f34;
+    --texto: #e6f0f1;
+    --texto-suave: #c9d8db;
+    --tenue: #9db3b8;
+    --acento: #5fc3d1;
+    --sobre-acento: #062026;
+    --resaltado: #1b4a52;
+    --aprobado: #7ed3a0;
+    --condiciones: #8db8ee;
+    --faltantes: #f0c46a;
+    --carencia: #f2a574;
+    --no-cubierto: #f59a93;
+    --auditor: #bca6f0;
+    color-scheme: dark;
+  }
 }
 
 * {
@@ -29,10 +65,10 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(1100px 500px at 12% -10%, #16283d 0%, transparent 60%),
+    radial-gradient(1100px 500px at 12% -10%, color-mix(in srgb, var(--acento) 12%, transparent) 0%, transparent 60%),
     var(--bg);
   color: var(--texto);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-family: var(--sans);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -47,15 +83,18 @@ body {
 
 .ceja {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--acento);
 }
 
 h1 {
+  font-family: var(--serif);
+  font-weight: 600;
   font-size: clamp(30px, 4.2vw, 46px);
-  line-height: 1.1;
+  line-height: 1.12;
+  text-wrap: balance;
   margin: 12px 0 14px;
   letter-spacing: -0.02em;
 }
@@ -87,7 +126,7 @@ h1 {
 }
 
 .metricas dt {
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--tenue);
@@ -145,7 +184,7 @@ h2 {
 
 .tarjeta .slug {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--tenue);
 }
 
@@ -165,7 +204,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--tenue);
 }
 
@@ -178,7 +217,7 @@ h2 {
   margin-top: 12px;
   padding-top: 10px;
   border-top: 1px dashed var(--border-suave);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--acento);
   opacity: 0.8;
 }
@@ -192,7 +231,7 @@ h2 {
 
 .chip {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--estado);
@@ -230,7 +269,7 @@ h2 {
 
 .caso .slug {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--tenue);
 }
 
@@ -246,20 +285,20 @@ h2 {
 }
 
 .veredicto .chip {
-  font-size: 12px;
+  font-size: 13px;
   padding: 6px 14px;
 }
 
 .veredicto .reloj {
   display: block;
   font-family: var(--mono);
-  font-size: 12.5px;
+  font-size: 13.5px;
   color: var(--tenue);
   margin-top: 10px;
 }
 
 .veredicto .reloj b {
-  color: #c8d6e4;
+  color: var(--texto-suave);
   font-weight: 600;
 }
 
@@ -278,15 +317,15 @@ h2 {
 .referencia {
   display: block;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--tenue);
 }
 
 .boton {
   font: inherit;
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 600;
-  color: #06121f;
+  color: var(--sobre-acento);
   background: var(--acento);
   border: none;
   border-radius: 10px;
@@ -304,7 +343,7 @@ h2 {
 .entrada {
   width: 100%;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.7;
   color: var(--texto);
   background: var(--panel-2);
@@ -328,7 +367,7 @@ h2 {
 }
 
 .etiqueta {
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--tenue);
@@ -379,7 +418,7 @@ h2 {
 
 .bloque h4 {
   margin: 0 0 14px;
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--tenue);
@@ -409,7 +448,7 @@ ol.motivos li::before {
   background: color-mix(in srgb, var(--estado) 16%, transparent);
   color: var(--estado);
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 13px;
   display: grid;
   place-items: center;
 }
@@ -420,7 +459,7 @@ ol.motivos li:last-child {
 
 .regla {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--tenue);
@@ -436,14 +475,15 @@ blockquote {
   border-left: 2px solid var(--border);
   background: var(--panel-2);
   border-radius: 0 10px 10px 0;
-  font-size: 14px;
-  color: #d3dee9;
+  font-family: var(--serif);
+  font-size: 15.5px;
+  color: var(--texto-suave);
 }
 
 blockquote .clausula {
   display: block;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--acento);
   margin-bottom: 4px;
 }
@@ -482,7 +522,7 @@ table {
 
 .nota {
   margin: 14px 0 0;
-  font-size: 12.5px;
+  font-size: 13.5px;
   color: var(--tenue);
 }
 
@@ -514,7 +554,7 @@ details.bloque {
 
 details.bloque > summary {
   cursor: pointer;
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--tenue);
@@ -541,7 +581,7 @@ details.bloque[open] > summary {
 
 .documento {
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.75;
   white-space: pre-wrap;
   margin: 0;
@@ -549,13 +589,13 @@ details.bloque[open] > summary {
   background: var(--panel-2);
   border: 1px solid var(--border-suave);
   border-radius: 12px;
-  color: #cfdae6;
+  color: var(--texto-suave);
   overflow-x: auto;
 }
 
 mark {
-  background: color-mix(in srgb, var(--acento) 26%, transparent);
-  color: #ffffff;
+  background: var(--resaltado);
+  color: var(--texto);
   border-bottom: 1px solid var(--acento);
   border-radius: 3px;
   padding: 1px 2px;
@@ -567,7 +607,7 @@ mark {
 
 .campos th {
   text-align: left;
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--tenue);
@@ -579,7 +619,7 @@ mark {
   padding: 7px 10px 7px 0;
   border-bottom: 1px dashed var(--border-suave);
   vertical-align: top;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .campos td:nth-child(1) {
@@ -603,7 +643,7 @@ mark {
   padding: 12px 0;
   border-bottom: 1px dashed var(--border-suave);
   font-size: 14px;
-  color: #cbd7e3;
+  color: var(--texto-suave);
 }
 
 .clausulas li:last-child {
@@ -612,7 +652,7 @@ mark {
 
 .clausulas .id {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--acento);
   display: block;
   margin-bottom: 4px;
@@ -623,10 +663,10 @@ footer {
   padding-top: 22px;
   border-top: 1px solid var(--border-suave);
   color: var(--tenue);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 footer code {
   font-family: var(--mono);
-  color: #cbd7e3;
+  color: var(--texto-suave);
 }

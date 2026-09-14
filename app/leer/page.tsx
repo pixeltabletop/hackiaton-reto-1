@@ -1,15 +1,8 @@
 import Link from 'next/link';
-import { Caso } from '../components/Caso';
 import { CASOS } from '../../src/data/casos';
-import { PLANES, planDe } from '../../src/data/planes';
+import { PLANES } from '../../src/data/planes';
 import { formato } from '../../src/domain/dinero';
-import { leerInforme, resumenLectura, type Lectura } from '../../src/domain/lectura';
-import { leerInformeConModelo, proveedorDeEntorno } from '../../src/domain/lectura-modelo';
-import { armarVista } from '../../src/domain/presentacion';
-
-type LecturaUI = Lectura & { nota?: string; descartados?: string[] };
-
-export const dynamic = 'force-dynamic';
+import { FormularioLeer } from './Formulario';
 
 const EJEMPLO = `CLÍNICA COSTA DEL ESTE — SERVICIO DE ORTOPEDIA
 Informe médico para solicitud de preautorización
@@ -25,26 +18,12 @@ Documentos adjuntos: informe del cirujano, estudio de imagen
 Antecedentes: dolor con bloqueos de rodilla. Sin antecedentes crónicos declarados.
 Hallazgos: rotura meniscal interna, sin derrame.`;
 
-export default async function PaginaLeer({
-  searchParams,
-}: {
-  searchParams: Promise<{ informe?: string; plan?: string }>;
-}) {
-  const parametros = await searchParams;
-  const informe = (parametros.informe ?? '').trim();
-  const planId = parametros.plan ?? 'PLAN-A';
-  const plan = planDe(planId);
-  const proveedor = informe ? proveedorDeEntorno() : null;
-
-  const lectura: LecturaUI | null = informe
-    ? proveedor
-      ? await leerInformeConModelo(informe, plan, proveedor)
-      : leerInforme(
-          informe,
-          planId,
-          plan.red.map((h) => h.hospital),
-        )
-    : null;
+export default function PaginaLeer() {
+  const planes = PLANES.map((p) => ({
+    id: p.id,
+    etiqueta: `${p.id} · ${p.plan} · deducible ${formato(p.deducibleAnual)} · coaseguro ${p.coaseguroPct}% en red`,
+  }));
+  const ejemplos = CASOS.map((c) => ({ id: c.id, titulo: c.titulo, planId: c.planId, informe: c.informeTexto }));
 
   return (
     <div className="hoja">
@@ -56,89 +35,7 @@ export default async function PaginaLeer({
         cae a documentos faltantes. Puede probar con un informe inventado.
       </p>
 
-      <form className="bloque" method="get" action="/leer" style={{ marginTop: 22 }}>
-        <h4>Informe del hospital</h4>
-        <p className="nota" style={{ marginTop: 0, marginBottom: 12 }}>
-          Borre este ejemplo y pegue su propio informe, o pulse uno de los casos del final de la
-          página. Se lee tal cual está escrito: cada dato que el agente use tiene que aparecer aquí,
-          con esas palabras.
-        </p>
-        <textarea
-          className="entrada"
-          name="informe"
-          rows={16}
-          defaultValue={informe || EJEMPLO}
-          spellCheck={false}
-        />
-        <div className="fila-formulario">
-          <label className="etiqueta" htmlFor="plan">
-            Póliza del paciente
-          </label>
-          <select className="select" name="plan" id="plan" defaultValue={planId}>
-            {PLANES.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.id} · {p.plan} · deducible {formato(p.deducibleAnual)} · coaseguro{' '}
-                {p.coaseguroPct}% en red
-              </option>
-            ))}
-          </select>
-          <button className="boton" type="submit">
-            Leer y dictaminar
-          </button>
-        </div>
-      </form>
-
-      {lectura && (
-        <>
-          <div className="bloque" style={{ marginTop: 18 }}>
-            <h4>Qué leyó el agente</h4>
-            <p style={{ marginTop: 0 }}>{resumenLectura(lectura)}</p>
-            {lectura.nota && (
-              <p className="nota" style={{ marginTop: 0 }}>
-                {lectura.nota}
-              </p>
-            )}
-            {lectura.descartados && lectura.descartados.length > 0 && (
-              <ul className="faltantes-lista">
-                {lectura.descartados.map((descartado) => (
-                  <li key={descartado}>Descartado del modelo — {descartado}</li>
-                ))}
-              </ul>
-            )}
-            {lectura.avisos.length > 0 ? (
-              <ul className="faltantes-lista">
-                {lectura.avisos.map((aviso) => (
-                  <li key={aviso}>{aviso}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="nota" style={{ marginBottom: 0 }}>
-                Todos los datos del informe se encontraron con su cita textual.
-              </p>
-            )}
-          </div>
-
-          <Caso
-            vista={armarVista(lectura.caso, plan)}
-            titulo={`Informe leído · CUPS ${lectura.caso.procedimientoCups || '—'}`}
-          />
-        </>
-      )}
-
-      <h2>O empiece por un informe de ejemplo</h2>
-      <div className="pared">
-        {CASOS.map((caso) => (
-          <form method="get" action="/leer" key={caso.id}>
-            <input type="hidden" name="plan" value={caso.planId} />
-            <input type="hidden" name="informe" value={caso.informeTexto} />
-            <button className="tarjeta boton-tarjeta" type="submit">
-              <span className="slug">{caso.id}</span>
-              <h3>{caso.titulo}</h3>
-              <span className="pista">Leer y dictaminar este informe →</span>
-            </button>
-          </form>
-        ))}
-      </div>
+      <FormularioLeer ejemplo={EJEMPLO} planes={planes} ejemplos={ejemplos} />
 
       <footer>
         <p>
