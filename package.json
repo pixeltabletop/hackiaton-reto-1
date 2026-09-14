@@ -14,8 +14,9 @@
     "test": "node --import ./scripts/registro-ts.mjs --test \"src/**/*.test.ts\"",
     "check:decision": "node --import ./scripts/registro-ts.mjs scripts/check-decision.mjs",
     "check:trampas": "node --import ./scripts/registro-ts.mjs scripts/check-informes-trampa.mjs",
+    "check:color": "node scripts/check-contraste.mjs",
     "notion:preparar": "node --import ./scripts/registro-ts.mjs scripts/notion-preparar.mjs",
-    "check": "npm run test && npm run check:decision && npm run check:trampas"
+    "check": "npm run test && npm run check:decision && npm run check:trampas && npm run check:color"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.125.0",

@@ -3,6 +3,7 @@ import { CASOS } from '../../src/data/casos';
 import { PLANES } from '../../src/data/planes';
 import { formato } from '../../src/domain/dinero';
 import { FormularioLeer } from './Formulario';
+import { MARCA } from '../marca';
 
 const EJEMPLO = `CLÍNICA COSTA DEL ESTE — SERVICIO DE ORTOPEDIA
 Informe médico para solicitud de preautorización
@@ -27,7 +28,7 @@ export default function PaginaLeer() {
 
   return (
     <div className="hoja">
-      <span className="ceja">Reto 1 · lectura del informe · Equipo Jajanken</span>
+      <span className="ceja">{MARCA.evento} · lectura del informe</span>
       <h1>Pegue un informe y el agente lo dictamina</h1>
       <p className="tesis">
         El agente lee el informe, saca cada dato <strong>con la cita textual de donde salió</strong> y

@@ -18,3 +18,5 @@ jobs:
         run: npm run check:decision
       - name: Informes trampa (aprobaciones indebidas y regresiones)
         run: npm run check:trampas
+      - name: Contraste del tema (WCAG)
+        run: npm run check:color

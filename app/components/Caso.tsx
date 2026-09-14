@@ -1,9 +1,11 @@
 import { formato } from '../../src/domain/dinero';
 import { CLASE_ESTADO, ETIQUETA_ESTADO, type VistaCaso } from '../../src/domain/presentacion';
+import { familiaDe, resumenDe } from '../../src/domain/resumen';
 
 /**
- * La ficha de un caso: el veredicto, el porqué con sus cláusulas, el reparto del
- * monto, lo que falta y los dos desplegables con el informe citado y la póliza.
+ * La ficha de un caso: el veredicto en una línea, el porqué con sus cláusulas
+ * agrupadas por familia, el reparto del monto, lo que falta y los dos desplegables
+ * con el informe citado y la póliza.
  *
  * Es un componente de servidor: se renderiza completo en el HTML, sin JavaScript
  * en el cliente. Se usa igual en la demostración y en la lectura de un informe.
@@ -90,7 +92,7 @@ export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
     const clausula = clausulas.find((c) => c.clausula.id === motivo.clausula)?.clausula;
     const repetida = clausula ? yaCitadas.has(clausula.id) : false;
     if (clausula) yaCitadas.add(clausula.id);
-    return { motivo, clausula, repetida, clave: `${motivo.regla}-${i}` };
+    return { motivo, clausula, repetida, familia: familiaDe(motivo.regla), numero: i + 1 };
   });
 
   return (
@@ -107,34 +109,41 @@ export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
             {decision.mesesAfiliado} meses)
           </p>
         </div>
-        <div className="veredicto">
-          <span className="chip">{ETIQUETA_ESTADO[decision.estado]}</span>
-          <span className="reloj">
-            <b>{decision.enRed ? 'en red' : 'fuera de red'}</b> ·{' '}
-            <b>{decision.motivos.length} reglas aplicadas</b> · <b>{decision.tiempoMs} ms</b>
-          </span>
-        </div>
       </header>
+
+      <section className="veredicto">
+        <span className="chip">{ETIQUETA_ESTADO[decision.estado]}</span>
+        <p className="veredicto-resumen">{resumenDe(decision)}</p>
+        <span className="reloj">
+          <b>{decision.enRed ? 'en red' : 'fuera de red'}</b> ·{' '}
+          <b>{decision.motivos.length} reglas aplicadas</b> · <b>{decision.tiempoMs} ms</b>
+        </span>
+      </section>
 
       <div className="rejilla">
         <section className="bloque">
           <h4>¿Por qué? — cada paso con su cláusula</h4>
           <ol className="motivos">
-            {pasos.map(({ motivo, clausula, repetida, clave }) => (
-              <li key={clave}>
-                <span className="regla">{motivo.regla}</span>
-                <p>{motivo.resultado}</p>
-                {clausula && !repetida && (
-                  <blockquote>
-                    <span className="clausula">Cláusula {clausula.id} de la póliza</span>
-                    {clausula.texto}
-                  </blockquote>
-                )}
-                {clausula && repetida && (
-                  <span className="referencia">
-                    Cláusula {clausula.id} — ya citada en el paso anterior
-                  </span>
-                )}
+            {pasos.map(({ motivo, clausula, repetida, familia, numero }) => (
+              <li className={`paso-${familia}`} key={`${motivo.regla}-${numero}`}>
+                <span className="paso-numero" aria-hidden="true">
+                  {numero}
+                </span>
+                <div>
+                  <span className="regla">{motivo.regla}</span>
+                  <p>{motivo.resultado}</p>
+                  {clausula && !repetida && (
+                    <blockquote>
+                      <span className="clausula">Cláusula {clausula.id} de la póliza</span>
+                      {clausula.texto}
+                    </blockquote>
+                  )}
+                  {clausula && repetida && (
+                    <span className="referencia">
+                      Cláusula {clausula.id} — ya citada en el paso anterior
+                    </span>
+                  )}
+                </div>
               </li>
             ))}
           </ol>
@@ -143,13 +152,13 @@ export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
       </div>
 
       {decision.faltantes.length > 0 && (
-        <section className="bloque" style={{ marginTop: 18 }}>
+        <section className="bloque" style={{ marginTop: 20 }}>
           <h4>Lo que falta para poder dictaminar</h4>
           <ul className="faltantes-lista">
             {decision.faltantes.map((faltante) => (
               <li key={faltante.documento}>
                 {faltante.documento}{' '}
-                <span className="slug">(lo exige la cláusula {faltante.clausula})</span>
+                <span className="referencia">(lo exige la cláusula {faltante.clausula})</span>
               </li>
             ))}
           </ul>

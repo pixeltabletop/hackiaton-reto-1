@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Caso } from './components/Caso';
+import { MARCA } from './marca';
 import { CASOS } from '../src/data/casos';
 import { planDe } from '../src/data/planes';
 import { formato } from '../src/domain/dinero';
@@ -17,7 +18,9 @@ export default function Page() {
   return (
     <div className="hoja">
       <header>
-        <span className="ceja">hackIAthon Panamá 2026 · Reto 1 · Equipo Jajanken</span>
+        <span className="ceja">
+          {MARCA.evento} · {MARCA.equipo}
+        </span>
         <h1>Pre-autorización quirúrgica en segundos</h1>
         <p className="tesis">
           El agente no autoriza: <strong>dictamina con la póliza en la mano</strong>. El modelo lee el
@@ -61,7 +64,7 @@ export default function Page() {
               <span className="chip">{ETIQUETA_ESTADO[decision.estado]}</span>
               <span>
                 {decision.estado.startsWith('PRE_APROBADO')
-                  ? formato(decision.pagaAseguradora)
+                  ? `responde ${formato(decision.pagaAseguradora)}`
                   : caso.hospital}
               </span>
             </div>

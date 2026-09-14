@@ -4,6 +4,7 @@ import { dictaminar } from '../../src/domain/motor';
 import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../src/domain/presentacion';
 import type { Caso, Plan } from '../../src/domain/tipos';
 import { consultarFuente, hayToken, leerRelacion } from '../../src/notion/cliente';
+import { MARCA } from '../marca';
 import { casoDesdeFila, planDesdeFila } from '../../src/notion/mapeo';
 
 export const dynamic = 'force-dynamic';
@@ -18,7 +19,7 @@ const PASOS = [
 function Aviso({ titulo, detalle }: { titulo: string; detalle: string }) {
   return (
     <div className="hoja">
-      <span className="ceja">Notion · reto 1 · Equipo Jajanken</span>
+      <span className="ceja">{MARCA.evento} · Notion</span>
       <h1>La integración con Notion</h1>
       <div className="bloque" style={{ marginTop: 22 }}>
         <h4>{titulo}</h4>
@@ -75,7 +76,7 @@ export default async function PaginaNotion() {
 
     return (
       <div className="hoja">
-        <span className="ceja">Notion · lectura en vivo · reto 1 · Equipo Jajanken</span>
+        <span className="ceja">{MARCA.evento} · Notion, lectura en vivo</span>
         <h1>Casos pendientes leídos de Notion</h1>
         <p className="tesis">
           Estas filas viven en la base <strong>Casos</strong> de Notion. El agente las lee, dictamina
@@ -107,7 +108,7 @@ export default async function PaginaNotion() {
                   <span className="chip">{ETIQUETA_ESTADO[decision.estado]}</span>
                   <span>
                     {decision.estado.startsWith('PRE_APROBADO')
-                      ? formato(decision.pagaAseguradora)
+                      ? `responde ${formato(decision.pagaAseguradora)}`
                       : `${decision.faltantes.length} faltantes`}
                   </span>
                 </div>
