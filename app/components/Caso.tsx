@@ -203,6 +203,11 @@ export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
             ))}
           </tbody>
         </table>
+        <p className="nota">
+          El <strong>valor</strong> es el dato ya normalizado; la <strong>cita</strong> es el texto
+          tal como está en el informe, y la <strong>posición</strong> es el carácter del informe
+          donde empieza esa cita. Si la cita no apareciera en el informe, el dato no se usaría.
+        </p>
       </details>
 
       <details className="bloque">
