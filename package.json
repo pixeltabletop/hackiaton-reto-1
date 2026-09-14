@@ -11,8 +11,9 @@
     "start": "next start --port 3000",
     "test": "node --import ./scripts/registro-ts.mjs --test \"src/domain/*.test.ts\"",
     "check:decision": "node --import ./scripts/registro-ts.mjs scripts/check-decision.mjs",
+    "check:trampas": "node --import ./scripts/registro-ts.mjs scripts/check-informes-trampa.mjs",
     "notion:preparar": "node --import ./scripts/registro-ts.mjs scripts/notion-preparar.mjs",
-    "check": "npm run test && npm run check:decision"
+    "check": "npm run test && npm run check:decision && npm run check:trampas"
   },
   "dependencies": {
     "next": "^16.3.5",

@@ -26,8 +26,22 @@ npm ci
 npm run dev            # la web en http://localhost:3000
 npm test               # 30 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo
 npm run check:decision # dictamina los seis casos y audita el contrato
-npm run check          # las dos anteriores
+npm run check:trampas  # informes trampa: variaciones reales que no pueden cambiar el dictamen
+npm run check          # las tres anteriores
 ```
+
+### Informes trampa
+
+Los seis informes del corpus están escritos a la medida del lector. `src/data/trampas.ts` los
+modifica como los escribiría un hospital —negaciones («pendiente estudio de imagen»),
+preexistencias con otro rótulo, montos corregidos, fechas `dd/mm/aaaa`, texto que ordena aprobar—
+y fija el dictamen correcto de cada variación, con la cláusula que lo justifica.
+
+`npm run check:trampas` pasa cada una por el mismo camino que `/leer` sin clave de modelo y sale
+con 1 si alguna da un dictamen distinto. Los defectos conocidos y todavía sin arreglar llevan un
+campo `deuda`: la puerta los imprime, pero no frena el CI. **La deuda solo puede bajar**: cuando
+una trampa en deuda empieza a pasar, la puerta falla hasta que se le quita la marca.
+`npm run check:trampas -- --estricto` exige cero deuda; es la verificación para antes de entregar.
 
 ## Los seis casos (corpus sintético)
 
@@ -69,7 +83,8 @@ src/domain/   dinero.ts      todo el dinero en centavos (el modelo nunca toca un
 src/data/     corpus sintético: 3 pólizas (con su texto legal), 6 casos, tarifario
 src/notion/   cliente.ts (fetch, sin SDK, API 2026-03-11) y mapeo.ts (Notion ↔ motor)
 app/          Next.js, todo renderizado en el servidor: cero JavaScript en el cliente
-scripts/      check-decision.mjs (puerta de calidad) y notion-preparar.mjs (crea las bases)
+scripts/      check-decision.mjs (puerta de calidad), check-informes-trampa.mjs (informes trampa)
+              y notion-preparar.mjs (crea las bases)
 ```
 
 Más detalle en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) y lo que falta por conectar en

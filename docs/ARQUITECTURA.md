@@ -74,3 +74,4 @@ faltantes o condiciones.
 | `motor.test.ts` | Los seis dictámenes, la determinación, el cuadre de montos y el contrafactual |
 | `lectura.test.ts` | Que el lector por reglas reconstruya cada caso del corpus campo por campo |
 | `lectura-modelo.test.ts` | Que el modelo no pueda inventar: cita no verificable, valor que no sale de su cita, carácter fuera del catálogo o documento sin cita ⇒ se descarta |
+| `scripts/check-informes-trampa.mjs` | Que variaciones reales del informe (negaciones, rótulos distintos, montos corregidos) no cambien el dictamen correcto. Casos en `src/data/trampas.ts`; los defectos sin arreglar van con `deuda` y la lista solo puede bajar |
