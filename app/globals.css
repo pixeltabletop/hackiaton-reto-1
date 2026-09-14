@@ -299,6 +299,59 @@ h2 {
   filter: brightness(1.12);
 }
 
+/* ---------- formulario de lectura ---------- */
+
+.entrada {
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--texto);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  resize: vertical;
+}
+
+.entrada:focus {
+  outline: 2px solid color-mix(in srgb, var(--acento) 60%, transparent);
+  outline-offset: 1px;
+}
+
+.fila-formulario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.etiqueta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tenue);
+}
+
+.select {
+  font: inherit;
+  font-size: 14px;
+  color: var(--texto);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.boton-tarjeta {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
 .rejilla {
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
