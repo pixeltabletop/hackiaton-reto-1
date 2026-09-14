@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "lectura",
+  "id": "PR-06",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-1205\",\"cita\":\"AF-1205\"},{\"campo\":\"edad\",\"valor\":\"33\",\"cita\":\"de 33 años\"},{\"campo\":\"hospital\",\"valor\":\"Clínica Costa del Este\",\"cita\":\"Clínica Costa del Este\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-08\",\"cita\":\"2026-09-08\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2020-01-10\",\"cita\":\"afiliada desde 2020-01-10\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"Z41.1\",\"cita\":\"(Z41.1)\"},{\"campo\":\"procedimientoCups\",\"valor\":\"158001\",\"cita\":\"CUPS 158001\"},{\"campo\":\"cirujano\",\"valor\":\"Dr. Alberto Quintero\",\"cita\":\"El Dr. Alberto Quintero\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 3,800.00\",\"cita\":\"$ 3,800.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"informe del cirujano\"},{\"id\":\"R2\",\"cita\":\"estudio de imagen\"},{\"id\":\"R3\",\"cita\":\"orden de anestesiología\"},{\"id\":\"R4\",\"cita\":\"consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 4018,
+  "entrada": 1514,
+  "salida": 478,
+  "modelo": "claude-sonnet-5"
+}

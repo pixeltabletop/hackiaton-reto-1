@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "PR-05",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.2, 3.1\", \"motivo\": \"Apendicitis aguda de urgencia en paciente afiliada desde 2021 con procedimiento CUPS 471201 cubierto, sin carencia aplicable a emergencias, costo bajo tope de auditoría.\"}",
+  "ms": 1616,
+  "entrada": 1617,
+  "salida": 88,
+  "modelo": "claude-haiku-4-5-20251001"
+}

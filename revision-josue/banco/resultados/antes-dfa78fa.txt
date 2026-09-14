@@ -1,0 +1,6 @@
+ANTES (código de main dfa78fa, 36 informes, mismas respuestas guardadas)
+V0 reglas  correctos 15/36 · aprueba de más 7 · niega de más 2 · frena de más 12
+V1 codex   correctos 25/36 · aprueba de más 5 · niega de más 3 · frena de más 3
+V1 haiku   correctos 25/36 · aprueba de más 5 · niega de más 3 · frena de más 3
+V1 sonnet  correctos 24/36 · aprueba de más 5 · niega de más 3 · frena de más 4
+V1 qwen    correctos 17/36 · aprueba de más 5 · niega de más 2 · frena de más 12

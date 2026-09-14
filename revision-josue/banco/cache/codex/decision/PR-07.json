@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-07",
+  "ok": true,
+  "texto": "{\"estado\":\"CARENCIA_NO_CUMPLIDA\",\"clausula\":\"3.1\",\"motivo\":\"La cirugía es electiva y el paciente solo acredita 35 días de afiliación continua, menos de los 3 meses exigidos.\"}",
+  "ms": 89949,
+  "entrada": 3440,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

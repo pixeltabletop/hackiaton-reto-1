@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-03",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    {\n      \"campo\": \"pacienteRef\",\n      \"valor\": \"AF-7790\",\n      \"cita\": \"Paciente AF-7790\"\n    },\n    {\n      \"campo\": \"edad\",\n      \"valor\": 62,\n      \"cita\": \"62 años\"\n    },\n    {\n      \"campo\": \"hospital\",\n      \"valor\": \"Hospital Nacional de Panamá\",\n      \"cita\": \"Hospital Nacional de Panamá\"\n    },\n    {\n      \"campo\": \"fecha\",\n      \"valor\": \"2026-09-12\",\n      \"cita\": \"Fecha 2026-09-12\"\n    },\n    {\n      \"campo\": \"fechaAfiliacion\",\n      \"valor\": \"2023-05-02\",\n      \"cita\": \"afiliado desde 2023-05-02\"\n    },\n    {\n      \"campo\": \"diagnosticoCie10\",\n      \"valor\": \"K80.10\",\n      \"cita\": \"colecistitis (K80.10)\"\n    },\n    {\n      \"campo\": \"procedimientoCups\",\n      \"valor\": \"512301\",\n      \"cita\": \"CUPS 512301\"\n    },\n    {\n      \"campo\": \"cirujano\",\n      \"valor\": \"Dra. Mariela Cárdenas\",\n      \"cita\": \"Dra. Mariela Cárdenas\"\n    },\n    {\n      \"campo\": \"caracter\",\n      \"valor\": \"electiva\",\n      \"cita\": \"electiva\"\n    },\n    {\n      \"campo\": \"montoEstimado\",\n      \"valor\": \"USD 4,200.00\",\n      \"cita\": \"USD 4,200.00\"\n    }\n  ],\n  \"documentos\": [\n    {\n      \"id\": \"R1\",\n      \"cita\": \"se adjuntan el informe del cirujano\"\n    },\n    {\n      \"id\": \"R4\",\n      \"cita\": \"el consentimiento informado\"\n    }\n  ],\n  \"preexistencias\": []\n}",
+  "ms": 97443,
+  "entrada": 3470,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

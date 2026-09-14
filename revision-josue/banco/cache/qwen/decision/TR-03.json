@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "TR-03",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"Se cumplen los requisitos documentales (informe del cirujano, estudio de imagen, orden de anestesiología, consentimiento informado) y el procedimiento es electivo, dentro de la red de proveedores.\"\n}",
+  "ms": 18050,
+  "entrada": 1395,
+  "salida": 79,
+  "modelo": "qwen3:1.7b"
+}

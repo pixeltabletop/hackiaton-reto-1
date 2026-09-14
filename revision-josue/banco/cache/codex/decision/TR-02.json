@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "TR-02",
+  "ok": true,
+  "texto": "{\"estado\":\"CARENCIA_NO_CUMPLIDA\",\"clausula\":\"3.1\",\"motivo\":\"La cirugía es electiva y al 11 de septiembre de 2026 no se han cumplido los 3 meses de afiliación continua requeridos.\"}",
+  "ms": 107375,
+  "entrada": 3588,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

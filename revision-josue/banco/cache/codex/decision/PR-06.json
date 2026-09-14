@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-06",
+  "ok": true,
+  "texto": "{\"estado\":\"NO_CUBIERTO\",\"clausula\":\"5.1\",\"motivo\":\"La rinoplastia CUPS 158001 está excluida y se solicita con fines estéticos de cambio de apariencia.\"}",
+  "ms": 65491,
+  "entrada": 13423,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

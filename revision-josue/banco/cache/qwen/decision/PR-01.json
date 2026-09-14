@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "PR-01",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"512301\",\n  \"motivo\": \"La solicitud cumple con los requisitos documentales (informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado) y se encuentra dentro de la red de proveedores. El procedimiento es de cirugía electiva y el monto es inferior a USD 5,000.00, por lo que se requiere preautorización. La paciente no tiene carencia y el informe muestra que el procedimiento es programado y necesario.\"\n}",
+  "ms": 28157,
+  "entrada": 1323,
+  "salida": 138,
+  "modelo": "qwen3:1.7b"
+}

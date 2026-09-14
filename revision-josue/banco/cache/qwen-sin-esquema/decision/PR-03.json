@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "PR-03",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO_CON_CONDICIONES\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"Se requiere el estudio de imagen y la orden de anestesiología para la preautorización, ya que estos documentos no se han adjuntado.\"\n}",
+  "ms": 13615,
+  "entrada": 1272,
+  "salida": 68,
+  "modelo": "qwen3:1.7b"
+}

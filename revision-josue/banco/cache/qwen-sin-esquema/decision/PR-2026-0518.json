@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "PR-2026-0518",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"8.1\",\n  \"motivo\": \"El procedimiento corresponde a un procedimiento quirúrgico electivo, se cumplen los requisitos documentales (informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado), y se encuentra dentro de la red de proveedores. Además, el monto estimado ($3,100.00) es menor a USD 5,000.00, por lo que no requiere dictaminación previa por parte de la médica auditor.\"\n}",
+  "ms": 25765,
+  "entrada": 1370,
+  "salida": 139,
+  "modelo": "qwen3:1.7b"
+}

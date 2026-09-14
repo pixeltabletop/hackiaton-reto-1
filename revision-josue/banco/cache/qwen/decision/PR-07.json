@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "PR-07",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"7.1\",\n  \"motivo\": \"El paciente es socio preferente y las carencias no se aplican, así que se emite PRE_APROBADO.\"\n}",
+  "ms": 13209,
+  "entrada": 1270,
+  "salida": 57,
+  "modelo": "qwen3:1.7b"
+}

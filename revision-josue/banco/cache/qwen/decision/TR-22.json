@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "TR-22",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud cumple con los requisitos documentales de urgencia, incluyendo el informe de urgencias y el consentimiento informado, y el procedimiento es de emergencia, por lo que se aprueba con preautorización.\"\n}",
+  "ms": 19641,
+  "entrada": 1385,
+  "salida": 81,
+  "modelo": "qwen3:1.7b"
+}

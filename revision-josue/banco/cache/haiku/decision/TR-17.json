@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-17",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1, 3.1, 4.1, 6.1\", \"motivo\": \"Procedimiento CUPS 452101 cubierto, paciente con 14 meses de afiliación (supera carencia de 3 meses), en hospital de la red, documentación completa, monto bajo deducible, sin preexistencias.\"}",
+  "ms": 3449,
+  "entrada": 1679,
+  "salida": 106,
+  "modelo": "claude-haiku-4-5-20251001"
+}

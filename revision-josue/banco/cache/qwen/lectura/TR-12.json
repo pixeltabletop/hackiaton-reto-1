@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "lectura",
+  "id": "TR-12",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    { \"campo\": \"procedimientoCups\", \"valor\": \"452101\", \"cita\": \"CUPS 452101 — hernioplastia inguinal\" },\n    { \"campo\": \"montoEstimado\", \"valor\": \"$ 2,300.00\", \"cita\": \"Monto estimado del procedimiento: $ 2,300.00\" }\n  ],\n  \"documentos\": [\n    { \"id\": \"R1\", \"cita\": \"informe del cirujano\" },\n    { \"id\": \"R3\", \"cita\": \"orden de anestesiología\" },\n    { \"id\": \"R4\", \"cita\": \"consentimiento informado\" }\n  ],\n  \"preexistencias\": [\"Hipertensión arterial desde 2024\"]\n}",
+  "ms": 23362,
+  "entrada": 810,
+  "salida": 200,
+  "modelo": "qwen3:1.7b"
+}

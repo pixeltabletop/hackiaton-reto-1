@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "PR-05",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO\",\"clausula\":\"2.2\",\"motivo\":\"Cirugía de urgencia por apendicitis con riesgo vital, sin carencia aplicable, documentos completos aunque el hospital no sea de red\"}",
+  "ms": 2381,
+  "entrada": 2127,
+  "salida": 85,
+  "modelo": "claude-sonnet-5"
+}

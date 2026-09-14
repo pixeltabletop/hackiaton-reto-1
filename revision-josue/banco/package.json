@@ -1,0 +1,9 @@
+{
+  "name": "banco-lectura-preautorizacion",
+  "private": true,
+  "type": "module",
+  "description": "Banco de pruebas de la revisión de Josué: compara lectores y modelos. No es parte del producto.",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.125.0"
+  }
+}

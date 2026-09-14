@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "lectura",
+  "id": "PR-05",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    { \"campo\": \"edad\", \"valor\": \"27\", \"cita\": \"27\" },\n    { \"campo\": \"procedimientoCups\", \"valor\": \"471201\", \"cita\": \"CUPS 471201\" },\n    { \"campo\": \"caracter\", \"valor\": \"urgente\", \"cita\": \"por riesgo para la vida\" }\n  ],\n  \"documentos\": [\n    { \"id\": \"R5\", \"cita\": \"informe de urgencias\" },\n    { \"id\": \"R4\", \"cita\": \"consentimiento informado\" }\n  ],\n  \"preexistencias\": [\"Hipertensión arterial diagnosticada en 2024\"]\n}",
+  "ms": 24907,
+  "entrada": 702,
+  "salida": 173,
+  "modelo": "qwen3:1.7b"
+}

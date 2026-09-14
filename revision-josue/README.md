@@ -4,6 +4,32 @@
 > `revision-josue/` y no toca ningún archivo del proyecto. Revisado sobre `main` en `dfa78fa`
 > (14 de septiembre, 11:32). Si algo de aquí te sirve, lo pasamos al proyecto en su propia rama.
 
+## Actualización del 14 de septiembre, en la tarde
+
+**Los nueve hallazgos están arreglados y comprobados** en la rama `josue/lectura-modelo`, que
+suma el arreglo de H-01/H-02, la puerta de trampas y dos commits nuevos. Cada decisión, con sus
+alternativas y la evidencia, está en **[decisiones.md](decisiones.md)**.
+
+| Hallazgo | Estado | Cómo se comprobó |
+|---|---|---|
+| H-01 y H-02 · valor sin respaldo de su cita, documentos sin cita | Arreglado | 8 pruebas; modelo simulado de 2/6 a 6/6 |
+| H-03 · el lector aprueba ante negaciones y rótulos distintos | Arreglado | Trampas en deuda de 11 a 0 |
+| H-04 · puertas que no ven reglas rotas; tope inalcanzable | Arreglado | Mutaciones del motor de 3/8 a 8/8 |
+| H-05 · afirmaciones sin respaldo en el README | Arreglado | README, ARQUITECTURA y PENDIENTES reescritos donde ya no eran ciertos |
+| H-06 · el informe viaja en la URL | Arreglado | Acción de servidor; probado en vivo |
+| H-07 · escritura en Notion sin control | Arreglado | 7 pruebas y curl desde otro sitio |
+| H-08 · frenos y negativas de más | Arreglado | 6 trampas nuevas, 0 en deuda |
+| H-09 · accesibilidad visual | Arreglado | 919 textos en dos temas, 0 fallos; ninguno bajo 13 px |
+| Nuevo · hospital leído de cualquier línea (negaba cirugías) | Arreglado | Trampa TR-28 |
+| Nuevo, del banco · balboas y campos en conflicto en el camino del modelo | Arreglado | 2 pruebas |
+
+**El banco:** 36 informes, cinco maneras de combinar lector y motor y cuatro modelos
+([banco/](banco/)). Con los arreglos, reglas + modelo da **36/36 y 0 aprobaciones indebidas** con
+Haiku 4.5, Sonnet 5 y Codex. Dejar que el modelo decida solo da entre 5 y 19 aprobaciones
+indebidas: la tesis del proyecto se sostiene con datos.
+
+Lo de abajo es la revisión original de la mañana, sin cambios.
+
 ## En 30 segundos
 
 La tesis está bien y el motor es sólido: rápido, determinista y con cada motivo citando su

@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "PR-2026-0518",
+  "ok": true,
+  "texto": "{\"estado\":\"CARENCIA_NO_CUMPLIDA\",\"clausula\":\"3.1\",\"motivo\":\"El paciente se afilió el 2026-06-20 y a la fecha de la solicitud (2026-09-11) no ha completado los 3 meses de carencia exigidos para cirugía electiva.\"}",
+  "ms": 2693,
+  "entrada": 2291,
+  "salida": 169,
+  "modelo": "claude-sonnet-5"
+}

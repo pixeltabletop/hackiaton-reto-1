@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "TR-05",
+  "ok": true,
+  "texto": "{\"estado\":\"NO_CUBIERTO\",\"clausula\":\"4.1\",\"motivo\":\"El Hospital Regional de Azuero no pertenece a la red de proveedores del plan y no consta autorización expresa para atención fuera de red.\"}",
+  "ms": 3439,
+  "entrada": 2316,
+  "salida": 207,
+  "modelo": "claude-sonnet-5"
+}

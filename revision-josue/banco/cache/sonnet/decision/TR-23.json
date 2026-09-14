@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "TR-23",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO\",\"clausula\":\"2.2\",\"motivo\":\"Es una urgencia con riesgo vital, sin carencia aplicable, fuera de red permitido, documentos completos y monto bajo umbral de auditoría.\"}",
+  "ms": 2879,
+  "entrada": 2286,
+  "salida": 87,
+  "modelo": "claude-sonnet-5"
+}

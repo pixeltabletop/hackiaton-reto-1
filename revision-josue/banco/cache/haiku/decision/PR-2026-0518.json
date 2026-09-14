@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "PR-2026-0518",
+  "ok": true,
+  "texto": "{\"estado\": \"CARENCIA_NO_CUMPLIDA\", \"clausula\": \"3.1\", \"motivo\": \"El paciente tiene solo 83 días de afiliación (desde 2026-06-20 hasta 2026-09-11) y la cirugía electiva requiere 3 meses de afiliación continua.\"}",
+  "ms": 3043,
+  "entrada": 1734,
+  "salida": 86,
+  "modelo": "claude-haiku-4-5-20251001"
+}

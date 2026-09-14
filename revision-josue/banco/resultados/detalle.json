@@ -1,0 +1,8402 @@
+[
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V0",
+    "proveedor": "reglas",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "niega de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "codex",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "codex",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "codex",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "codex",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "niega de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "haiku",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "haiku",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "haiku",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "haiku",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "qwen-sin-esquema",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0417",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0518",
+    "grupo": "corpus",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0633",
+    "grupo": "corpus",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0701",
+    "grupo": "corpus",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0744",
+    "grupo": "corpus",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-2026-0790",
+    "grupo": "corpus",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-01",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-02",
+    "grupo": "trampa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-03",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-04",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-05",
+    "grupo": "trampa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-06",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-15",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-16",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-17",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-28",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-26",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-27",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-10",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-11",
+    "grupo": "trampa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-12",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-13",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-14",
+    "grupo": "trampa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR",
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-20",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-21",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-22",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-23",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES",
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "niega de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-24",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "TR-25",
+    "grupo": "trampa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-01",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-02",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-03",
+    "grupo": "prosa",
+    "esperado": [
+      "DOCUMENTOS_FALTANTES"
+    ],
+    "obtenido": "DOCUMENTOS_FALTANTES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "DERIVAR_A_MEDICO_AUDITOR",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-04",
+    "grupo": "prosa",
+    "esperado": [
+      "DERIVAR_A_MEDICO_AUDITOR"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "aprueba de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO_CON_CONDICIONES",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-05",
+    "grupo": "prosa",
+    "esperado": [
+      "PRE_APROBADO_CON_CONDICIONES"
+    ],
+    "obtenido": "PRE_APROBADO",
+    "riesgo": "frena de más"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-06",
+    "grupo": "prosa",
+    "esperado": [
+      "NO_CUBIERTO"
+    ],
+    "obtenido": "NO_CUBIERTO",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V1",
+    "proveedor": "sonnet",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V2",
+    "proveedor": "sonnet",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V3",
+    "proveedor": "sonnet",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  },
+  {
+    "variante": "V4",
+    "proveedor": "sonnet",
+    "id": "PR-07",
+    "grupo": "prosa",
+    "esperado": [
+      "CARENCIA_NO_CUMPLIDA"
+    ],
+    "obtenido": "CARENCIA_NO_CUMPLIDA",
+    "riesgo": "ok"
+  }
+]

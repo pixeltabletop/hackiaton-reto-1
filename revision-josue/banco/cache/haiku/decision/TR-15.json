@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-15",
+  "ok": true,
+  "texto": "{\"estado\": \"DOCUMENTOS_FALTANTES\", \"clausula\": \"6.1\", \"motivo\": \"Falta la orden de anestesiología requerida para cirugía electiva.\"}",
+  "ms": 1662,
+  "entrada": 1765,
+  "salida": 51,
+  "modelo": "claude-haiku-4-5-20251001"
+}

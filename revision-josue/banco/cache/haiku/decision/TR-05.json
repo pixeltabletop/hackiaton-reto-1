@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-05",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1, 3.1, 6.1\", \"motivo\": \"Procedimiento CUPS 512301 cubierto, paciente con más de 3 meses de afiliación (desde 2022-03-15), documentación completa, monto bajo umbral de auditoría, y hospital fuera de red requiere autorización expresa que se otorga por cumplimiento de requisitos.\"}",
+  "ms": 2094,
+  "entrada": 1764,
+  "salida": 117,
+  "modelo": "claude-haiku-4-5-20251001"
+}

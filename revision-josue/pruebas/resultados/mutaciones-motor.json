@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "M1 quitar la vigencia",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "M2 quitar el umbral de auditoría",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "M3 quitar el tope anual",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "M4 quitar las exclusiones",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "M5 cubrir electivas fuera de red",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "M6 quitar la regla de evidencia",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "M7 no aplicar el deducible",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "M8 preexistencias a 12 meses en vez de 24",
+    "resultado": "detectada"
+  }
+]

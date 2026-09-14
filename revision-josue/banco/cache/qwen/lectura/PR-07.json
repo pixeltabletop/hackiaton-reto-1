@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "lectura",
+  "id": "PR-07",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    { \"campo\": \"procedimientoCups\", \"valor\": \"793501\", \"cita\": \"artroscopia de rodilla CUPS 793501\" },\n    { \"campo\": \"montoEstimado\", \"valor\": \"$ 3,100.00\", \"cita\": \"por $ 3,100.00\" }\n  ],\n  \"documentos\": [\n    { \"id\": \"R1\", \"cita\": \"informe del cirujano\" },\n    { \"id\": \"R2\", \"cita\": \"estudio de imagen\" },\n    { \"id\": \"R3\", \"cita\": \"orden de anestesiología\" },\n    { \"id\": \"R4\", \"cita\": \"consentimiento informado\" }\n  ],\n  \"preexistencias\": [\"Hipertensión arterial diagnosticada en 2024\"]\n}",
+  "ms": 19124,
+  "entrada": 703,
+  "salida": 214,
+  "modelo": "qwen3:1.7b"
+}

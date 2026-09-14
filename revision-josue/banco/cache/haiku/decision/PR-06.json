@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "PR-06",
+  "ok": true,
+  "texto": "{\"estado\": \"NO_CUBIERTO\", \"clausula\": \"5.1\", \"motivo\": \"La rinoplastia estética no está cubierta por ser procedimiento con fines de cambio de apariencia, conforme a la cláusula de exclusiones.\"}",
+  "ms": 1558,
+  "entrada": 1534,
+  "salida": 68,
+  "modelo": "claude-haiku-4-5-20251001"
+}

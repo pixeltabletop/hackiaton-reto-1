@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "lectura",
+  "id": "PR-2026-0633",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    { \"campo\": \"procedimientoCups\", \"valor\": \"158001\", \"cita\": \"CUPS 158001\" },\n    { \"campo\": \"montoEstimado\", \"valor\": \"$ 3,800.00\", \"cita\": \"Monto estimado del procedimiento: $ 3,800.00\" }\n  ],\n  \"documentos\": [\n    { \"id\": \"R1\", \"cita\": \"informe del cirujano\" },\n    { \"id\": \"R3\", \"cita\": \"orden de anestesiología\" },\n    { \"id\": \"R4\", \"cita\": \"consentimiento informado\" }\n  ],\n  \"preexistencias\": [\"Hipertensión arterial diagnosticada en 2024\"]\n}",
+  "ms": 34902,
+  "entrada": 807,
+  "salida": 194,
+  "modelo": "qwen3:1.7b"
+}

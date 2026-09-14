@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "TR-21",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"7.1\",\"motivo\":\"Procedimiento cubierto, en red, con carencia y documentos completos; aplica deducible anual de USD 1,200 y el coaseguro correspondiente.\"}",
+  "ms": 117619,
+  "entrada": 3746,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

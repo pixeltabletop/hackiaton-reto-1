@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "PR-04",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"7.1\",\"motivo\":\"Cirugía cubierta, en red y con documentos completos, pero el monto de $2,300 no supera el deducible anual de $2,500, por lo que el costo será asumido por el asegurado.\"}",
+  "ms": 4514,
+  "entrada": 2054,
+  "salida": 305,
+  "modelo": "claude-sonnet-5"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "TR-11",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"512301\",\n  \"motivo\": \"Los documentos son adecuados: se tiene el informe del cirujano, estudio de imagen, consentimiento informado. El procedimiento es electivo y se encuentra en la red de proveedores. No hay exclusiones aplicables.\"\n}",
+  "ms": 16372,
+  "entrada": 1399,
+  "salida": 83,
+  "modelo": "qwen3:1.7b"
+}

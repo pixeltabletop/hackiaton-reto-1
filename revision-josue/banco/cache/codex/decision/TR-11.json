@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "TR-11",
+  "ok": true,
+  "texto": "{\"estado\":\"DOCUMENTOS_FALTANTES\",\"clausula\":\"6.1\",\"motivo\":\"Falta la orden de anestesiología exigida para la cirugía electiva.\"}",
+  "ms": 104076,
+  "entrada": 3535,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

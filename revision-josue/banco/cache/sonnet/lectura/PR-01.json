@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "lectura",
+  "id": "PR-01",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-4410\",\"cita\":\"paciente AF-4410\"},{\"campo\":\"edad\",\"valor\":\"51\",\"cita\":\"de 51 años\"},{\"campo\":\"hospital\",\"valor\":\"Hospital Nacional de Panamá\",\"cita\":\"Hospital Nacional de Panamá\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-10\",\"cita\":\"fecha 2026-09-10\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2021-06-01\",\"cita\":\"afiliada al plan desde 2021-06-01\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K80.20\",\"cita\":\"CIE-10 K80.20\"},{\"campo\":\"procedimientoCups\",\"valor\":\"512301\",\"cita\":\"CUPS 512301\"},{\"campo\":\"cirujano\",\"valor\":\"Dra. Mariela Cárdenas\",\"cita\":\"a cargo de la Dra. Mariela Cárdenas\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"cirugía electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 4,200.00\",\"cita\":\"El costo estimado del procedimiento es de $ 4,200.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"el informe del cirujano\"},{\"id\":\"R2\",\"cita\":\"el estudio de imagen (ecografía del 2026-09-03)\"},{\"id\":\"R3\",\"cita\":\"la orden de anestesiología\"},{\"id\":\"R4\",\"cita\":\"el consentimiento informado firmado por la paciente\"}],\"preexistencias\":[\"La paciente niega enfermedades crónicas.\"]}",
+  "ms": 4775,
+  "entrada": 1612,
+  "salida": 565,
+  "modelo": "claude-sonnet-5"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "TR-02",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"8.1\",\n  \"motivo\": \"El procedimiento requiere preautorización y el médico auditor ha dado su aprobación, así como se cumplen los requisitos documentales (informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado). Además, la solicitud está dentro de la red de proveedores y el monto es inferior a USD 5,000.00, por lo que se aplica la preautorización.\"\n}",
+  "ms": 23809,
+  "entrada": 1391,
+  "salida": 125,
+  "modelo": "qwen3:1.7b"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "TR-04",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud de preautorización se encuentra en cumplimiento de los requisitos documentales (informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado), y el procedimiento es electivo con vigencia en la red del plan.\"\n}",
+  "ms": 17630,
+  "entrada": 1395,
+  "salida": 88,
+  "modelo": "qwen3:1.7b"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-06",
+  "ok": true,
+  "texto": "{\"estado\": \"DOCUMENTOS_FALTANTES\", \"clausula\": \"6.1\", \"motivo\": \"Falta el estudio de imagen que respalde la indicación quirúrgica según los requisitos documentales de cirugía electiva.\"}",
+  "ms": 2580,
+  "entrada": 1746,
+  "salida": 62,
+  "modelo": "claude-haiku-4-5-20251001"
+}

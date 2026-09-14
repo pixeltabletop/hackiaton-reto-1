@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-01",
+  "ok": true,
+  "texto": "{\"estado\":\"DERIVAR_A_MEDICO_AUDITOR\",\"clausula\":\"8.1\",\"motivo\":\"La cirugía electiva requiere preautorización y, por tanto, debe ser dictaminada por el médico auditor antes de responder al hospital.\"}",
+  "ms": 71107,
+  "entrada": 13716,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

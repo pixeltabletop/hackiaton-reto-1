@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "TR-02",
+  "ok": true,
+  "texto": "{\"estado\":\"CARENCIA_NO_CUMPLIDA\",\"clausula\":\"3.1\",\"motivo\":\"La afiliación del paciente (20-06-2026 a 11-09-2026) es de menos de 3 meses, incumpliendo el período de carencia para cirugía electiva.\"}",
+  "ms": 2861,
+  "entrada": 2330,
+  "salida": 167,
+  "modelo": "claude-sonnet-5"
+}

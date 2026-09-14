@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "TR-05",
+  "ok": true,
+  "texto": "{\"estado\":\"NO_CUBIERTO\",\"clausula\":\"4.1\",\"motivo\":\"La cirugía electiva se solicita en el Hospital Regional de Azuero, que está fuera de la red, y no consta autorización expresa de la aseguradora.\"}",
+  "ms": 106067,
+  "entrada": 3547,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

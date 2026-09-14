@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-25",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1\", \"motivo\": \"Procedimiento CUPS 512301 cubierto, paciente afiliado desde 2022 cumple carencia de 3 meses para electiva, en hospital de red, con documentación completa y monto bajo el umbral de auditoría.\"}",
+  "ms": 1811,
+  "entrada": 1767,
+  "salida": 89,
+  "modelo": "claude-haiku-4-5-20251001"
+}

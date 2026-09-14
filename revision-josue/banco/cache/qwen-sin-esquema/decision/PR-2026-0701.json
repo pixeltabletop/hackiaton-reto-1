@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "PR-2026-0701",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud de preautorización se encuentra en cumplimiento de los requisitos documentales (informe del cirujano, estudio de imagen y consentimiento informado) y del marco de cobertura quirúrgica electiva, así como de la red de proveedores.\"\n}",
+  "ms": 17963,
+  "entrada": 1348,
+  "salida": 88,
+  "modelo": "qwen3:1.7b"
+}

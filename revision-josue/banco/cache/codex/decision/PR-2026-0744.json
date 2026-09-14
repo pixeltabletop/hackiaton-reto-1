@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-2026-0744",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"7.1\",\"motivo\":\"Procedimiento cubierto, carencia cumplida, hospital en red y documentos completos; el costo estimado de USD 2,300 queda íntegramente sujeto al deducible anual de USD 2,500.\"}",
+  "ms": 95978,
+  "entrada": 3679,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

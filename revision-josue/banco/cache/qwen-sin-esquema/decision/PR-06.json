@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "PR-06",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"DOCUMENTOS_FALTANTES\",\n  \"clausula\": \"158001\",\n  \"motivo\": \"La solicitud contiene solo el informe del cirujano, el estudio de imagen y el consentimiento informado, pero falta la orden de anestesiología.\"\n}",
+  "ms": 12500,
+  "entrada": 1192,
+  "salida": 68,
+  "modelo": "qwen3:1.7b"
+}

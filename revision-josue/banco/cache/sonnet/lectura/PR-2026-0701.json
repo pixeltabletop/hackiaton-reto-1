@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "lectura",
+  "id": "PR-2026-0701",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-7788\",\"cita\":\"Paciente: AF-7788\"},{\"campo\":\"edad\",\"valor\":\"62\",\"cita\":\"62 años\"},{\"campo\":\"hospital\",\"valor\":\"HOSPITAL NACIONAL DE PANAMÁ\",\"cita\":\"HOSPITAL NACIONAL DE PANAMÁ — SERVICIO DE CIRUGÍA GENERAL\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-12\",\"cita\":\"Fecha: 2026-09-12\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2023-05-02\",\"cita\":\"Fecha de afiliación al plan: 2023-05-02\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K80.10\",\"cita\":\"Diagnóstico: K80.10 — colelitiasis con otra colecistitis\"},{\"campo\":\"procedimientoCups\",\"valor\":\"512301\",\"cita\":\"CUPS 512301 — colecistectomía laparoscópica\"},{\"campo\":\"cirujano\",\"valor\":\"Dra. Mariela Cárdenas\",\"cita\":\"Cirujano tratante: Dra. Mariela Cárdenas\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"Carácter: electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 4,200.00\",\"cita\":\"Monto estimado del procedimiento: $ 4,200.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"Documentos adjuntos: informe del cirujano y consentimiento informado\"},{\"id\":\"R4\",\"cita\":\"Documentos adjuntos: informe del cirujano y consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 6803,
+  "entrada": 1679,
+  "salida": 597,
+  "modelo": "claude-sonnet-5"
+}

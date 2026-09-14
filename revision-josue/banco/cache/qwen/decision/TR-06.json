@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "TR-06",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud de preautorización se encuentra completa con los documentos requeridos (informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado). El procedimiento es electivo y se encuentra dentro de la red de proveedores. El monto estimado es inferior a USD 5,000.00, por lo que se requiere dictaminación por el médico auditor de la aseguradora.\"\n}",
+  "ms": 25741,
+  "entrada": 1376,
+  "salida": 124,
+  "modelo": "qwen3:1.7b"
+}

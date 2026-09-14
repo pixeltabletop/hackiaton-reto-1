@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "lectura",
+  "id": "PR-03",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-7790\",\"cita\":\"Paciente AF-7790\"},{\"campo\":\"edad\",\"valor\":\"62\",\"cita\":\"62 años\"},{\"campo\":\"hospital\",\"valor\":\"Hospital Nacional de Panamá\",\"cita\":\"Hospital Nacional de Panamá\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-12\",\"cita\":\"Fecha 2026-09-12\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2023-05-02\",\"cita\":\"afiliado desde 2023-05-02\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K80.10\",\"cita\":\"colecistitis (K80.10)\"},{\"campo\":\"procedimientoCups\",\"valor\":\"512301\",\"cita\":\"CUPS 512301\"},{\"campo\":\"cirujano\",\"valor\":\"Dra. Mariela Cárdenas\",\"cita\":\"a cargo de la Dra. Mariela Cárdenas\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"USD 4,200.00\",\"cita\":\"por USD 4,200.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"se adjuntan el informe del cirujano\"},{\"id\":\"R4\",\"cita\":\"el consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 3986,
+  "entrada": 1543,
+  "salida": 469,
+  "modelo": "claude-sonnet-5"
+}

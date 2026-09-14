@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "PR-2026-0790",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO\",\"clausula\":\"2.2 y 6.2\",\"motivo\":\"Emergencia con riesgo vital, sin carencia aplicable, hospital fuera de red permitido por urgencia y documentación completa según cláusula 6.2\"}",
+  "ms": 2389,
+  "entrada": 2295,
+  "salida": 94,
+  "modelo": "claude-sonnet-5"
+}

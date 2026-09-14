@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-02",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    {\n      \"campo\": \"pacienteRef\",\n      \"valor\": \"AF-3350\",\n      \"cita\": \"referencia AF-3350\"\n    },\n    {\n      \"campo\": \"edad\",\n      \"valor\": 41,\n      \"cita\": \"de 41 años\"\n    },\n    {\n      \"campo\": \"hospital\",\n      \"valor\": \"CLÍNICA COSTA DEL ESTE\",\n      \"cita\": \"CLÍNICA COSTA DEL ESTE\"\n    },\n    {\n      \"campo\": \"fecha\",\n      \"valor\": \"2026-09-11\",\n      \"cita\": \"11 de septiembre de 2026 (2026-09-11)\"\n    },\n    {\n      \"campo\": \"fechaAfiliacion\",\n      \"valor\": \"2026-06-20\",\n      \"cita\": \"20 de junio de 2026 (2026-06-20)\"\n    },\n    {\n      \"campo\": \"diagnosticoCie10\",\n      \"valor\": \"M23.20\",\n      \"cita\": \"lesión de menisco (M23.20)\"\n    },\n    {\n      \"campo\": \"procedimientoCups\",\n      \"valor\": \"793501\",\n      \"cita\": \"CUPS 793501\"\n    },\n    {\n      \"campo\": \"cirujano\",\n      \"valor\": \"Dr. Ignacio Sáez\",\n      \"cita\": \"Dr. Ignacio Sáez\"\n    },\n    {\n      \"campo\": \"caracter\",\n      \"valor\": \"electiva\",\n      \"cita\": \"cirugía electiva\"\n    },\n    {\n      \"campo\": \"montoEstimado\",\n      \"valor\": \"B/. 3,100.00\",\n      \"cita\": \"Valor estimado: B/. 3,100.00\"\n    }\n  ],\n  \"documentos\": [\n    {\n      \"id\": \"R1\",\n      \"cita\": \"informe del cirujano\"\n    },\n    {\n      \"id\": \"R2\",\n      \"cita\": \"estudio de imagen\"\n    },\n    {\n      \"id\": \"R3\",\n      \"cita\": \"orden de anestesiología\"\n    },\n    {\n      \"id\": \"R4\",\n      \"cita\": \"consentimiento informado\"\n    }\n  ],\n  \"preexistencias\": []\n}",
+  "ms": 55598,
+  "entrada": 13793,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

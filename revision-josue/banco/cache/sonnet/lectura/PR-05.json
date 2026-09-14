@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "lectura",
+  "id": "PR-05",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-9043\",\"cita\":\"AF-9043\"},{\"campo\":\"edad\",\"valor\":\"27\",\"cita\":\"de 27 años\"},{\"campo\":\"hospital\",\"valor\":\"HOSPITAL REGIONAL DE AZUERO\",\"cita\":\"HOSPITAL REGIONAL DE AZUERO\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-13\",\"cita\":\"2026-09-13\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2021-11-05\",\"cita\":\"afiliada desde 2021-11-05\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K35.80\",\"cita\":\"apendicitis aguda (K35.80)\"},{\"campo\":\"procedimientoCups\",\"valor\":\"471201\",\"cita\":\"CUPS 471201\"},{\"campo\":\"cirujano\",\"valor\":\"Dr. Alberto Quintero\",\"cita\":\"El Dr. Alberto Quintero indica apendicectomía\"},{\"campo\":\"caracter\",\"valor\":\"urgente\",\"cita\":\"de carácter urgente\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 2,600.00\",\"cita\":\"Costo estimado: $ 2,600.00\"}],\"documentos\":[{\"id\":\"R5\",\"cita\":\"el informe de urgencias\"},{\"id\":\"R4\",\"cita\":\"el consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 4037,
+  "entrada": 1545,
+  "salida": 482,
+  "modelo": "claude-sonnet-5"
+}

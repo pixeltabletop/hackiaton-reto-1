@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-05",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO\",\"clausula\":\"2.2\",\"motivo\":\"Urgencia vital cubierta en cualquier hospital, con procedimiento incluido y documentación completa.\"}",
+  "ms": 68278,
+  "entrada": 13602,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

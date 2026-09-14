@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-13",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1, 3.1, 4.1, 6.1\", \"motivo\": \"Procedimiento CUPS 452101 cubierto, afiliación vigente desde julio 2025 (14 meses, supera carencia de 3 meses), en red autorizada, documentación completa, monto bajo deducible, sin preexistencia relevante.\"}",
+  "ms": 3376,
+  "entrada": 1698,
+  "salida": 111,
+  "modelo": "claude-haiku-4-5-20251001"
+}

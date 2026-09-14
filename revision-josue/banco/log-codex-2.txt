@@ -1,0 +1,4 @@
+
+
+codex: 0 llamadas pendientes (paralelo 4)
+

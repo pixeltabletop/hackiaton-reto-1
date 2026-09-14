@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-2026-0518",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    {\n      \"campo\": \"pacienteRef\",\n      \"valor\": \"AF-3310\",\n      \"cita\": \"Paciente: AF-3310\"\n    },\n    {\n      \"campo\": \"edad\",\n      \"valor\": 41,\n      \"cita\": \"41 años\"\n    },\n    {\n      \"campo\": \"hospital\",\n      \"valor\": \"CLÍNICA COSTA DEL ESTE\",\n      \"cita\": \"CLÍNICA COSTA DEL ESTE\"\n    },\n    {\n      \"campo\": \"fecha\",\n      \"valor\": \"2026-09-11\",\n      \"cita\": \"Fecha: 2026-09-11\"\n    },\n    {\n      \"campo\": \"fechaAfiliacion\",\n      \"valor\": \"2026-06-20\",\n      \"cita\": \"Fecha de afiliación al plan: 2026-06-20\"\n    },\n    {\n      \"campo\": \"diagnosticoCie10\",\n      \"valor\": \"M17.11\",\n      \"cita\": \"Diagnóstico: M17.11\"\n    },\n    {\n      \"campo\": \"procedimientoCups\",\n      \"valor\": \"793501\",\n      \"cita\": \"CUPS 793501\"\n    },\n    {\n      \"campo\": \"cirujano\",\n      \"valor\": \"Dr. Ignacio Sáez\",\n      \"cita\": \"Cirujano tratante: Dr. Ignacio Sáez\"\n    },\n    {\n      \"campo\": \"caracter\",\n      \"valor\": \"electiva\",\n      \"cita\": \"Carácter: electiva\"\n    },\n    {\n      \"campo\": \"montoEstimado\",\n      \"valor\": \"$ 3,100.00\",\n      \"cita\": \"Monto estimado del procedimiento: $ 3,100.00\"\n    }\n  ],\n  \"documentos\": [\n    {\n      \"id\": \"R1\",\n      \"cita\": \"informe del cirujano\"\n    },\n    {\n      \"id\": \"R2\",\n      \"cita\": \"estudio de imagen\"\n    },\n    {\n      \"id\": \"R3\",\n      \"cita\": \"orden de anestesiología\"\n    },\n    {\n      \"id\": \"R4\",\n      \"cita\": \"consentimiento informado\"\n    }\n  ],\n  \"preexistencias\": []\n}",
+  "ms": 147690,
+  "entrada": 13865,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

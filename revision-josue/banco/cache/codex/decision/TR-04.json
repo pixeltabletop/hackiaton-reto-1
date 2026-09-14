@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "TR-04",
+  "ok": true,
+  "texto": "{\"estado\":\"NO_CUBIERTO\",\"clausula\":\"1.1\",\"motivo\":\"La cirugía está programada para el 1 de febrero de 2027, después del vencimiento de la póliza el 31 de diciembre de 2026.\"}",
+  "ms": 168525,
+  "entrada": 3580,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

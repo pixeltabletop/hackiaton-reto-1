@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "PR-02",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"7.1\",\n  \"motivo\": \"La cirugía corresponde a un procedimiento quirúrgico electivo que requiere preautorización y el informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado están presentes y cumplen con los requisitos establecidos en el artículo 6.1 del texto legal.\"\n}",
+  "ms": 18976,
+  "entrada": 1297,
+  "salida": 101,
+  "modelo": "qwen3:1.7b"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "TR-13",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO\",\"clausula\":\"2.1\",\"motivo\":\"Procedimiento cubierto, en red, con carencia electiva cumplida, documentación completa y monto por debajo del umbral de auditoría.\"}",
+  "ms": 2509,
+  "entrada": 2232,
+  "salida": 193,
+  "modelo": "claude-sonnet-5"
+}

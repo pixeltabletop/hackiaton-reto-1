@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "TR-15",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud de preautorización se encuentra completa con los documentos requeridos (informe del cirujano, estudio de imagen, consentimiento informado) y el procedimiento corresponde a la red de proveedores del plan.\"\n}",
+  "ms": 28202,
+  "entrada": 1396,
+  "salida": 77,
+  "modelo": "qwen3:1.7b"
+}

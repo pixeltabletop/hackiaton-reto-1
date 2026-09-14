@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-23",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.2\", \"motivo\": \"Apendicitis aguda es urgencia con riesgo vital, cubierta en cualquier hospital sin requisito de red, con afiliación vigente desde 2021 y documentos completos.\"}",
+  "ms": 2683,
+  "entrada": 1739,
+  "salida": 76,
+  "modelo": "claude-haiku-4-5-20251001"
+}

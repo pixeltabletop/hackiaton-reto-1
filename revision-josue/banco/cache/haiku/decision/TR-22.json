@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-22",
+  "ok": true,
+  "texto": "{\"estado\": \"DERIVAR_A_MEDICO_AUDITOR\", \"clausula\": \"4.1\", \"motivo\": \"El procedimiento de urgencia se solicita fuera de la red contractual (Hospital Regional de Azuero), requiriendo autorización expresa de la aseguradora según cláusula 4.1.\"}",
+  "ms": 3073,
+  "entrada": 1748,
+  "salida": 84,
+  "modelo": "claude-haiku-4-5-20251001"
+}

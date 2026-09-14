@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-2026-0744",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-5510\",\"cita\":\"Paciente: AF-5510\"},{\"campo\":\"edad\",\"valor\":48,\"cita\":\"48 años\"},{\"campo\":\"hospital\",\"valor\":\"HOSPITAL NACIONAL DE PANAMÁ\",\"cita\":\"HOSPITAL NACIONAL DE PANAMÁ\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-12\",\"cita\":\"Fecha: 2026-09-12\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2025-07-01\",\"cita\":\"Fecha de afiliación al plan: 2025-07-01\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K40.90\",\"cita\":\"Diagnóstico: K40.90\"},{\"campo\":\"procedimientoCups\",\"valor\":\"452101\",\"cita\":\"CUPS 452101\"},{\"campo\":\"cirujano\",\"valor\":\"Dr. Ignacio Sáez\",\"cita\":\"Cirujano tratante: Dr. Ignacio Sáez\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"Carácter: electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 2,300.00\",\"cita\":\"Monto estimado del procedimiento: $ 2,300.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"informe del cirujano\"},{\"id\":\"R2\",\"cita\":\"estudio de imagen\"},{\"id\":\"R3\",\"cita\":\"orden de anestesiología\"},{\"id\":\"R4\",\"cita\":\"consentimiento informado\"}],\"preexistencias\":[\"Hipertensión arterial diagnosticada en 2024\"]}",
+  "ms": 151214,
+  "entrada": 13679,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

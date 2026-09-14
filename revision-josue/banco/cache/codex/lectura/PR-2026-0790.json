@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-2026-0790",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    {\n      \"campo\": \"pacienteRef\",\n      \"valor\": \"AF-9042\",\n      \"cita\": \"Paciente: AF-9042\"\n    },\n    {\n      \"campo\": \"edad\",\n      \"valor\": 27,\n      \"cita\": \"27 años\"\n    },\n    {\n      \"campo\": \"hospital\",\n      \"valor\": \"HOSPITAL REGIONAL DE AZUERO\",\n      \"cita\": \"HOSPITAL REGIONAL DE AZUERO\"\n    },\n    {\n      \"campo\": \"fecha\",\n      \"valor\": \"2026-09-13\",\n      \"cita\": \"Fecha: 2026-09-13\"\n    },\n    {\n      \"campo\": \"fechaAfiliacion\",\n      \"valor\": \"2021-11-05\",\n      \"cita\": \"Fecha de afiliación al plan: 2021-11-05\"\n    },\n    {\n      \"campo\": \"diagnosticoCie10\",\n      \"valor\": \"K35.80\",\n      \"cita\": \"Diagnóstico: K35.80\"\n    },\n    {\n      \"campo\": \"procedimientoCups\",\n      \"valor\": \"471201\",\n      \"cita\": \"CUPS 471201\"\n    },\n    {\n      \"campo\": \"cirujano\",\n      \"valor\": \"Dr. Alberto Quintero\",\n      \"cita\": \"Cirujano tratante: Dr. Alberto Quintero\"\n    },\n    {\n      \"campo\": \"caracter\",\n      \"valor\": \"urgente\",\n      \"cita\": \"Carácter: urgente\"\n    },\n    {\n      \"campo\": \"montoEstimado\",\n      \"valor\": \"$ 2,600.00\",\n      \"cita\": \"Monto estimado del procedimiento: $ 2,600.00\"\n    }\n  ],\n  \"documentos\": [\n    {\n      \"id\": \"R2\",\n      \"cita\": \"Estudios adjuntos: tomografía de abdomen del 2026-09-13\"\n    },\n    {\n      \"id\": \"R4\",\n      \"cita\": \"Documentos adjuntos: informe de urgencias y consentimiento informado\"\n    },\n    {\n      \"id\": \"R5\",\n      \"cita\": \"Documentos adjuntos: informe de urgencias y consentimiento informado\"\n    }\n  ],\n  \"preexistencias\": []\n}",
+  "ms": 151803,
+  "entrada": 13909,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

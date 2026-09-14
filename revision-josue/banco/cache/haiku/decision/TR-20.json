@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-20",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1, 3.1, 4.1, 6.1\", \"motivo\": \"Procedimiento cubierto (CUPS 512301), paciente con 3+ años de afiliación continua cumpliendo carencia de cirugía electiva, procedimiento en hospital de la red, documentación completa, monto bajo el umbral de auditoría y sin preexistencia.\"}",
+  "ms": 3528,
+  "entrada": 1766,
+  "salida": 113,
+  "modelo": "claude-haiku-4-5-20251001"
+}

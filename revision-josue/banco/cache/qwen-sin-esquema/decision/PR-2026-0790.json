@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "PR-2026-0790",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud cumple con los requisitos documentales de urgencia, incluyendo el informe de urgencias y el consentimiento informado, y el procedimiento es urgente y está dentro de la red de proveedores.\"\n}",
+  "ms": 18203,
+  "entrada": 1385,
+  "salida": 78,
+  "modelo": "qwen3:1.7b"
+}

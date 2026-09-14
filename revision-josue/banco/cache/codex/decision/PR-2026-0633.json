@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-2026-0633",
+  "ok": true,
+  "texto": "{\"estado\":\"NO_CUBIERTO\",\"clausula\":\"5.1\",\"motivo\":\"La rinoplastia solicitada está excluida por tener fines exclusivamente estéticos y de cambio de apariencia.\"}",
+  "ms": 177126,
+  "entrada": 3474,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

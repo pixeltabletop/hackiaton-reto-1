@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "lectura",
+  "id": "TR-22",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    { \"campo\": \"procedimientoCups\", \"valor\": \"471201\", \"cita\": \"CUPS 471201 — apendicectomía por laparotomía\" },\n    { \"campo\": \"montoEstimado\", \"valor\": \"$ 2,600.00\", \"cita\": \"Monto estimado del procedimiento: $ 2,600.00\" }\n  ],\n  \"documentos\": [\n    { \"id\": \"R5\", \"cita\": \"informe de urgencias\" },\n    { \"id\": \"R4\", \"cita\": \"consentimiento informado\" }\n  ],\n  \"preexistencias\": [\"Hipertensión arterial diagnosticada en 2024\"]\n}",
+  "ms": 30283,
+  "entrada": 818,
+  "salida": 184,
+  "modelo": "qwen3:1.7b"
+}

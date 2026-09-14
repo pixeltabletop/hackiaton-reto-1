@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "PR-03",
+  "ok": true,
+  "texto": "{\"estado\":\"DOCUMENTOS_FALTANTES\",\"clausula\":\"6.1\",\"motivo\":\"Falta el estudio de imagen y la orden de anestesiología requeridos para cirugía electiva, aunque el resto de condiciones (red, carencia) se cumplen.\"}",
+  "ms": 2101,
+  "entrada": 2125,
+  "salida": 98,
+  "modelo": "claude-sonnet-5"
+}

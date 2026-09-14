@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "lectura",
+  "id": "PR-04",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-5520\",\"cita\":\"La paciente AF-5520, de 48 años\"},{\"campo\":\"edad\",\"valor\":\"48\",\"cita\":\"de 48 años\"},{\"campo\":\"hospital\",\"valor\":\"Hospital Nacional de Panamá\",\"cita\":\"Hospital Nacional de Panamá, 2026-09-12.\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-12\",\"cita\":\"Hospital Nacional de Panamá, 2026-09-12.\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2025-07-01\",\"cita\":\"afiliada desde 2025-07-01\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K40.90\",\"cita\":\"hernia inguinal derecha (K40.90)\"},{\"campo\":\"procedimientoCups\",\"valor\":\"452101\",\"cita\":\"CUPS 452101\"},{\"campo\":\"cirujano\",\"valor\":\"Dr. Ignacio Sáez\",\"cita\":\"El Dr. Ignacio Sáez indica hernioplastia inguinal CUPS 452101\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"programada (electiva)\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 2,300.00\",\"cita\":\"por $ 2,300.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"informe del cirujano\"},{\"id\":\"R2\",\"cita\":\"estudio de imagen\"},{\"id\":\"R3\",\"cita\":\"orden de anestesiología\"},{\"id\":\"R4\",\"cita\":\"consentimiento informado\"}],\"preexistencias\":[\"es hipertensa desde 2024 y toma losartán desde entonces\"]}",
+  "ms": 4127,
+  "entrada": 1544,
+  "salida": 575,
+  "modelo": "claude-sonnet-5"
+}

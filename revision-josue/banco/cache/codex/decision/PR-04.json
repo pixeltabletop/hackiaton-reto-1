@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-04",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"7.1\",\"motivo\":\"Procedimiento cubierto, electivo, en red, con carencia y documentos completos, sujeto al deducible anual de USD 2,500.\"}",
+  "ms": 89595,
+  "entrada": 3658,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-2026-0790",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"2.2\",\"motivo\":\"Urgencia cubierta fuera de la red por riesgo vital, sujeta al deducible anual y al coaseguro del 40% aplicable.\"}",
+  "ms": 94010,
+  "entrada": 23870,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

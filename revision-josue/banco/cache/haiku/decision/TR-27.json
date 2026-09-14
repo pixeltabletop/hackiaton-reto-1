@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-27",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1\", \"motivo\": \"Procedimiento CUPS 512301 cubierto, paciente con 3+ años de afiliación (carencia cumplida), en hospital de red, documentación completa y monto bajo el umbral de auditoría.\"}",
+  "ms": 2964,
+  "entrada": 1766,
+  "salida": 82,
+  "modelo": "claude-haiku-4-5-20251001"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "PR-2026-0633",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"DOCUMENTOS_FALTANTES\",\n  \"clausula\": \"158001\",\n  \"motivo\": \"El procedimiento soliculado es de carácter estético, lo cual no está permitido según el artículo 5.1 del texto legal.\"\n}",
+  "ms": 23910,
+  "entrada": 1311,
+  "salida": 63,
+  "modelo": "qwen3:1.7b"
+}

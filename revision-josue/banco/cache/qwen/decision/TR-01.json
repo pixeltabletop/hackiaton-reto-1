@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "TR-01",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud cumple con los requisitos documentales (informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado) y se encuentra dentro de la red de proveedores. El procedimiento es electivo y el monto es inferior a USD 5,000.00, por lo que se requiere preautorización.\"\n}",
+  "ms": 24326,
+  "entrada": 1394,
+  "salida": 110,
+  "modelo": "qwen3:1.7b"
+}

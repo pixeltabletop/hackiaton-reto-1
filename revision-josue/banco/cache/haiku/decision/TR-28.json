@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-28",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1, 3.1, 6.1\", \"motivo\": \"Procedimiento cubierto (CUPS 512301), afiliación vigente desde 2022 (supera 3 meses de carencia), en hospital de red, documentación completa, monto bajo deducible y umbral de auditoría.\"}",
+  "ms": 2006,
+  "entrada": 1761,
+  "salida": 99,
+  "modelo": "claude-haiku-4-5-20251001"
+}

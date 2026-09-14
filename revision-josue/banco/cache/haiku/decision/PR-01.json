@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "PR-01",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1\", \"motivo\": \"Procedimiento CUPS 512301 cubierto, afiliada desde 2026-06-01 cumple carencia de 3 meses para cirugía electiva, en red autorizada, documentación completa y costo bajo el umbral de auditoría.\"}",
+  "ms": 3066,
+  "entrada": 1675,
+  "salida": 93,
+  "modelo": "claude-haiku-4-5-20251001"
+}

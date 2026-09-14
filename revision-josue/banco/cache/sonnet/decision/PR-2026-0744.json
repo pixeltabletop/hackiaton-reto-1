@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "PR-2026-0744",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"7.1\",\"motivo\":\"Cirugía electiva cubierta, en red, con carencia y documentos cumplidos, pero el monto de $2,300 queda por debajo del deducible anual de $2,500, por lo que el asegurado asumirá el costo total hasta cubrir el deducible.\"}",
+  "ms": 2344,
+  "entrada": 2232,
+  "salida": 132,
+  "modelo": "claude-sonnet-5"
+}

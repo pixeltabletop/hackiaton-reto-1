@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-2026-0417",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-2291\",\"cita\":\"Paciente: AF-2291\"},{\"campo\":\"edad\",\"valor\":54,\"cita\":\"54 años\"},{\"campo\":\"hospital\",\"valor\":\"HOSPITAL NACIONAL DE PANAMÁ\",\"cita\":\"HOSPITAL NACIONAL DE PANAMÁ\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-10\",\"cita\":\"Fecha: 2026-09-10\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2022-03-15\",\"cita\":\"Fecha de afiliación al plan: 2022-03-15\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K80.20\",\"cita\":\"Diagnóstico: K80.20\"},{\"campo\":\"procedimientoCups\",\"valor\":\"512301\",\"cita\":\"CUPS 512301\"},{\"campo\":\"cirujano\",\"valor\":\"Dra. Mariela Cárdenas\",\"cita\":\"Cirujano tratante: Dra. Mariela Cárdenas\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"Carácter: electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 4,200.00\",\"cita\":\"Monto estimado del procedimiento: $ 4,200.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"informe del cirujano\"},{\"id\":\"R2\",\"cita\":\"estudio de imagen\"},{\"id\":\"R3\",\"cita\":\"orden de anestesiología\"},{\"id\":\"R4\",\"cita\":\"consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 147563,
+  "entrada": 3383,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

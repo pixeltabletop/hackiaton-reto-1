@@ -1,0 +1,30 @@
+
+
+qwen: 12 llamadas pendientes (paralelo 1)
+qwen lectura TR-15 32100 ms
+qwen lectura TR-16 22550 ms
+qwen lectura TR-17 23489 ms
+qwen lectura TR-28 30965 ms
+qwen lectura TR-26 27241 ms
+qwen lectura TR-27 22517 ms
+qwen decision TR-15 28202 ms
+qwen decision TR-16 22840 ms
+qwen decision TR-17 8006 ms
+qwen decision TR-28 12518 ms
+qwen decision TR-26 15209 ms
+qwen decision TR-27 9739 ms
+
+qwen-sin-esquema: 12 llamadas pendientes (paralelo 1)
+qwen-sin-esquema lectura TR-15 17152 ms
+qwen-sin-esquema lectura TR-16 24459 ms
+qwen-sin-esquema lectura TR-17 18774 ms
+qwen-sin-esquema lectura TR-28 19746 ms
+qwen-sin-esquema lectura TR-26 19817 ms
+qwen-sin-esquema lectura TR-27 18313 ms
+qwen-sin-esquema decision TR-15 8723 ms
+qwen-sin-esquema decision TR-16 7409 ms
+qwen-sin-esquema decision TR-17 7710 ms
+qwen-sin-esquema decision TR-28 11125 ms
+qwen-sin-esquema decision TR-26 13351 ms
+qwen-sin-esquema decision TR-27 8776 ms
+

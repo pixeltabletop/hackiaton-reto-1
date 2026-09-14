@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b",
+  "tarea": "decision",
+  "id": "PR-2026-0744",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"452101\",\n  \"motivo\": \"Los documentos son completos y cumplen con los requisitos de preautorización, incluyendo el informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado. El procedimiento es electivo y se encuentra dentro de la red de proveedores. El monto estimado es inferior a USD 3,000.00, por lo que no requiere auditoría previa.\"\n}",
+  "ms": 41508,
+  "entrada": 1320,
+  "salida": 125,
+  "modelo": "qwen3:1.7b"
+}

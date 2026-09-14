@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "TR-11",
+  "ok": true,
+  "texto": "{\"estado\":\"DOCUMENTOS_FALTANTES\",\"clausula\":\"6.1\",\"motivo\":\"Falta la orden de anestesiología requerida para la solicitud de cirugía electiva\"}",
+  "ms": 2050,
+  "entrada": 2325,
+  "salida": 70,
+  "modelo": "claude-sonnet-5"
+}

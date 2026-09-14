@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "TR-24",
+  "ok": true,
+  "texto": "{\"estado\": \"PRE_APROBADO\", \"clausula\": \"2.1\", \"motivo\": \"Procedimiento CUPS 512301 cubierto, afiliación vigente desde 2022 cumple carencia de 3 meses, ubicado en red, documentación completa, monto bajo umbral de auditoría.\"}",
+  "ms": 2137,
+  "entrada": 1764,
+  "salida": 84,
+  "modelo": "claude-haiku-4-5-20251001"
+}

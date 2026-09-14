@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "PR-2026-0701",
+  "ok": true,
+  "texto": "{\"estado\": \"DOCUMENTOS_FALTANTES\", \"clausula\": \"6.1\", \"motivo\": \"Falta adjuntar el estudio de imagen que respalde la indicación quirúrgica y la orden de anestesiología requeridos para cirugía electiva.\"}",
+  "ms": 1387,
+  "entrada": 1714,
+  "salida": 70,
+  "modelo": "claude-haiku-4-5-20251001"
+}

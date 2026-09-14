@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "TR-01",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO\",\"clausula\":\"2.1\",\"motivo\":\"Procedimiento electivo cubierto, en hospital de la red, con carencia cumplida, documentación completa y monto inferior al umbral de auditoría.\"}",
+  "ms": 110185,
+  "entrada": 3709,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

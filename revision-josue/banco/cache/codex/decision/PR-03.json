@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "PR-03",
+  "ok": true,
+  "texto": "{\"estado\":\"DOCUMENTOS_FALTANTES\",\"clausula\":\"6.1\",\"motivo\":\"Faltan el estudio de imagen que respalde la indicación y la orden de anestesiología exigidos para la cirugía electiva.\"}",
+  "ms": 68493,
+  "entrada": 13684,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

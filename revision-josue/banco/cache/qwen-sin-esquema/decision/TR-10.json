@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "TR-10",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"512301\",\n  \"motivo\": \"Los documentos pendientes (estudio de imagen y orden de anestesiología) se encuentran en proceso de cumplimiento, pero el procedimiento se encuentra en fase de preautorización y se considera válido para la emisión de la preautorización.\"\n}",
+  "ms": 17285,
+  "entrada": 1397,
+  "salida": 87,
+  "modelo": "qwen3:1.7b"
+}

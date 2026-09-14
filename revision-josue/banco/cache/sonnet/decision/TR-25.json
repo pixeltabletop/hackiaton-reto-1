@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "TR-25",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"2.1, 7.1\",\"motivo\":\"Procedimiento cubierto, en red, con documentación completa y carencia cumplida, pero sujeto al deducible anual de USD 1,200 y coaseguro correspondiente.\"}",
+  "ms": 2208,
+  "entrada": 2321,
+  "salida": 110,
+  "modelo": "claude-sonnet-5"
+}

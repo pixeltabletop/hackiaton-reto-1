@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "PR-2026-0633",
+  "ok": true,
+  "texto": "{\"estado\":\"NO_CUBIERTO\",\"clausula\":\"5.1\",\"motivo\":\"El CUPS 158001 corresponde a rinoplastia estética, explícitamente excluida por fines de embellecimiento.\"}",
+  "ms": 1933,
+  "entrada": 2197,
+  "salida": 76,
+  "modelo": "claude-sonnet-5"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-sonnet-5@low",
+  "tarea": "decision",
+  "id": "TR-15",
+  "ok": true,
+  "texto": "{\"estado\":\"DOCUMENTOS_FALTANTES\",\"clausula\":\"6.1\",\"motivo\":\"Falta la orden de anestesiología requerida para procedimientos quirúrgicos electivos, aunque el resto de requisitos (afiliación, red y monto) se cumplen.\"}",
+  "ms": 2490,
+  "entrada": 2320,
+  "salida": 100,
+  "modelo": "claude-sonnet-5"
+}

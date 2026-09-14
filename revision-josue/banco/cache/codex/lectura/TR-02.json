@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "TR-02",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-3310\",\"cita\":\"Paciente: AF-3310\"},{\"campo\":\"edad\",\"valor\":41,\"cita\":\"41 años\"},{\"campo\":\"hospital\",\"valor\":\"CLÍNICA COSTA DEL ESTE\",\"cita\":\"CLÍNICA COSTA DEL ESTE\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-11\",\"cita\":\"Fecha: 2026-09-11\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2026-06-20\",\"cita\":\"Fecha de afiliación al plan: 2026-06-20\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"M17.11\",\"cita\":\"Diagnóstico: M17.11\"},{\"campo\":\"procedimientoCups\",\"valor\":\"793501\",\"cita\":\"CUPS 793501\"},{\"campo\":\"cirujano\",\"valor\":\"Dr. Ignacio Sáez\",\"cita\":\"Cirujano tratante: Dr. Ignacio Sáez\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"Carácter: electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 3,100.00\",\"cita\":\"Monto estimado del procedimiento: $ 3,100.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"informe del cirujano\"},{\"id\":\"R2\",\"cita\":\"estudio de imagen\"},{\"id\":\"R3\",\"cita\":\"orden de anestesiología\"},{\"id\":\"R4\",\"cita\":\"consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 140003,
+  "entrada": 13703,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-05",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    {\n      \"campo\": \"pacienteRef\",\n      \"valor\": \"AF-9043\",\n      \"cita\": \"paciente AF-9043\"\n    },\n    {\n      \"campo\": \"edad\",\n      \"valor\": 27,\n      \"cita\": \"de 27 años\"\n    },\n    {\n      \"campo\": \"hospital\",\n      \"valor\": \"HOSPITAL REGIONAL DE AZUERO\",\n      \"cita\": \"HOSPITAL REGIONAL DE AZUERO\"\n    },\n    {\n      \"campo\": \"fecha\",\n      \"valor\": \"2026-09-13\",\n      \"cita\": \"2026-09-13\"\n    },\n    {\n      \"campo\": \"fechaAfiliacion\",\n      \"valor\": \"2021-11-05\",\n      \"cita\": \"afiliada desde 2021-11-05\"\n    },\n    {\n      \"campo\": \"diagnosticoCie10\",\n      \"valor\": \"K35.80\",\n      \"cita\": \"apendicitis aguda (K35.80)\"\n    },\n    {\n      \"campo\": \"procedimientoCups\",\n      \"valor\": \"471201\",\n      \"cita\": \"CUPS 471201\"\n    },\n    {\n      \"campo\": \"cirujano\",\n      \"valor\": \"Dr. Alberto Quintero\",\n      \"cita\": \"El Dr. Alberto Quintero\"\n    },\n    {\n      \"campo\": \"caracter\",\n      \"valor\": \"urgente\",\n      \"cita\": \"carácter urgente\"\n    },\n    {\n      \"campo\": \"montoEstimado\",\n      \"valor\": \"$ 2,600.00\",\n      \"cita\": \"Costo estimado: $ 2,600.00\"\n    }\n  ],\n  \"documentos\": [\n    {\n      \"id\": \"R5\",\n      \"cita\": \"Se adjuntan el informe de urgencias\"\n    },\n    {\n      \"id\": \"R4\",\n      \"cita\": \"el consentimiento informado\"\n    }\n  ],\n  \"preexistencias\": []\n}",
+  "ms": 121783,
+  "entrada": 3461,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

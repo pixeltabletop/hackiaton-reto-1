@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "TR-27",
+  "ok": true,
+  "texto": "{\n  \"campos\": [\n    {\n      \"campo\": \"pacienteRef\",\n      \"valor\": \"AF-2291\",\n      \"cita\": \"Paciente: AF-2291\"\n    },\n    {\n      \"campo\": \"edad\",\n      \"valor\": 54,\n      \"cita\": \"54 años\"\n    },\n    {\n      \"campo\": \"hospital\",\n      \"valor\": \"HOSPITAL NACIONAL DE PANAMÁ\",\n      \"cita\": \"HOSPITAL NACIONAL DE PANAMÁ\"\n    },\n    {\n      \"campo\": \"fecha\",\n      \"valor\": \"2026-09-10\",\n      \"cita\": \"Fecha: 2026-09-10\"\n    },\n    {\n      \"campo\": \"fechaAfiliacion\",\n      \"valor\": \"2022-03-15\",\n      \"cita\": \"Fecha de afiliación al plan: 2022-03-15\"\n    },\n    {\n      \"campo\": \"diagnosticoCie10\",\n      \"valor\": \"K80.20\",\n      \"cita\": \"Diagnóstico: K80.20\"\n    },\n    {\n      \"campo\": \"procedimientoCups\",\n      \"valor\": \"512301\",\n      \"cita\": \"CUPS 512301\"\n    },\n    {\n      \"campo\": \"cirujano\",\n      \"valor\": \"Dra. Mariela Cárdenas\",\n      \"cita\": \"Cirujano tratante: Dra. Mariela Cárdenas\"\n    },\n    {\n      \"campo\": \"caracter\",\n      \"valor\": \"electiva\",\n      \"cita\": \"Carácter: electiva\"\n    },\n    {\n      \"campo\": \"montoEstimado\",\n      \"valor\": \"B/. 4,200.00\",\n      \"cita\": \"Monto estimado del procedimiento: B/. 4,200.00\"\n    }\n  ],\n  \"documentos\": [\n    {\n      \"id\": \"R1\",\n      \"cita\": \"informe del cirujano\"\n    },\n    {\n      \"id\": \"R2\",\n      \"cita\": \"estudio de imagen\"\n    },\n    {\n      \"id\": \"R3\",\n      \"cita\": \"orden de anestesiología\"\n    },\n    {\n      \"id\": \"R4\",\n      \"cita\": \"consentimiento informado\"\n    }\n  ],\n  \"preexistencias\": []\n}",
+  "ms": 177798,
+  "entrada": 3656,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

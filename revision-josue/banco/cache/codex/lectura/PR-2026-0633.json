@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "lectura",
+  "id": "PR-2026-0633",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-1204\",\"cita\":\"Paciente: AF-1204\"},{\"campo\":\"edad\",\"valor\":33,\"cita\":\"33 años\"},{\"campo\":\"hospital\",\"valor\":\"CLÍNICA COSTA DEL ESTE\",\"cita\":\"CLÍNICA COSTA DEL ESTE\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-08\",\"cita\":\"Fecha: 2026-09-08\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2020-01-10\",\"cita\":\"Fecha de afiliación al plan: 2020-01-10\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"Z41.1\",\"cita\":\"Diagnóstico: Z41.1\"},{\"campo\":\"procedimientoCups\",\"valor\":\"158001\",\"cita\":\"CUPS 158001\"},{\"campo\":\"cirujano\",\"valor\":\"Dr. Alberto Quintero\",\"cita\":\"Cirujano tratante: Dr. Alberto Quintero\"},{\"campo\":\"caracter\",\"valor\":\"electiva\",\"cita\":\"Carácter: electiva\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 3,800.00\",\"cita\":\"Monto estimado del procedimiento: $ 3,800.00\"}],\"documentos\":[{\"id\":\"R1\",\"cita\":\"informe del cirujano\"},{\"id\":\"R2\",\"cita\":\"estudio de imagen\"},{\"id\":\"R3\",\"cita\":\"orden de anestesiología\"},{\"id\":\"R4\",\"cita\":\"consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 137946,
+  "entrada": 23453,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

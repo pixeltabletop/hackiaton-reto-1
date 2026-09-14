@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "lectura",
+  "id": "PR-2026-0790",
+  "ok": true,
+  "texto": "{\"campos\":[{\"campo\":\"pacienteRef\",\"valor\":\"AF-9042\",\"cita\":\"Paciente: AF-9042\"},{\"campo\":\"edad\",\"valor\":\"27\",\"cita\":\"27 años\"},{\"campo\":\"hospital\",\"valor\":\"HOSPITAL REGIONAL DE AZUERO\",\"cita\":\"HOSPITAL REGIONAL DE AZUERO\"},{\"campo\":\"fecha\",\"valor\":\"2026-09-13\",\"cita\":\"Fecha: 2026-09-13\"},{\"campo\":\"fechaAfiliacion\",\"valor\":\"2021-11-05\",\"cita\":\"Fecha de afiliación al plan: 2021-11-05\"},{\"campo\":\"diagnosticoCie10\",\"valor\":\"K35.80\",\"cita\":\"Diagnóstico: K35.80\"},{\"campo\":\"procedimientoCups\",\"valor\":\"471201\",\"cita\":\"CUPS 471201\"},{\"campo\":\"cirujano\",\"valor\":\"Dr. Alberto Quintero\",\"cita\":\"Cirujano tratante: Dr. Alberto Quintero\"},{\"campo\":\"caracter\",\"valor\":\"urgente\",\"cita\":\"Carácter: urgente\"},{\"campo\":\"montoEstimado\",\"valor\":\"$ 2,600.00\",\"cita\":\"Monto estimado del procedimiento: $ 2,600.00\"}],\"documentos\":[{\"id\":\"R5\",\"cita\":\"informe de urgencias\"},{\"id\":\"R4\",\"cita\":\"consentimiento informado\"}],\"preexistencias\":[]}",
+  "ms": 8120,
+  "entrada": 1390,
+  "salida": 337,
+  "modelo": "claude-haiku-4-5-20251001"
+}

@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "PR-04",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"452101\",\n  \"motivo\": \"Los documentos requeridos (informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado) están presentes y cumplen con los requisitos para la preautorización de la cirugía electiva.\"\n}",
+  "ms": 15988,
+  "entrada": 1219,
+  "salida": 85,
+  "modelo": "qwen3:1.7b"
+}

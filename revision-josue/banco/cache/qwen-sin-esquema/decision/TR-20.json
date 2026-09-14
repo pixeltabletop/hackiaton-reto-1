@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "TR-20",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"Se cumplen los requisitos documentales para la preautorización de un procedimiento quirúrgico electivo, incluyendo el informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado.\"\n}",
+  "ms": 20349,
+  "entrada": 1395,
+  "salida": 82,
+  "modelo": "qwen3:1.7b"
+}

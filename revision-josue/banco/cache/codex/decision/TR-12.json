@@ -1,0 +1,11 @@
+{
+  "proveedor": "codex-cli",
+  "tarea": "decision",
+  "id": "TR-12",
+  "ok": true,
+  "texto": "{\"estado\":\"PRE_APROBADO_CON_CONDICIONES\",\"clausula\":\"7.1\",\"motivo\":\"Procedimiento cubierto, en red, con carencia y documentos completos; el monto estimado de USD 2,300 queda íntegramente a cargo del asegurado por el deducible anual de USD 2,500.\"}",
+  "ms": 123387,
+  "entrada": 3618,
+  "salida": 0,
+  "modelo": "gpt-5.6-sol"
+}

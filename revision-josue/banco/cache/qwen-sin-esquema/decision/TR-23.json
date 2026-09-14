@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "TR-23",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"6.1\",\n  \"motivo\": \"La solicitud cumple con los requisitos documentales (informe de urgencias, consentimiento informado) y el procedimiento es de urgencia, así como se encuentra dentro de la red de proveedores. El monto es inferior a USD 5,000.00 y requiere preautorización, lo cual se ha verificado.\"\n}",
+  "ms": 19564,
+  "entrada": 1378,
+  "salida": 104,
+  "modelo": "qwen3:1.7b"
+}

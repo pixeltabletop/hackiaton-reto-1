@@ -1,0 +1,11 @@
+{
+  "proveedor": "claude-haiku-4-5",
+  "tarea": "decision",
+  "id": "PR-2026-0633",
+  "ok": true,
+  "texto": "{\"estado\": \"NO_CUBIERTO\", \"clausula\": \"5.1\", \"motivo\": \"La rinoplastia estética está explícitamente excluida por ser un procedimiento con fines de embellecimiento y cambio de apariencia.\"}",
+  "ms": 2728,
+  "entrada": 1675,
+  "salida": 65,
+  "modelo": "claude-haiku-4-5-20251001"
+}

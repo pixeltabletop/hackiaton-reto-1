@@ -1,0 +1,58 @@
+[
+  {
+    "nombre": "A01 negación de documentos ignorada",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A02 conflicto de rótulos ignorado",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A03 preexistencia anulada por cualquier «sin antecedentes»",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A04 preexistencias sin declarar no marcan",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A05 carácter sin declarar se asume electiva",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A06 hospital leído de cualquier línea",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A07 monto en balboas mal convertido",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A08 fechas dd/mm no equivalen",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A09 abreviatura de hospital no se expande",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A10 motor no deriva sin carácter",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A11 motor no deriva sin preexistencias declaradas",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A12 el modelo llena un campo en conflicto",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A13 el hospital del modelo no se resuelve contra la red",
+    "resultado": "detectada"
+  },
+  {
+    "nombre": "A14 escritura en Notion sin validar origen",
+    "resultado": "detectada"
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "proveedor": "ollama:qwen3:1.7b·sin-esquema",
+  "tarea": "decision",
+  "id": "TR-16",
+  "ok": true,
+  "texto": "{\n  \"estado\": \"PRE_APROBADO\",\n  \"clausula\": \"452101\",\n  \"motivo\": \"Los documentos son completos y cumplen con los requisitos de preautorización, incluyendo el informe del cirujano, estudio de imagen, orden de anestesiología y consentimiento informado.\"\n}",
+  "ms": 7409,
+  "entrada": 1295,
+  "salida": 78,
+  "modelo": "qwen3:1.7b"
+}
