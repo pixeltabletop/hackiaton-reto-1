@@ -24,7 +24,7 @@ cláusula que lo sostiene** — o la lista exacta de lo que falta y qué pasa si
 ```bash
 npm ci
 npm run dev            # la web en http://localhost:3000
-npm test               # 48 pruebas: corpus, evidencia, motor, lectura, modelo y escritura en Notion
+npm test               # 54 pruebas: corpus, evidencia, motor, lectura, modelo y escritura en Notion
 npm run check:decision # dictamina los seis casos y audita el contrato
 npm run check:trampas  # informes trampa: variaciones reales que no pueden cambiar el dictamen
 npm run check          # las tres anteriores
