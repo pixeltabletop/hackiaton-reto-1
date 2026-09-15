@@ -485,6 +485,209 @@ h2 {
   background: color-mix(in srgb, var(--acento) 16%, var(--superficie));
 }
 
+/* ---------- el buscador: la primera pantalla ---------- */
+
+.buscador {
+  margin: 0 0 22px;
+}
+
+.buscador-form {
+  padding: 20px 22px;
+  background: var(--superficie);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+}
+
+.etiqueta {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+.buscador-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* La casilla se lee desde el asiento de al lado: números grandes y monoespaciados. */
+.casilla {
+  flex: 1 1 280px;
+  min-width: 0;
+  padding: 14px 18px;
+  font-family: var(--fuente-codigo), ui-monospace, monospace;
+  font-size: 27px;
+  letter-spacing: 0.03em;
+  color: var(--tinta);
+  background: var(--fondo-2);
+  border: 2px solid var(--borde);
+  border-radius: var(--radio-chico);
+}
+
+.casilla:focus {
+  outline: 3px solid var(--acento-suave);
+  border-color: var(--acento);
+}
+
+.ejemplos {
+  margin-top: 18px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip-ejemplo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 320px;
+  padding: 9px 14px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-chico);
+  text-decoration: none;
+}
+
+.chip-ejemplo b {
+  font-family: var(--fuente-codigo), ui-monospace, monospace;
+  font-size: 14.5px;
+  color: var(--tinta);
+}
+
+.chip-ejemplo span {
+  font-size: 12.5px;
+  color: var(--tinta-3);
+}
+
+.chip-ejemplo:hover {
+  background: var(--acento-suave);
+  border-color: var(--acento);
+}
+
+/* ---------- subir la foto ---------- */
+
+.subir {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  margin: 0 0 22px;
+}
+
+.subir-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.archivo-etiqueta {
+  font-size: 15px;
+  color: var(--tinta-2);
+}
+
+.archivo {
+  max-width: 250px;
+  font-size: 13.5px;
+  color: var(--tinta-3);
+}
+
+.boton-secundario {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-chico);
+  cursor: pointer;
+}
+
+.boton-secundario:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.enlace-boton {
+  font: inherit;
+  font-size: 14.5px;
+  padding: 4px 0;
+  color: var(--acento);
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.nota.nota-buena {
+  padding: 12px 16px;
+  color: var(--aprobado);
+  background: var(--aprobado-tinte);
+  border-left: 3px solid var(--aprobado);
+}
+
+.nota.nota-mala {
+  padding: 12px 16px;
+  color: var(--no-cubierto);
+  background: var(--no-cubierto-tinte);
+  border-left: 3px solid var(--no-cubierto);
+}
+
+.no-encontrado {
+  margin: 0 0 26px;
+  padding: 18px 22px;
+  background: var(--superficie);
+  border: 1px solid var(--borde-suave);
+  border-left: 4px solid var(--no-cubierto);
+  border-radius: var(--radio-chico);
+}
+
+.no-encontrado h2 {
+  margin-top: 0;
+}
+
+/* ---------- la ficha que ve admisiones antes del dictamen ---------- */
+
+.ficha-admision {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  margin: 0 0 16px;
+  overflow: hidden;
+  background: var(--borde-suave);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-chico);
+}
+
+.ficha-admision div {
+  padding: 14px 18px;
+  background: var(--superficie);
+}
+
+.ficha-admision dt {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+.ficha-admision dd {
+  margin: 0;
+  font-size: 16px;
+  color: var(--tinta);
+}
+
 /* ---------- ficha de un caso ---------- */
 
 .caso {

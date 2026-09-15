@@ -1,103 +1,125 @@
 import Link from 'next/link';
+import { Buscador } from './components/Buscador';
+import { SubirFoto } from './components/SubirFoto';
 import { Caso } from './components/Caso';
 import { CREDITOS } from './marca';
-import { CASOS } from '../src/data/casos';
+import { buscar } from '../src/domain/busqueda';
 import { planDe } from '../src/data/planes';
-import { formato } from '../src/domain/dinero';
-import { armarVista, CLASE_ESTADO, ETIQUETA_ESTADO } from '../src/domain/presentacion';
+import { armarVista } from '../src/domain/presentacion';
 
-export const dynamic = 'force-static';
+// Cada consulta se resuelve contra el corpus en el momento: aquí no hay nada cacheado.
+export const dynamic = 'force-dynamic';
 
-export default function Page() {
-  const vistas = CASOS.map((caso) => armarVista(caso, planDe(caso.planId)));
-  const aprobados = vistas.filter((v) => v.decision.estado.startsWith('PRE_APROBADO'));
-  const totalAseguradora = aprobados.reduce((total, v) => total + v.decision.pagaAseguradora, 0);
-  const sinClausula = vistas.filter((v) => v.decision.motivos.length === 0).length;
-  const masLento = Math.max(...vistas.map((v) => v.decision.tiempoMs));
-  const clausulasCitadas = new Set(
-    vistas.flatMap((v) => v.decision.motivos.map((m) => m.clausula)),
-  ).size;
+const AVISOS: Record<string, string> = {
+  'sin-foto': 'No llegó ninguna foto. Elija una imagen o use la cédula de ejemplo.',
+  'no-leido': 'No se pudo leer ningún número en la foto. Escriba la cédula a mano.',
+  'archivo-grande': 'La foto pesa más de 12 MB. Tome otra más liviana.',
+};
+
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; leido?: string; error?: string }>;
+}) {
+  const { q = '', leido, error } = await searchParams;
+  const consulta = buscar(q);
+  const encontrados = consulta.coincidencias;
 
   return (
     <div className="hoja">
       <header>
-        <h1>La cirugía no espera. La carta aval tampoco.</h1>
+        <h1>Buscar al asegurado</h1>
         <p className="problema">
-          Hoy el paciente espera horas o días por la autorización, y el hospital no agenda hasta que
-          llegue la carta aval.
-        </p>
-        <p className="tesis">
-          <strong>Prior IA no autoriza: dictamina.</strong> Lee el informe y la póliza, cita la
-          cláusula y dice quién paga qué —deducible, coaseguro y tope anual— sin llamadas de por medio.
-        </p>
-        <p>
-          <Link className="chip chip-enlace" href="/leer">
-            Dictaminar una solicitud →
-          </Link>
+          En la ambulancia o en admisiones: con la cédula o el número de póliza, el sistema saca la
+          póliza, la carencia y el copago. Sin llamar a nadie.
         </p>
       </header>
 
-      <dl className="metricas">
-        <div>
-          <dt>Casos dictaminados</dt>
-          <dd>6 de 6</dd>
-        </div>
-        <div>
-          <dt>Decisiones sin cláusula citada</dt>
-          <dd className="cero">{sinClausula}</dd>
-        </div>
-        <div>
-          <dt>Cláusulas citadas</dt>
-          <dd>{clausulasCitadas}</dd>
-        </div>
-        <div>
-          <dt>Dictamen más lento</dt>
-          <dd>{masLento} ms</dd>
-        </div>
-      </dl>
+      <Buscador valor={q} />
+      <SubirFoto />
 
-      <h2>Solicitudes dictaminadas</h2>
-      <div className="pared">
-        {vistas.map(({ caso, decision }) => (
-          <a className={`tarjeta ${CLASE_ESTADO[decision.estado]}`} href={`#${caso.id}`} key={caso.id}>
-            <span className="slug">{caso.id}</span>
-            <h3>{caso.titulo}</h3>
-            <div className="pie">
-              <span className="chip">{ETIQUETA_ESTADO[decision.estado]}</span>
-              <span className="detalle">
-                {decision.estado.startsWith('PRE_APROBADO') ? (
-                  <>
-                    <span>Paga la aseguradora</span>
-                    <b>{formato(decision.pagaAseguradora)}</b>
-                  </>
-                ) : (
-                  <>
-                    <span>Hospital</span>
-                    <b>{caso.hospital}</b>
-                  </>
-                )}
-              </span>
-            </div>
-          </a>
-        ))}
-      </div>
+      {leido && (
+        <p className="nota nota-buena">
+          Leído de la foto: <b>{q}</b>. Verifique el número contra el documento antes de continuar.
+        </p>
+      )}
+      {error && AVISOS[error] && <p className="nota nota-mala">{AVISOS[error]}</p>}
 
-      {vistas.map((vista) => (
-        <Caso key={vista.caso.id} vista={vista} />
-      ))}
+      {q.trim() === '' && (
+        <p className="nota">
+          Nadie quiere inventarse una cédula para probar. Toque cualquiera de los ejemplos de arriba y
+          el sistema busca, dictamina y muestra la cláusula en la que se apoya.
+        </p>
+      )}
+
+      {q.trim() !== '' && encontrados.length === 0 && (
+        <section className="no-encontrado">
+          <h2>No aparece en la base</h2>
+          <p>
+            <b>{q}</b> no corresponde a ningún asegurado de esta demostración. Si el número salió de
+            una foto, revise los dígitos: el OCR puede confundir un 8 con un 3 o un 0 con una O.
+          </p>
+          <p className="nota">
+            La base de esta demostración tiene seis asegurados. Los valores de prueba están arriba, en
+            los ejemplos.
+          </p>
+        </section>
+      )}
+
+      {encontrados.length > 0 && (
+        <>
+          <p className="nota">
+            {consulta.tipo === 'poliza'
+              ? `Póliza ${q}: ${encontrados.length} ${encontrados.length === 1 ? 'asegurado' : 'asegurados'} cubiertos por este certificado.`
+              : `Cédula ${q}: un asegurado.`}
+          </p>
+
+          {encontrados.map((caso) => {
+            const plan = planDe(caso.planId);
+            return (
+              <section className="encontrado" key={caso.id}>
+                <dl className="ficha-admision">
+                  <div>
+                    <dt>Asegurado</dt>
+                    <dd>
+                      {caso.pacienteRef} · {caso.edad} años · sexo {caso.sexo}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Cédula</dt>
+                    <dd>{caso.cedula}</dd>
+                  </div>
+                  <div>
+                    <dt>Póliza</dt>
+                    <dd>
+                      {caso.numeroPoliza} · {plan.aseguradora}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Vigencia del plan</dt>
+                    <dd>
+                      del {plan.vigenciaDesdeIso} al {plan.vigenciaHastaIso}
+                    </dd>
+                  </div>
+                </dl>
+
+                <Caso vista={armarVista(caso, plan)} />
+              </section>
+            );
+          })}
+        </>
+      )}
 
       <footer>
         <p className="cierre">Aquí no se adivina: se cita la cláusula.</p>
         <p>
-          Seis dictámenes · {formato(totalAseguradora)} respondidos por la aseguradora en los casos
-          aprobados · ninguna decisión sin cláusula citada · el mismo caso da siempre el mismo
-          dictamen.
+          <Link href="/casos" style={{ color: 'var(--acento)' }}>
+            Ver los seis casos dictaminados
+          </Link>
         </p>
         <p>
-          Los datos son <strong>sintéticos</strong>: pólizas, hospitales, pacientes y montos son
-          inventados. La calidad se audita con <code>npm run check</code>: si un caso cambia de
-          dictamen, si una decisión sale sin cláusula o si los montos no cuadran contra lo facturado,
-          la verificación falla.
+          Los datos son <strong>sintéticos</strong>: cédulas, pólizas, hospitales, pacientes y montos
+          son inventados. Las fotos de ejemplo son documentos ficticios.
         </p>
         <p>
           {CREDITOS.equipo} · {CREDITOS.evento}

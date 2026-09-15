@@ -1,5 +1,6 @@
 import { evidenciaDe, fechasEn, normalizarHospital, type Evidencia } from './evidencia';
 import { formato, usd } from './dinero';
+import { extraerNumeros } from './numeros';
 import type { Caso, Caracter } from './tipos';
 
 /**
@@ -229,6 +230,10 @@ export function leerInforme(
     hospital,
     fecha,
     pacienteRef: buscar(informe, REGLAS.pacienteRef),
+    // La cédula y la póliza se leen del informe si están escritas: si no están, quedan
+    // vacías y el informe se dictamina igual. Lo que no se hace es inventarlas.
+    cedula: extraerNumeros(informe).cedulas[0] ?? '',
+    numeroPoliza: extraerNumeros(informe).polizas[0] ?? '',
     edad: Number(buscar(informe, REGLAS.edad) || 0),
     sexo: /sexo femenino/i.test(informe) ? 'F' : 'M',
     fechaAfiliacion,

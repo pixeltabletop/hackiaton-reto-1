@@ -100,6 +100,8 @@ function esquemaCasos(fuentePolizas) {
     Hospital: { select: { options: [] } },
     Fecha: { date: {} },
     Paciente: { rich_text: {} },
+    Cédula: { rich_text: {} },
+    Póliza: { rich_text: {} },
     Edad: { number: { format: 'number' } },
     Sexo: { select: { options: [] } },
     Afiliación: { date: {} },

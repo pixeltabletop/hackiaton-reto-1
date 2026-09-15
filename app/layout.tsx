@@ -59,7 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               {casos.map(({ caso, decision }) => (
                 <Link
                   className={`lateral-caso ${CLASE_ESTADO[decision.estado]}`}
-                  href={`/#${caso.id}`}
+                  href={`/casos/#${caso.id}`}
                   key={caso.id}
                   title={ETIQUETA_ESTADO[decision.estado]}
                 >

@@ -82,6 +82,10 @@ export interface Caso {
   hospital: string;
   fecha: string;
   pacienteRef: string;
+  /** Cédula del asegurado, como se teclea en admisiones. */
+  cedula: string;
+  /** Número de póliza. Una póliza puede cubrir a más de un asegurado. */
+  numeroPoliza: string;
   edad: number;
   sexo: 'F' | 'M';
   fechaAfiliacion: string;
