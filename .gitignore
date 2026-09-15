@@ -4,6 +4,7 @@ node_modules/
 # Secretos y credenciales: nunca al repositorio
 .env
 .env.*
+!.env.example
 .secrets/
 .vercel/
 notion.config.json
