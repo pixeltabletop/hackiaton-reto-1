@@ -1,9 +1,9 @@
 'use server';
 
-import { PLANES, planDe } from '../../src/data/planes';
-import { leerInforme, resumenLectura } from '../../src/domain/lectura';
-import { leerInformeConModelo, proveedorDeEntorno } from '../../src/domain/lectura-modelo';
-import { armarVista, type VistaCaso } from '../../src/domain/presentacion';
+import { PLANES, planDe } from '../../../src/data/planes';
+import { leerInforme, resumenLectura } from '../../../src/domain/lectura';
+import { leerInformeConModelo, proveedorDeEntorno } from '../../../src/domain/lectura-modelo';
+import { armarVista, type VistaCaso } from '../../../src/domain/presentacion';
 
 /**
  * Lee y dictamina un informe pegado. Corre en el servidor y recibe el informe por

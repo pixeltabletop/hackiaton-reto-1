@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { Buscador } from './components/Buscador';
-import { SubirFoto } from './components/SubirFoto';
-import { Caso } from './components/Caso';
-import { CREDITOS } from './marca';
-import { buscar } from '../src/domain/busqueda';
-import { planDe } from '../src/data/planes';
-import { armarVista } from '../src/domain/presentacion';
+import { Buscador } from '../components/Buscador';
+import { SubirFoto } from '../components/SubirFoto';
+import { Caso } from '../components/Caso';
+import { CREDITOS } from '../marca';
+import { buscar } from '../../src/domain/busqueda';
+import { planDe } from '../../src/data/planes';
+import { armarVista } from '../../src/domain/presentacion';
 
 // Cada consulta se resuelve contra el corpus en el momento: aquí no hay nada cacheado.
 export const dynamic = 'force-dynamic';

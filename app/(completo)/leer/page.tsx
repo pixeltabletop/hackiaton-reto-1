@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { CASOS } from '../../src/data/casos';
-import { PLANES } from '../../src/data/planes';
-import { formato } from '../../src/domain/dinero';
+import { CASOS } from '../../../src/data/casos';
+import { PLANES } from '../../../src/data/planes';
+import { formato } from '../../../src/domain/dinero';
 import { FormularioLeer } from './Formulario';
 
 const EJEMPLO = `CLÍNICA COSTA DEL ESTE — SERVICIO DE ORTOPEDIA

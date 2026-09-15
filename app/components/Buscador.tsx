@@ -20,7 +20,7 @@ export function Buscador({ valor = '' }: { valor?: string }) {
             defaultValue={valor}
             id="q"
             name="q"
-            placeholder="8-742-1593"
+            placeholder="000-000-0000 o IS-A-0000-0000"
             spellCheck={false}
           />
           <button className="boton" type="submit">

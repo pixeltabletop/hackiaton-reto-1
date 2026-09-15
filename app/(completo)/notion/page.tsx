@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { formato } from '../../src/domain/dinero';
-import { dictaminar } from '../../src/domain/motor';
-import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../src/domain/presentacion';
-import type { Caso, Plan } from '../../src/domain/tipos';
-import { consultarFuente, hayToken, leerRelacion } from '../../src/notion/cliente';
-import { casoDesdeFila, planDesdeFila } from '../../src/notion/mapeo';
+import { formato } from '../../../src/domain/dinero';
+import { dictaminar } from '../../../src/domain/motor';
+import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../../src/domain/presentacion';
+import type { Caso, Plan } from '../../../src/domain/tipos';
+import { consultarFuente, hayToken, leerRelacion } from '../../../src/notion/cliente';
+import { casoDesdeFila, planDesdeFila } from '../../../src/notion/mapeo';
 
 export const dynamic = 'force-dynamic';
 

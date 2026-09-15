@@ -688,6 +688,263 @@ h2 {
   color: var(--tinta);
 }
 
+/* ---------- modo ambulancia: una pantalla, una acción ---------- */
+
+.lateral-ambulancia {
+  display: block;
+  padding: 11px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--acento);
+  background: var(--acento-suave);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.ambulancia {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px 18px 48px;
+}
+
+.ambulancia-barra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+  font-size: 17px;
+}
+
+.ambulancia-salir {
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--tinta-3);
+}
+
+.ambulancia h1 {
+  margin-bottom: 10px;
+  font-size: 34px;
+  line-height: 1.15;
+}
+
+.ambulancia-ayuda {
+  margin-bottom: 22px;
+  font-size: 17px;
+  color: var(--tinta-2);
+}
+
+.ambulancia-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* Se lee y se teclea con una mano, con el vehículo en movimiento. */
+.casilla-grande {
+  width: 100%;
+  padding: 18px 20px;
+  font-family: var(--fuente-codigo), ui-monospace, monospace;
+  font-size: 28px;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 2px solid var(--borde);
+  border-radius: var(--radio-chico);
+}
+
+.casilla-grande:focus {
+  outline: 3px solid var(--acento-suave);
+  border-color: var(--acento);
+}
+
+.boton-grande {
+  font: inherit;
+  font-size: 21px;
+  font-weight: 700;
+  padding: 18px 22px;
+  color: #ffffff;
+  background: var(--acento);
+  border: none;
+  border-radius: var(--radio-chico);
+  cursor: pointer;
+}
+
+.boton-grande:disabled {
+  opacity: 0.7;
+}
+
+.boton-grande-secundario {
+  display: block;
+  padding: 17px 22px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-chico);
+  cursor: pointer;
+}
+
+.boton-grande-secundario.ocupado {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.escanear {
+  margin-bottom: 20px;
+}
+
+.archivo-oculto {
+  display: none;
+}
+
+.ambulancia-aviso {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  font-size: 16px;
+  color: var(--aprobado);
+  background: var(--aprobado-tinte);
+  border-left: 4px solid var(--aprobado);
+}
+
+.ambulancia-aviso-malo {
+  color: var(--no-cubierto);
+  background: var(--no-cubierto-tinte);
+  border-left-color: var(--no-cubierto);
+}
+
+.ambulancia-ficha {
+  --estado: var(--acento);
+  margin-bottom: 20px;
+  padding: 20px;
+  background: var(--superficie);
+  border: 1px solid var(--borde-suave);
+  border-left: 6px solid var(--estado);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.chip-grande {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.ambulancia-resumen {
+  margin: 14px 0 18px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--tinta);
+}
+
+.ambulancia-datos {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.ambulancia-datos li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 9px 0;
+  font-size: 16px;
+  border-bottom: 1px solid var(--borde-suave);
+}
+
+.ambulancia-datos span {
+  min-width: 150px;
+  color: var(--tinta-3);
+}
+
+.ambulancia-datos b {
+  color: var(--tinta);
+}
+
+.ambulancia-clausula {
+  margin: 0 0 14px;
+  padding-left: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--tinta-2);
+  border-left: 3px solid var(--estado);
+}
+
+.ambulancia-clausula b {
+  color: var(--tinta);
+}
+
+.ambulancia-falta {
+  padding: 12px 14px;
+  font-size: 16px;
+  color: var(--faltantes);
+  background: var(--faltantes-tinte);
+  border-radius: var(--radio-chico);
+}
+
+.ambulancia-montos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin: 16px 0;
+  font-size: 16px;
+  color: var(--tinta-3);
+}
+
+.ambulancia-montos b {
+  display: block;
+  font-size: 22px;
+  color: var(--tinta);
+}
+
+.ambulancia-detalle {
+  display: inline-block;
+  font-size: 16px;
+  color: var(--acento);
+}
+
+.ambulancia-ejemplos {
+  margin: 10px 0 0;
+  font-size: 16px;
+}
+
+.ambulancia-ejemplos summary {
+  color: var(--tinta-2);
+  cursor: pointer;
+}
+
+.ambulancia-ejemplos .chips {
+  margin-top: 14px;
+}
+
+.ambulancia-pie {
+  margin-top: 34px;
+  padding-top: 16px;
+  font-size: 14px;
+  color: var(--tinta-3);
+  border-top: 1px solid var(--borde);
+}
+
+/* En el teléfono: una columna, todo ancho, nada que apretar con puntería. */
+@media (max-width: 620px) {
+  .buscador-fila {
+    flex-direction: column;
+  }
+
+  .casilla,
+  .boton {
+    width: 100%;
+  }
+
+  .ambulancia h1 {
+    font-size: 30px;
+  }
+
+  .casilla-grande {
+    font-size: 24px;
+  }
+}
+
 /* ---------- ficha de un caso ---------- */
 
 .caso {

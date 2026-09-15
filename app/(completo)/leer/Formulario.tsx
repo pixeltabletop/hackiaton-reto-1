@@ -1,7 +1,7 @@
 'use client';
 
 import { useActionState } from 'react';
-import { Caso } from '../components/Caso';
+import { Caso } from '../../components/Caso';
 import { dictaminarInforme, type EstadoLectura } from './acciones';
 
 interface Opcion {

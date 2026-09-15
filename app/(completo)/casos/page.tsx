@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { Caso } from '../components/Caso';
-import { CREDITOS } from '../marca';
-import { CASOS } from '../../src/data/casos';
-import { planDe } from '../../src/data/planes';
-import { formato } from '../../src/domain/dinero';
-import { armarVista, CLASE_ESTADO, ETIQUETA_ESTADO } from '../../src/domain/presentacion';
+import { Caso } from '../../components/Caso';
+import { CREDITOS } from '../../marca';
+import { CASOS } from '../../../src/data/casos';
+import { planDe } from '../../../src/data/planes';
+import { formato } from '../../../src/domain/dinero';
+import { armarVista, CLASE_ESTADO, ETIQUETA_ESTADO } from '../../../src/domain/presentacion';
 
 export const dynamic = 'force-static';
 
