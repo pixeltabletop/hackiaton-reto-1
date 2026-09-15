@@ -6,7 +6,9 @@ import {
   leerRelacion,
   seleccion,
 } from '../../../src/notion/cliente';
-import { casoDesdeFila, planDesdeFila, propiedadesDeDecision } from '../../../src/notion/mapeo';
+import { planDesdeFila, propiedadesDeDecision } from '../../../src/notion/mapeo';
+import { casoDeLaFila } from '../../../src/notion/lectura-del-caso';
+import { proveedorDeEntorno } from '../../../src/domain/lectura-modelo';
 import { validarEscritura, validarOrigen } from '../../../src/notion/seguridad';
 
 export const dynamic = 'force-dynamic';
@@ -14,8 +16,9 @@ export const dynamic = 'force-dynamic';
 /**
  * Dictamina un caso que vive en Notion y escribe la decisión de vuelta:
  *   1. lee la fila del caso y su póliza relacionada
- *   2. dictamina con el motor determinista
- *   3. crea la fila en Decisiones y marca el caso como dictaminado
+ *   2. el modelo lee el informe de esa fila y cita cada dato (si no hay clave, lo leen las reglas)
+ *   3. dictamina con el motor determinista
+ *   4. crea la fila en Decisiones y marca el caso como dictaminado
  *
  * Es un formulario HTML normal: funciona sin JavaScript en el cliente.
  */
@@ -47,11 +50,14 @@ export async function POST(peticion: Request) {
       fila: filaCaso,
     });
     if (!permiso.ok) throw new Error(permiso.motivo);
-    const caso = casoDesdeFila(filaCaso);
 
     const paginaPoliza = leerRelacion(filaCaso.properties['Póliza'])[0];
-    if (!paginaPoliza) throw new Error(`El caso ${caso.id} no tiene una póliza relacionada`);
+    if (!paginaPoliza) throw new Error('El caso no tiene una póliza relacionada');
     const plan = planDesdeFila(await leerPagina(paginaPoliza));
+
+    // El informe de la fila se lee con el modelo, con la cita de cada dato.
+    const leido = await casoDeLaFila(filaCaso, plan, proveedorDeEntorno());
+    const caso = leido.caso;
 
     const decision = dictaminar(caso, plan);
     const clausulas = [...new Set(decision.motivos.map((m) => m.clausula))];
@@ -64,6 +70,7 @@ export async function POST(peticion: Request) {
 
     destino.searchParams.set('ok', `${caso.id} → ${decision.estado}`);
     destino.searchParams.set('clausulas', clausulas.join(', ') || 'ninguna');
+    destino.searchParams.set('lectura', leido.nota);
   } catch (error) {
     destino.searchParams.set('error', error instanceof Error ? error.message : String(error));
   }
@@ -76,6 +83,7 @@ export async function GET() {
     JSON.stringify({
       ok: true,
       uso: 'POST con el campo caso=<id de la página en Notion>',
+      lectura: 'el modelo lee el informe de la fila y cita cada dato; sin clave lo leen las reglas',
       motor: 'reglas deterministas sobre la póliza',
     }),
     { headers: { 'content-type': 'application/json' } },

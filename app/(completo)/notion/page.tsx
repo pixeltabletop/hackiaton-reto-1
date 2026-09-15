@@ -39,7 +39,31 @@ function Aviso({ titulo, detalle }: { titulo: string; detalle: string }) {
   );
 }
 
-export default async function PaginaNotion() {
+/** Lo que la ruta de dictaminar deja en la dirección al volver: se pinta arriba del todo. */
+function Resultado({ ok, error, clausulas, lectura }: Record<string, string | undefined>) {
+  if (!ok && !error) return null;
+  return (
+    <div className={`nota ${ok ? 'nota-buena' : 'nota-mala'}`} role="status">
+      {ok ? (
+        <>
+          <b>Dictaminado en Notion:</b> {ok}. Cláusulas citadas: {clausulas || 'ninguna'}.
+          {lectura ? <> Lectura del informe: {lectura}</> : null}
+        </>
+      ) : (
+        <>
+          <b>No se pudo dictaminar:</b> {error}
+        </>
+      )}
+    </div>
+  );
+}
+
+export default async function PaginaNotion({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | undefined>>;
+}) {
+  const resultado = await searchParams;
   const fuenteCasos = process.env.NOTION_FUENTE_CASOS;
   const fuentePolizas = process.env.NOTION_FUENTE_POLIZAS;
   const fuenteDecisiones = process.env.NOTION_FUENTE_DECISIONES;
@@ -75,10 +99,13 @@ export default async function PaginaNotion() {
     return (
       <div className="hoja">
         <h1>Casos pendientes leídos de Notion</h1>
+        <Resultado {...resultado} />
         <p className="tesis">
-          Estas filas viven en la base <strong>Casos</strong> de Notion. El sistema las lee, dictamina
-          contra la póliza relacionada y escribe la decisión en la base <strong>Decisiones</strong>,
-          dejando el caso como dictaminado. Nada de esto sale de un archivo local.
+          Estas filas viven en la base <strong>Casos</strong> de Notion. Al dictaminar, el modelo lee
+          el <strong>informe escrito en la fila</strong> y cita cada dato; el motor aplica la póliza
+          relacionada, escribe la decisión en la base <strong>Decisiones</strong> y deja el caso como
+          dictaminado. La lista de abajo se arma con las columnas, para no llamar al modelo cada vez
+          que alguien abre esta pantalla.
         </p>
 
         {pendientes.length === 0 && (
