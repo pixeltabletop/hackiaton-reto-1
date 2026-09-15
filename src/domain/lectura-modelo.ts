@@ -403,7 +403,10 @@ export function proveedorDeEntorno(): ProveedorModelo | null {
     return proveedorCompatible(
       process.env.GROQ_API_KEY,
       'https://api.groq.com/openai/v1',
-      process.env.MODELO_LECTURA ?? 'llama-3.3-70b-versatile',
+      // Groq retiró llama-3.3-70b-versatile el 16-ago-2026 en los planes gratuito y de
+      // desarrollo: con ese nombre respondía 404 y la lectura caía a reglas sin avisar.
+      // Reemplazo recomendado por Groq; no está medido con el banco: correr probar:proveedor.
+      process.env.MODELO_LECTURA ?? 'openai/gpt-oss-120b',
       'Groq',
     );
   }

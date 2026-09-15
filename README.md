@@ -102,7 +102,9 @@ La web se publica en Vercel. Variables de entorno (nunca en el repositorio):
 ```
 ANTHROPIC_API_KEY           # lectura con Claude Sonnet 5 (elegido con el banco de la revisión). Tiene prioridad.
 MODELO_LECTURA              # opcional: otro modelo del mismo proveedor (por defecto claude-sonnet-5)
-GOOGLE_API_KEY              # alternativa: lectura con Gemini. Sin ninguna clave, lee por reglas.
+GOOGLE_API_KEY              # alternativa: Gemini (por defecto gemini-2.5-flash; Google la retira desde el 16-oct-2026)
+GROQ_API_KEY                # alternativa: Groq (por defecto openai/gpt-oss-120b)
+OPENAI_API_KEY              # alternativa: OpenAI (por defecto gpt-4o-mini). Sin ninguna clave, lee por reglas.
 NOTION_TOKEN                # opcional: integración de Notion
 NOTION_FUENTE_CASOS         # id de la fuente de datos de la base Casos
 NOTION_FUENTE_POLIZAS       # id de la base Pólizas
@@ -110,7 +112,12 @@ NOTION_FUENTE_DECISIONES    # id de la base Decisiones
 ```
 
 Sin ninguna variable el sitio funciona igual: `/` y `/leer` dictaminan con el corpus y con la
-lectura por reglas. Es deliberado: **el enlace público no depende de un token.**
+lectura por reglas. Es deliberado: **el enlace público no depende de un token.** Pero sin clave
+los informes en prosa no se dictaminan bien, y el reto pide leer con IA.
+
+**Antes de publicar con una clave**, correr `npm run probar:proveedor` con esa clave en el entorno.
+Pasa 13 informes con dictamen conocido por el mismo camino que `/leer` y sale con 1 si hay una
+aprobación indebida o si el modelo no está leyendo (solo Claude Sonnet 5 está medido con el banco).
 
 ## Aviso
 
