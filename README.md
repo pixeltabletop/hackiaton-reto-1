@@ -1,4 +1,4 @@
-# Pre-autorización quirúrgica — el agente que dictamina con la póliza en la mano
+# Prior IA — el dictamen con la póliza en la mano
 
 Equipo **Jajanken** · Reto 1 del hackIAthon Panamá 2026 · **datos sintéticos**
 

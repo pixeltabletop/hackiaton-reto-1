@@ -21,11 +21,11 @@ export default function Page() {
   return (
     <div className="hoja">
       <header>
-        <h1>Pre-autorización quirúrgica en segundos</h1>
+        <h1>La pre-autorización quirúrgica, en segundos</h1>
         <p className="tesis">
-          <strong>No autoriza: dictamina con la póliza en la mano.</strong> Cada decisión cita la
-          cláusula exacta que la sostiene y cada dato sale del informe del hospital. Lo que no está
-          escrito en el expediente, no se aprueba.
+          <strong>Prior IA no autoriza: dictamina con la póliza en la mano.</strong> Cada decisión
+          cita la cláusula exacta que la sostiene y cada dato sale del informe del hospital. Lo que no
+          está escrito en el expediente, no se aprueba.
         </p>
         <p>
           <Link className="chip chip-enlace" href="/leer">

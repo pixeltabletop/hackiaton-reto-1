@@ -1,4 +1,4 @@
-# Reto 1 · Pre-autorización quirúrgica — contrato de decisión y plan de 3 días
+# Reto 1 · Prior IA — contrato de decisión y plan de 3 días
 
 Equipo Jajanken · hackIAthon Panamá 2026 (reto clasificatorio) · 13–16 de septiembre de 2026
 

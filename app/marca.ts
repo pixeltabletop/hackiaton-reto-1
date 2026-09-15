@@ -5,8 +5,8 @@
  * lateral, en el título de la pestaña y en el pie. Nada más.
  */
 export const MARCA = {
-  nombre: 'Pre-autorización quirúrgica',
-  corto: 'Pre-autorización',
+  nombre: 'Prior IA',
+  corto: 'Prior IA',
   lema: 'Dictamina con la póliza en la mano.',
 };
 
