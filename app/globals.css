@@ -386,6 +386,15 @@ h2 {
   box-shadow: var(--sombra);
 }
 
+/* La entrada a la lectura de informes, en la portada, antes del buscador. */
+.tarjeta.entrada-leer {
+  margin: 8px 0 28px;
+}
+
+.tarjeta.entrada-leer h3 {
+  min-height: 0;
+}
+
 .tarjeta .slug {
   font-family: var(--fuente-codigo), ui-monospace, monospace;
   font-size: 12.5px;

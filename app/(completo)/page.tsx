@@ -35,6 +35,16 @@ export default async function Page({
         </p>
       </header>
 
+      {/* La lectura de un informe nuevo es lo que pide el reto: tiene que verse sin bajar. */}
+      {q.trim() === '' && (
+        <Link className="tarjeta entrada-leer" href="/leer">
+          <span className="slug">¿Ya llegó el informe del hospital?</span>
+          <h3>Péguelo tal como lo escribió el médico: el agente lo lee y lo dictamina con la póliza</h3>
+          <span className="detalle">Cada dato sale con su cita del informe y cada decisión con su cláusula.</span>
+          <span className="pista">Leer un informe →</span>
+        </Link>
+      )}
+
       <Buscador valor={q} />
       <SubirFoto />
 

@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 
 const ENLACES = [
   { href: '/', texto: 'Buscar asegurado' },
-  { href: '/casos', texto: 'Casos dictaminados' },
   { href: '/leer', texto: 'Subir un informe' },
+  { href: '/casos', texto: 'Casos dictaminados' },
   { href: '/notion', texto: 'Bandeja de entrada' },
 ];
 
