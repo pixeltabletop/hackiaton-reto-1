@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Caso } from '../../components/Caso';
-import { CREDITOS } from '../../marca';
+import { CREDITOS, MARCA } from '../../marca';
 import { CASOS } from '../../../src/data/casos';
 import { planDe } from '../../../src/data/planes';
 import { formato } from '../../../src/domain/dinero';
@@ -27,7 +27,7 @@ export default function Page() {
           llegue la carta aval.
         </p>
         <p className="tesis">
-          <strong>Prior IA no autoriza: dictamina.</strong> Lee el informe y la póliza, cita la
+          <strong>{MARCA.nombre} no autoriza: dictamina.</strong> Lee el informe y la póliza, cita la
           cláusula y dice quién paga qué —deducible, coaseguro y tope anual— sin llamadas de por medio.
         </p>
         <p>

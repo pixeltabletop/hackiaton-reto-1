@@ -5,8 +5,8 @@
  * lateral, en el título de la pestaña y en el pie. Nada más.
  */
 export const MARCA = {
-  nombre: 'Prior IA',
-  corto: 'Prior IA',
+  nombre: 'PRIOR AI',
+  corto: 'PRIOR AI',
   lema: 'La cláusula manda.',
 };
 
