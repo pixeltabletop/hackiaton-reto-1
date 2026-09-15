@@ -16,6 +16,7 @@ build/
 out/
 .next/
 coverage/
+*.tsbuildinfo
 
 # Sistema y editor
 .DS_Store
