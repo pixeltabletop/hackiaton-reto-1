@@ -5,6 +5,7 @@ import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../../src/domain/presentacion'
 import type { Caso, Plan } from '../../../src/domain/tipos';
 import { consultarFuente, hayToken, leerRelacion } from '../../../src/notion/cliente';
 import { casoDesdeFila, planDesdeFila } from '../../../src/notion/mapeo';
+import { casoDeLaFila } from '../../../src/notion/lectura-del-caso';
 
 export const dynamic = 'force-dynamic';
 
@@ -83,13 +84,23 @@ export default async function PaginaNotion({
       planPorPagina.set(fila.id, planDesdeFila(fila));
     }
 
-    const pendientes: { paginaId: string; caso: Caso; plan: Plan | undefined }[] = (
+    // La lista lee el INFORME de cada fila con las reglas (sin modelo, sin costo): así el
+    // dictamen que se ve aquí es el mismo que sale del informe, y no el de unas columnas
+    // que pueden haber perdido matices al viajar. El modelo entra al pulsar el botón.
+    const filas = (
       await consultarFuente(fuenteCasos, { property: 'Estado', select: { equals: 'Pendiente' } })
-    ).results.map((fila: any) => ({
-      paginaId: fila.id,
-      caso: casoDesdeFila(fila),
-      plan: planPorPagina.get(leerRelacion(fila.properties['Póliza'])[0] ?? ''),
-    }));
+    ).results;
+
+    const pendientes: { paginaId: string; caso: Caso; plan: Plan | undefined }[] = await Promise.all(
+      filas.map(async (fila: any) => {
+        const plan = planPorPagina.get(leerRelacion(fila.properties['Póliza'])[0] ?? '');
+        return {
+          paginaId: fila.id,
+          caso: plan ? (await casoDeLaFila(fila, plan, null)).caso : casoDesdeFila(fila),
+          plan,
+        };
+      }),
+    );
 
     const conPlan = pendientes.filter((p) => p.plan);
     const escritas = fuenteDecisiones
@@ -104,8 +115,8 @@ export default async function PaginaNotion({
           Estas filas viven en la base <strong>Casos</strong> de Notion. Al dictaminar, el modelo lee
           el <strong>informe escrito en la fila</strong> y cita cada dato; el motor aplica la póliza
           relacionada, escribe la decisión en la base <strong>Decisiones</strong> y deja el caso como
-          dictaminado. La lista de abajo se arma con las columnas, para no llamar al modelo cada vez
-          que alguien abre esta pantalla.
+          dictaminado. La lista de abajo ya lee el informe de cada fila, pero con las reglas: el
+          modelo entra al pulsar el botón, para no llamarlo cada vez que alguien abre esta pantalla.
         </p>
 
         {pendientes.length === 0 && (
