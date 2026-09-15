@@ -40,7 +40,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     caso,
     decision: dictaminar(caso, planDe(caso.planId)),
   }));
-  const sinClausula = casos.filter((c) => c.decision.motivos.length === 0).length;
 
   return (
     <html lang="es" className={`${texto.variable} ${codigo.variable}`}>
@@ -77,7 +76,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <li>Aplica la póliza cláusula por cláusula.</li>
                 <li>Responde a la solicitud, o dice qué falta.</li>
               </ol>
-              <p>{sinClausula} decisiones sin cláusula citada.</p>
             </div>
           </aside>
 

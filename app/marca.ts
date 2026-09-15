@@ -7,7 +7,7 @@
 export const MARCA = {
   nombre: 'Prior IA',
   corto: 'Prior IA',
-  lema: 'Dictamina con la póliza en la mano.',
+  lema: 'Cada dictamen, con su cláusula.',
 };
 
 /** El equipo y el evento van juntos y solo al pie. */
