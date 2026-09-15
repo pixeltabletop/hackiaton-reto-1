@@ -342,7 +342,7 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
   motivos.push(
     motivo(
       'montos',
-      `Deducible ${formato(montos.deducibleAplicado)} · coaseguro ${motivoPorcentaje(montos.coaseguroPct)} sobre ${formato(menos(montos.montoFacturado, montos.deducibleAplicado))} = ${formato(montos.coaseguroAplicado)}`,
+      `Deducible ${formato(montos.deducibleAplicado)} · coaseguro ${motivoPorcentaje(montos.coaseguroPct)} sobre ${formato(menos(caso.montoEstimado, montos.deducibleAplicado))} = ${formato(montos.coaseguroAplicado)}`,
       '7.2',
       cita('montoEstimado'),
     ),
