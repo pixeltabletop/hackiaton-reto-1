@@ -1423,6 +1423,10 @@ mark {
   border: 1px solid var(--borde);
   border-radius: var(--radio-chico);
   padding: 12px 14px;
+  /* Las opciones describen el plan completo: en un teléfono el selector no puede ensanchar la página. */
+  max-width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
 }
 
 .boton {
