@@ -76,7 +76,7 @@ export async function GET() {
     JSON.stringify({
       ok: true,
       uso: 'POST con el campo caso=<id de la página en Notion>',
-      motor: 'determinista · el modelo solo lee y cita',
+      motor: 'reglas deterministas sobre la póliza',
     }),
     { headers: { 'content-type': 'application/json' } },
   );

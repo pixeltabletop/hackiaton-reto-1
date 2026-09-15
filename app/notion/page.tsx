@@ -4,7 +4,6 @@ import { dictaminar } from '../../src/domain/motor';
 import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../src/domain/presentacion';
 import type { Caso, Plan } from '../../src/domain/tipos';
 import { consultarFuente, hayToken, leerRelacion } from '../../src/notion/cliente';
-import { MARCA } from '../marca';
 import { casoDesdeFila, planDesdeFila } from '../../src/notion/mapeo';
 
 export const dynamic = 'force-dynamic';
@@ -19,7 +18,6 @@ const PASOS = [
 function Aviso({ titulo, detalle }: { titulo: string; detalle: string }) {
   return (
     <div className="hoja">
-      <span className="ceja">{MARCA.evento} · Notion</span>
       <h1>La integración con Notion</h1>
       <div className="bloque" style={{ marginTop: 22 }}>
         <h4>{titulo}</h4>
@@ -76,11 +74,10 @@ export default async function PaginaNotion() {
 
     return (
       <div className="hoja">
-        <span className="ceja">{MARCA.evento} · Notion, lectura en vivo</span>
         <h1>Casos pendientes leídos de Notion</h1>
         <p className="tesis">
-          Estas filas viven en la base <strong>Casos</strong> de Notion. El agente las lee, dictamina
-          con la póliza relacionada y escribe la decisión en la base <strong>Decisiones</strong>,
+          Estas filas viven en la base <strong>Casos</strong> de Notion. El sistema las lee, dictamina
+          contra la póliza relacionada y escribe la decisión en la base <strong>Decisiones</strong>,
           dejando el caso como dictaminado. Nada de esto sale de un archivo local.
         </p>
 
@@ -106,10 +103,18 @@ export default async function PaginaNotion() {
                 <h3>{caso.titulo || `CUPS ${caso.procedimientoCups}`}</h3>
                 <div className="pie">
                   <span className="chip">{ETIQUETA_ESTADO[decision.estado]}</span>
-                  <span>
-                    {decision.estado.startsWith('PRE_APROBADO')
-                      ? `responde ${formato(decision.pagaAseguradora)}`
-                      : `${decision.faltantes.length} faltantes`}
+                  <span className="detalle">
+                    {decision.estado.startsWith('PRE_APROBADO') ? (
+                      <>
+                        <span>Paga la aseguradora</span>
+                        <b>{formato(decision.pagaAseguradora)}</b>
+                      </>
+                    ) : (
+                      <>
+                        <span>Documentos pendientes</span>
+                        <b>{decision.faltantes.length}</b>
+                      </>
+                    )}
                   </span>
                 </div>
                 <p className="nota" style={{ marginTop: 12 }}>
@@ -154,7 +159,7 @@ export default async function PaginaNotion() {
         <footer>
           <p>
             <Link href="/" style={{ color: 'var(--acento)' }}>
-              Ver los seis casos de la demostración
+              Ver los seis casos dictaminados
             </Link>
           </p>
         </footer>

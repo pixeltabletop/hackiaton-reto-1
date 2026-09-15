@@ -257,5 +257,5 @@ export function leerInforme(
 export function resumenLectura(lectura: Lectura): string {
   const verificados = lectura.campos.filter((c) => c.verificado).length;
   const monto = lectura.caso.montoEstimado ? formato(lectura.caso.montoEstimado) : 'sin monto';
-  return `${verificados}/${lectura.campos.length} campos con cita textual · ${monto} · ${lectura.caso.documentosAdjuntos.length} documentos detectados`;
+  return `${verificados}/${lectura.campos.length} datos con respaldo textual · ${monto} · ${lectura.caso.documentosAdjuntos.length} documentos adjuntos`;
 }

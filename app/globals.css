@@ -61,7 +61,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: 24px;
 }
 
 body {
@@ -83,35 +83,42 @@ body {
   outline-offset: 2px;
 }
 
-/* ---------- barra de navegación ---------- */
+/* ---------- armazón: barra lateral + contenido ---------- */
 
-.barra {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 20px;
-  padding: 12px clamp(20px, 4vw, 56px);
-  background: color-mix(in srgb, var(--superficie) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--borde-suave);
+.marco {
+  display: grid;
+  grid-template-columns: 276px minmax(0, 1fr);
+  min-height: 100vh;
 }
 
-.barra-marca {
+.lateral {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 18px;
+  background: var(--superficie);
+  border-right: 1px solid var(--borde-suave);
+}
+
+.lateral-marca {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
   color: var(--tinta);
   text-decoration: none;
 }
 
-.barra-punto {
+.lateral-punto-marca {
+  flex: 0 0 auto;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -119,23 +126,128 @@ body {
   box-shadow: 0 0 0 4px var(--acento-suave);
 }
 
-.barra-enlaces {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+.lateral-lema {
+  margin: -10px 0 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--tinta-3);
 }
 
-.barra-enlaces a {
-  font-size: 14.5px;
+.lateral-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lateral-nav a {
+  font-size: 15px;
   color: var(--tinta-2);
   text-decoration: none;
-  padding: 7px 12px;
+  padding: 9px 12px;
   border-radius: 10px;
 }
 
-.barra-enlaces a:hover {
+.lateral-nav a:hover {
   background: var(--superficie-suave);
   color: var(--tinta);
+}
+
+.lateral-nav a.activo {
+  background: var(--acento-suave);
+  color: var(--acento);
+  font-weight: 600;
+}
+
+.lateral-pasos {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.lateral-pasos li {
+  margin-bottom: 5px;
+}
+
+.lateral-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.lateral-titulo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+  padding: 0 12px 8px;
+}
+
+.lateral-caso {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 12px;
+  border-radius: 9px;
+  text-decoration: none;
+  color: var(--tinta-2);
+}
+
+.lateral-caso:hover {
+  background: var(--superficie-suave);
+}
+
+.lateral-caso-id {
+  font-family: var(--fuente-codigo), ui-monospace, monospace;
+  font-size: 12.5px;
+}
+
+.lateral-punto {
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--estado, var(--acento));
+}
+
+.lateral-tarjeta {
+  margin-top: auto;
+  padding: 16px;
+  background: var(--fondo-2);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-chico);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--tinta-3);
+}
+
+.lateral-tarjeta strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: var(--tinta);
+}
+
+.contenido {
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .marco {
+    grid-template-columns: 1fr;
+  }
+
+  .lateral {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--borde-suave);
+  }
+
+  .lateral-tarjeta {
+    margin-top: 0;
+  }
 }
 
 /* ---------- hoja ---------- */
@@ -274,16 +386,24 @@ h2 {
 
 .tarjeta .pie {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
-  font-size: 14px;
-  color: var(--tinta-2);
 }
 
-.tarjeta .pie span:last-child {
-  text-align: right;
+.tarjeta .detalle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--tinta-3);
+}
+
+.tarjeta .detalle b {
+  font-size: 16px;
+  color: var(--tinta);
+  font-variant-numeric: tabular-nums;
 }
 
 .tarjeta .pista {
@@ -328,11 +448,21 @@ h2 {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--estado);
-  background: color-mix(in srgb, var(--estado) 10%, var(--superficie));
-  border: 1px solid color-mix(in srgb, var(--estado) 30%, transparent);
+  color: var(--estado, var(--acento));
+  background: color-mix(in srgb, var(--estado, var(--acento)) 10%, var(--superficie));
+  border: 1px solid color-mix(in srgb, var(--estado, var(--acento)) 30%, transparent);
   border-radius: 999px;
   padding: 5px 14px;
+}
+
+.chip-enlace {
+  text-decoration: none;
+  padding: 9px 18px;
+  font-size: 13px;
+}
+
+.chip-enlace:hover {
+  background: color-mix(in srgb, var(--acento) 16%, var(--superficie));
 }
 
 /* ---------- ficha de un caso ---------- */

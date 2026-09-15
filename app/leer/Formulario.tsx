@@ -28,9 +28,9 @@ export function FormularioLeer({ ejemplo, planes, ejemplos }: { ejemplo: string;
       <form className="bloque" action={accion} style={{ marginTop: 22 }}>
         <h4>Informe del hospital</h4>
         <p className="nota" style={{ marginTop: 0, marginBottom: 12 }}>
-          Borre este ejemplo y pegue su propio informe, o pulse uno de los casos del final de la
-          página. Se lee tal cual está escrito: cada dato que el agente use tiene que aparecer aquí,
-          con esas palabras. El texto se envía al servidor y no queda en la dirección de la página.
+          Pegue aquí el informe. Se evalúa literalmente como está escrito: cada dato que sostenga el
+          dictamen tiene que aparecer en este texto, con esas palabras. El contenido se envía al
+          servidor y no queda en la dirección de la página.
         </p>
         <textarea
           key={`texto-${clave}`}
@@ -53,7 +53,7 @@ export function FormularioLeer({ ejemplo, planes, ejemplos }: { ejemplo: string;
             ))}
           </select>
           <button className="boton" type="submit" disabled={enCurso}>
-            {enCurso ? 'Leyendo…' : 'Leer y dictaminar'}
+            {enCurso ? 'Dictaminando…' : 'Dictaminar solicitud'}
           </button>
         </div>
         {estado.error && (
@@ -66,7 +66,7 @@ export function FormularioLeer({ ejemplo, planes, ejemplos }: { ejemplo: string;
       {r && (
         <>
           <div className="bloque" style={{ marginTop: 18 }} aria-live="polite">
-            <h4>Qué leyó el agente</h4>
+            <h4>Datos leídos del informe</h4>
             <p style={{ marginTop: 0 }}>{r.resumen}</p>
             {r.nota && (
               <p className="nota" style={{ marginTop: 0 }}>
@@ -76,7 +76,7 @@ export function FormularioLeer({ ejemplo, planes, ejemplos }: { ejemplo: string;
             {r.descartados.length > 0 && (
               <ul className="faltantes-lista">
                 {r.descartados.map((descartado) => (
-                  <li key={descartado}>Descartado del modelo — {descartado}</li>
+                  <li key={descartado}>Sin respaldo en el informe — {descartado}</li>
                 ))}
               </ul>
             )}
@@ -88,7 +88,7 @@ export function FormularioLeer({ ejemplo, planes, ejemplos }: { ejemplo: string;
               </ul>
             ) : (
               <p className="nota" style={{ marginBottom: 0 }}>
-                Todos los datos del informe se encontraron con su cita textual.
+                Todos los datos del dictamen tienen respaldo textual en el informe.
               </p>
             )}
           </div>
@@ -97,7 +97,7 @@ export function FormularioLeer({ ejemplo, planes, ejemplos }: { ejemplo: string;
         </>
       )}
 
-      <h2>O empiece por un informe de ejemplo</h2>
+      <h2>Solicitudes de ejemplo</h2>
       <div className="pared">
         {ejemplos.map((caso) => (
           <form action={accion} key={caso.id}>
@@ -106,7 +106,7 @@ export function FormularioLeer({ ejemplo, planes, ejemplos }: { ejemplo: string;
             <button className="tarjeta boton-tarjeta" type="submit" disabled={enCurso}>
               <span className="slug">{caso.id}</span>
               <h3>{caso.titulo}</h3>
-              <span className="pista">Leer y dictaminar este informe →</span>
+              <span className="pista">Dictaminar esta solicitud →</span>
             </button>
           </form>
         ))}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Caso } from './components/Caso';
-import { MARCA } from './marca';
+import { CREDITOS } from './marca';
 import { CASOS } from '../src/data/casos';
 import { planDe } from '../src/data/planes';
 import { formato } from '../src/domain/dinero';
@@ -14,23 +14,22 @@ export default function Page() {
   const totalAseguradora = aprobados.reduce((total, v) => total + v.decision.pagaAseguradora, 0);
   const sinClausula = vistas.filter((v) => v.decision.motivos.length === 0).length;
   const masLento = Math.max(...vistas.map((v) => v.decision.tiempoMs));
+  const clausulasCitadas = new Set(
+    vistas.flatMap((v) => v.decision.motivos.map((m) => m.clausula)),
+  ).size;
 
   return (
     <div className="hoja">
       <header>
-        <span className="ceja">
-          {MARCA.evento} · {MARCA.equipo}
-        </span>
         <h1>Pre-autorización quirúrgica en segundos</h1>
         <p className="tesis">
-          El agente no autoriza: <strong>dictamina con la póliza en la mano</strong>. El modelo lee el
-          informe del hospital y cita de dónde sacó cada dato; la cobertura la decide la póliza con
-          reglas deterministas. Si un dato no tiene respaldo textual, el caso no se aprueba: cae a
-          documentos faltantes.
+          <strong>No autoriza: dictamina con la póliza en la mano.</strong> Cada decisión cita la
+          cláusula exacta que la sostiene y cada dato sale del informe del hospital. Lo que no está
+          escrito en el expediente, no se aprueba.
         </p>
         <p>
-          <Link className="chip" href="/leer" style={{ textDecoration: 'none' }}>
-            Leer un informe propio →
+          <Link className="chip chip-enlace" href="/leer">
+            Evaluar una nueva solicitud →
           </Link>
         </p>
       </header>
@@ -45,16 +44,16 @@ export default function Page() {
           <dd className="cero">{sinClausula}</dd>
         </div>
         <div>
+          <dt>Cláusulas citadas</dt>
+          <dd>{clausulasCitadas}</dd>
+        </div>
+        <div>
           <dt>Dictamen más lento</dt>
           <dd>{masLento} ms</dd>
         </div>
-        <div>
-          <dt>Origen de los datos</dt>
-          <dd className="palabra">Sintético</dd>
-        </div>
       </dl>
 
-      <h2>Los seis casos</h2>
+      <h2>Solicitudes dictaminadas</h2>
       <div className="pared">
         {vistas.map(({ caso, decision }) => (
           <a className={`tarjeta ${CLASE_ESTADO[decision.estado]}`} href={`#${caso.id}`} key={caso.id}>
@@ -62,13 +61,20 @@ export default function Page() {
             <h3>{caso.titulo}</h3>
             <div className="pie">
               <span className="chip">{ETIQUETA_ESTADO[decision.estado]}</span>
-              <span>
-                {decision.estado.startsWith('PRE_APROBADO')
-                  ? `responde ${formato(decision.pagaAseguradora)}`
-                  : caso.hospital}
+              <span className="detalle">
+                {decision.estado.startsWith('PRE_APROBADO') ? (
+                  <>
+                    <span>Paga la aseguradora</span>
+                    <b>{formato(decision.pagaAseguradora)}</b>
+                  </>
+                ) : (
+                  <>
+                    <span>Hospital</span>
+                    <b>{caso.hospital}</b>
+                  </>
+                )}
               </span>
             </div>
-            <span className="pista">Ver el dictamen completo ↓</span>
           </a>
         ))}
       </div>
@@ -80,13 +86,17 @@ export default function Page() {
       <footer>
         <p>
           Seis dictámenes · {formato(totalAseguradora)} respondidos por la aseguradora en los casos
-          aprobados · cero decisiones sin cláusula citada · motor determinista: el mismo caso da
-          siempre el mismo dictamen.
+          aprobados · ninguna decisión sin cláusula citada · el mismo caso da siempre el mismo
+          dictamen.
         </p>
         <p>
-          Pólizas, hospitales, pacientes y montos son <strong>sintéticos</strong>. El motor se audita
-          con <code>npm run check</code>: falla si un caso da un dictamen distinto al esperado, si una
-          decisión sale sin cláusula o si los montos no cuadran contra lo facturado.
+          Los datos son <strong>sintéticos</strong>: pólizas, hospitales, pacientes y montos son
+          inventados. La calidad se audita con <code>npm run check</code>: si un caso cambia de
+          dictamen, si una decisión sale sin cláusula o si los montos no cuadran contra lo facturado,
+          la verificación falla.
+        </p>
+        <p>
+          {CREDITOS.equipo} · {CREDITOS.evento}
         </p>
       </footer>
     </div>
