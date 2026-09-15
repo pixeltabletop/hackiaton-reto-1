@@ -128,9 +128,9 @@ body {
 
 .lateral-lema {
   margin: -10px 0 0;
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: var(--tinta-3);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--tinta-2);
 }
 
 .lateral-nav {
@@ -282,17 +282,15 @@ h1 {
   margin: 0 0 28px;
 }
 
-/* El problema, contado como lo cuenta el reto: en la voz del que lo vive. */
+/* El problema, en la voz del que lo vive: una línea, sin competir con el titular. */
 .problema {
-  max-width: 68ch;
-  margin: 0 0 20px;
-  padding: 14px 20px;
-  background: var(--fam-documentos-tinte);
-  border-left: 4px solid var(--fam-documentos);
-  border-radius: 0 var(--radio-chico) var(--radio-chico) 0;
-  font-size: 16.5px;
+  max-width: 62ch;
+  margin: 0 0 22px;
+  padding: 2px 0 2px 18px;
+  border-left: 3px solid var(--fam-documentos);
+  font-size: 17px;
   line-height: 1.65;
-  color: var(--fam-documentos);
+  color: var(--tinta-2);
 }
 
 /* La frase que cierra la portada. */

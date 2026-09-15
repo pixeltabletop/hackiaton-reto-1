@@ -23,8 +23,8 @@ export default function Page() {
       <header>
         <h1>La cirugía no espera. La carta aval tampoco.</h1>
         <p className="problema">
-          Hoy el paciente espera horas o días por la autorización, y el hospital no agenda una cirugía
-          electiva hasta que llegue la carta aval.
+          Hoy el paciente espera horas o días por la autorización, y el hospital no agenda hasta que
+          llegue la carta aval.
         </p>
         <p className="tesis">
           <strong>Prior IA no autoriza: dictamina.</strong> Lee el informe y la póliza, cita la
