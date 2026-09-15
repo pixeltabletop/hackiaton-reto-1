@@ -2,7 +2,11 @@ import Link from 'next/link';
 import { CASOS } from '../../../src/data/casos';
 import { PLANES } from '../../../src/data/planes';
 import { formato } from '../../../src/domain/dinero';
+import { proveedorDeEntorno } from '../../../src/domain/lectura-modelo';
 import { FormularioLeer } from './Formulario';
+
+// Esta pantalla depende de si hay clave de modelo en el servidor, así que se arma al pedirla.
+export const dynamic = 'force-dynamic';
 
 const EJEMPLO = `CLÍNICA COSTA DEL ESTE — SERVICIO DE ORTOPEDIA
 Informe médico para solicitud de preautorización
@@ -19,6 +23,9 @@ Antecedentes: dolor con bloqueos de rodilla. Sin antecedentes crónicos declarad
 Hallazgos: rotura meniscal interna, sin derrame.`;
 
 export default function PaginaLeer() {
+  // En qué modo está el agente. Se dice antes de dictaminar, no después: quien evalúa
+  // tiene que saber si el informe lo va a leer un modelo o las reglas.
+  const proveedor = proveedorDeEntorno();
   const planes = PLANES.map((p) => ({
     id: p.id,
     etiqueta: `${p.id} · ${p.plan} · deducible ${formato(p.deducibleAnual)} · coaseguro ${p.coaseguroPct}% en red`,
@@ -32,6 +39,22 @@ export default function PaginaLeer() {
         Pegue el informe del hospital y elija la póliza del paciente. Cada dato se toma{' '}
         <strong>con la cita textual de donde salió</strong> y la cobertura la resuelven las cláusulas.
         Si un papel falta, la solicitud no se aprueba: queda a la espera de documentación.
+      </p>
+
+      <p className={`nota ${proveedor ? 'nota-buena' : ''}`} role="status">
+        {proveedor ? (
+          <>
+            <b>Lectura con modelo activa:</b> {proveedor.nombre}. El modelo extrae los datos del
+            informe con su cita; la cobertura la sigue decidiendo la póliza.
+          </>
+        ) : (
+          <>
+            <b>Modo sin modelo:</b> este servidor no tiene clave de IA, así que el informe lo lee el
+            lector por reglas. Funciona con informes rotulados; uno escrito en prosa quedará
+            incompleto. Para encenderlo, copie <code>.env.example</code> a <code>.env.local</code> y
+            complete una clave.
+          </>
+        )}
       </p>
 
       <FormularioLeer ejemplo={EJEMPLO} planes={planes} ejemplos={ejemplos} />

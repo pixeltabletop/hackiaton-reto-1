@@ -1,142 +1,254 @@
 # PRIOR AI — el dictamen con la póliza en la mano
 
-Equipo **Jajanken** · Reto 1 del hackIAthon Panamá 2026 · **datos sintéticos**
+Agente de **pre-autorización quirúrgica**: lee el informe del hospital con IA y dictamina contra la
+póliza, citando la cláusula que sostiene cada decisión.
+
+Equipo **Jajanken** · Reto 1 del hackIAthon Panamá 2026.
 
 > **El agente no autoriza: dictamina con la póliza en la mano.**
-> El modelo lee el informe del hospital y cita; la cobertura la decide la póliza con reglas
-> deterministas. Si un dato no tiene cita textual en el documento, no existe: el caso no se aprueba.
-
-Un paciente no debería esperar días para saber si su cirugía está cubierta. PRIOR AI recibe el
-informe del hospital y la póliza del paciente y devuelve **un dictamen con la cláusula que lo
-sostiene**, o la lista exacta de lo que falta y qué pasa si se adjunta.
-
-## Las pantallas
-
-| Ruta | Qué es |
-|---|---|
-| `/` | **Buscar al asegurado** por cédula o número de póliza (tecleado o leído de una foto). Muestra su póliza, su vigencia y el dictamen de su caso. Desde aquí se entra a leer un informe nuevo. |
-| `/leer` | **Pegue un informe y el agente lo dictamina.** El modelo lee el informe en prosa, cada dato sale con su cita y el motor decide con la póliza. Es el agente sobre un documento que nunca vio. |
-| `/casos` | Los seis casos del corpus: veredicto, cada regla con su cláusula, reparto del monto e informe con la cita de cada dato. |
-| `/emergencia` | **Modo ambulancia**: una pantalla, un campo y un botón para escanear la cédula o la póliza con una mano. |
-| `/notion` | Lee los casos pendientes de la base **Casos** de Notion y escribe la decisión en **Decisiones**. |
-| `/api/dictaminar` | `POST caso=<id de la página de Notion>`: dictamina ese caso y escribe la decisión. |
-
-## Cómo correrlo
-
-Requisitos: Node 24 o superior.
-
-```bash
-npm ci
-npm run dev                      # la web en http://localhost:3000
-npm run check                    # pruebas, puerta del dictamen, informes trampa y contraste
-npm run check:trampas -- --estricto   # cero defectos conocidos: la verificación antes de entregar
-npm run probar:ocr               # lee las dos fotos de ejemplo sin red
-npm run probar:proveedor         # con una clave de modelo: ver «Despliegue»
-```
-
-| Comando | Qué comprueba |
-|---|---|
-| `npm test` | 81 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo, búsqueda por cédula y póliza, números en documentos, escritura en Notion y la regla de salida de `probar:proveedor` |
-| `npm run check:decision` | Dictamina los seis casos y audita los invariantes del contrato |
-| `npm run check:trampas` | 24 informes trampa: variaciones reales (negaciones, rótulos distintos, montos corregidos, órdenes escondidas) que no pueden cambiar el dictamen correcto |
-| `npm run check:color` | Contraste WCAG AA de todos los pares de color del tema |
-| `npm run probar:ocr` | El OCR lee la cédula y la póliza de ejemplo con el modelo de idioma local, sin salir a la red |
-
-La integración continua de GitHub corre todo lo anterior, la prueba del proveedor en modo simulado y
-el build de producción en cada push.
-
-## Los seis casos (corpus sintético)
-
-| Caso | Qué trae | Dictamen |
-|---|---|---|
-| `PR-2026-0417` | Colecistectomía electiva, en red, tres años de afiliación, todo adjunto | `PRE_APROBADO` |
-| `PR-2026-0518` | Artroscopia electiva con dos meses de afiliación (la póliza pide tres) | `CARENCIA_NO_CUMPLIDA` |
-| `PR-2026-0633` | Rinoplastia con fines estéticos | `NO_CUBIERTO` |
-| `PR-2026-0701` | Colecistectomía sin estudio de imagen ni orden de anestesiología | `DOCUMENTOS_FALTANTES` |
-| `PR-2026-0744` | Hernioplastia con preexistencia declarada, 14 de 24 meses | `DERIVAR_A_MEDICO_AUDITOR` |
-| `PR-2026-0790` | Apendicectomía urgente en hospital fuera de la red | `PRE_APROBADO_CON_CONDICIONES` |
-
-El caso `PR-2026-0701` además responde **qué falta para aprobar**: *«con esos documentos, el caso
-pasa a `PRE_APROBADO` y la aseguradora responde $ 2,400.00»*.
-
-Cédulas y pólizas de prueba para el buscador: `8-742-1593`, `8-315-8820`, `3-714-2296`,
-`4-118-5471`, `9-233-6604`, `2-641-9038` y la póliza familiar `IS-A-2025-0871`.
-
-## Las reglas que no se negocian
-
-1. **El modelo lee y cita; el código decide.** La cobertura la resuelve la póliza, no un modelo.
-2. **Sin cita textual no hay dato.** Cada campo que el agente usa tiene que existir literalmente en
-   el documento, y su valor tiene que salir de esa cita. Si el informe se contradice (dos montos
-   distintos), ese dato no se usa.
-3. **El modelo no puede inventar.** Su respuesta se acepta campo por campo y solo si el fragmento
-   que cita aparece en el informe **y el valor sale de ese fragmento**: un monto de $ 1,000.00 que
-   cita la línea de $ 4,200.00 se descarta. El carácter tiene que estar en el catálogo, los
-   documentos también se citan uno por uno, y el modelo nunca pisa lo que las reglas ya resolvieron.
-4. **Lo que el informe no declara no se adivina.** Sin carácter (electiva o urgencia) o sin
-   declaración de preexistencias dentro de su carencia, el caso deriva al médico auditor. Un
-   documento negado («pendiente estudio de imagen») no cuenta. La cédula y la póliza del informe
-   solo se toman junto a su rótulo: una fecha o un teléfono no se convierten en una persona.
-5. **Todo en centavos enteros**, y los montos de una aprobación cuadran contra lo facturado.
-
-## Arquitectura
-
-```
-src/domain/   dinero.ts          todo el dinero en centavos (el modelo nunca toca una cifra)
-              evidencia.ts       cita textual verificada como subcadena, con offset al original
-              poliza.ts          compilador: el texto legal pasa a cláusulas indexadas
-              motor.ts           motor determinista: evidencia → vigencia → cobertura → red →
-                                 preexistencias → carencias → documentos → tope y umbral
-              lectura.ts         lector por reglas (determinista, sin costo, sin red)
-              lectura-modelo.ts  lector con modelo + la regla de la cita + respaldo por reglas
-              busqueda.ts        buscador por cédula o póliza, con o sin guiones
-              numeros.ts         cédulas panameñas y pólizas dentro de un texto
-              presentacion.ts    resumen.ts   lo que la web pinta, ya resuelto
-src/ocr/      leer-documento.ts  OCR en el servidor (Tesseract, modelo de idioma local, sin red)
-src/data/     corpus sintético: 3 pólizas con su texto legal, 6 casos, tarifario e informes trampa
-src/notion/   cliente.ts (fetch, API 2026-03-11), mapeo.ts y seguridad.ts (quién puede escribir)
-app/          Next.js en el servidor; los informes y las fotos viajan por POST, nunca en la URL
-scripts/      puertas de calidad, probar-ocr, probar-proveedor y notion-preparar (crea las bases)
-```
-
-Más detalle en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md).
-
-## Despliegue
-
-La web se publica en Vercel. Variables de entorno (nunca en el repositorio; plantilla en
-[`.env.example`](.env.example)):
-
-```
-ANTHROPIC_API_KEY           # lectura con Claude Sonnet 5 (medido: 36/36, 0 aprobaciones indebidas). Tiene prioridad.
-GOOGLE_API_KEY              # alternativa: Gemini (por defecto gemini-2.5-flash; Google la retira desde el 16-oct-2026)
-GROQ_API_KEY                # alternativa: Groq (por defecto openai/gpt-oss-120b)
-OPENAI_API_KEY              # alternativa: OpenAI (por defecto gpt-4o-mini)
-MODELO_LECTURA              # opcional: otro modelo del proveedor elegido
-NOTION_TOKEN                # integración de Notion
-NOTION_FUENTE_CASOS         # id de la fuente de datos de la base Casos
-NOTION_FUENTE_POLIZAS       # id de la base Pólizas
-NOTION_FUENTE_DECISIONES    # id de la base Decisiones
-```
-
-Sin ninguna variable el sitio funciona: el buscador, los casos y `/leer` dictaminan con la lectura
-por reglas. Pero **sin clave de modelo los informes en prosa no se dictaminan bien**, y el reto pide
-leer con IA.
-
-**Antes de publicar con una clave**, correr con esa clave en el entorno:
-
-```bash
-npm run probar:proveedor
-```
-
-Pasa 13 informes con dictamen conocido (7 en prosa y 6 trampas) por el mismo camino que `/leer`.
-Sale con 1 si hay una aprobación indebida o si el modelo no está leyendo y todo cae a reglas; con 2
-si no hay clave. Solo Claude Sonnet 5 está medido con el banco completo.
-
-Las fotos se reducen en el teléfono antes de subir; el servidor acepta hasta 4 MB por foto.
+> El modelo lee y cita; la cobertura la decide la póliza con reglas deterministas. Si un dato no
+> tiene cita textual en el documento, no existe: el caso no se aprueba.
 
 ## Aviso
 
-Todos los datos son **sintéticos**: pólizas, hospitales, pacientes, cédulas y montos son inventados
-para la demostración, y las fotos de ejemplo están marcadas como documentos ficticios. No hay datos
-reales de pacientes ni de ninguna aseguradora.
+- Es un **prototipo de hackathon**, no un sistema en producción ni un producto de ninguna aseguradora.
+- **Todos los datos son sintéticos**: pólizas, hospitales, pacientes, cédulas, montos e informes son
+  inventados. Las fotos de ejemplo llevan impreso «MUESTRA · DATOS FICTICIOS».
+- No sustituye el criterio del médico auditor: cuando hay criterio médico o un monto alto, **deriva**.
 
-Licencia MIT.
+## Qué problema resuelve
+
+Hoy el hospital manda el informe a la aseguradora y la respuesta tarda horas o días. El paciente no
+sabe si se opera, el hospital no agenda sin carta aval, y a veces la respuesta vuelve como «no
+autorizado» sin decir por qué ni qué faltaba.
+
+PRIOR AI recibe el informe y la póliza y devuelve, en milisegundos, un dictamen con **la cláusula
+exacta** que lo sostiene: o está cubierto y dice cuánto paga cada quién, o dice **qué papel falta y
+cuánto pagaría la aseguradora si se adjunta**.
+
+El diferenciador no es «usamos IA». Es el reparto de trabajo: **el modelo solo lee y cita; la
+cobertura la calcula un motor determinista sobre el texto de la póliza**. Medido en un banco de 36
+informes con cuatro modelos: reglas + modelo da 36/36 con **cero aprobaciones indebidas**; dejando
+que el modelo decida solo, entre **5 y 19 aprobaciones indebidas**.
+
+## Qué es y cómo funciona
+
+1. **Entra un informe**: pegado en la web, o leído de una fila de Notion, o escaneado de una foto.
+2. **Lectura**: las reglas extraen lo que pueden; el modelo completa lo que falta y **cada dato viaja
+   con el fragmento textual del que salió**. Un dato cuya cita no aparece en el informe se descarta.
+3. **Compilación de la póliza**: el texto legal se indexa en cláusulas numeradas con su posición.
+4. **Motor determinista**, ocho pasos en orden fijo: evidencia, vigencia, cobertura, red,
+   preexistencias, carencias, documentos, tope y umbral. **El primer paso que falla cierra el caso.**
+5. **Salida**: estado, motivos con su cláusula citada, reparto del monto y, si falta un documento,
+   el contrafactual («con esos documentos pasa a PRE_APROBADO y la aseguradora responde $ 2,400.00»).
+
+La pantalla **«Cómo decide, paso a paso»** (`/flujo`) enseña ese recorrido con diez variantes, e
+incluye informes trampa: el mismo informe con una negación, una orden escondida o un rótulo distinto,
+para ver que el camino cambia por lo que dice el documento.
+
+### Las pantallas
+
+| Ruta | Qué es |
+|---|---|
+| `/` | **Buscar al asegurado** por cédula o póliza, tecleada o leída de una foto (OCR en el servidor) |
+| `/leer` | **Pegue un informe y el agente lo dictamina.** Dice arriba si hay modelo activo o si lee por reglas |
+| `/flujo` | **Cómo decide, paso a paso**, con diez variantes y los informes trampa |
+| `/casos` | Los seis casos del corpus, con el porqué de cada uno y el informe con la cita de cada dato |
+| `/emergencia` | **Modo ambulancia**: una pantalla, un campo, un botón para escanear |
+| `/notion` | Los casos pendientes de la base **Casos** de Notion; al dictaminar, el modelo lee el informe de la fila y la decisión se escribe en **Decisiones** |
+| `/api/dictaminar` | `POST caso=<id de página de Notion>`: la misma ruta, sin interfaz |
+
+## Qué sale a la red y qué no
+
+| Parte | Dónde corre | Sale a internet |
+|---|---|---|
+| Motor de decisión (`src/domain/motor.ts`) | En el servidor, sin red | **No** |
+| Lector por reglas (`src/domain/lectura.ts`) | En el servidor, sin red | **No** |
+| OCR de fotos (`src/ocr/`) | En el servidor, con Tesseract y el modelo de idioma incluido en el repositorio (`src/ocr/idioma/eng.traineddata`, 5.0 MB) | **No** — el worker tiene `fetch` bloqueado y `npm run probar:ocr` falla si intenta salir |
+| Lectura con modelo (`src/domain/lectura-modelo.ts`) | API del proveedor elegido | **Sí**: el texto del informe. Es la única salida |
+| Notion | API de Notion | **Sí**, solo si se configura el token |
+
+Sin ninguna clave, la web funciona completa leyendo por reglas: **el enlace público no depende de un
+token**. Lo que cambia es que un informe escrito en prosa libre quedará incompleto.
+
+## Máquina donde se midió
+
+Windows 11 Pro (26200), Intel Core i7-1355U, 10 núcleos, 15.6 GB de RAM, Node 24.16.0.
+**Todas las cifras de este documento salen de esa máquina**, salvo las de la integración continua,
+que corren en Ubuntu en GitHub Actions.
+
+## Modelo y configuración exacta
+
+| Uso | Modelo | Configuración | Medido |
+|---|---|---|---|
+| Lectura del informe | `claude-sonnet-5` (SDK `@anthropic-ai/sdk` 0.125.0, versión fijada) | esfuerzo `low`, salida estructurada con el esquema de lectura, sin `temperature` | 13/13 informes, mediana 5.0 s, ~USD 0.009 por informe |
+| Alternativa medida | `claude-haiku-4-5` | igual | 36/36 en el banco, 8.7 s, ~USD 0.003 |
+| Alternativas soportadas **sin medir** | Gemini, Groq, OpenAI | por defecto `gemini-2.5-flash`, `openai/gpt-oss-120b`, `gpt-4o-mini` | correr `npm run probar:proveedor` antes de publicar |
+| OCR | Tesseract 7 (`eng`, modelo LSTM) | lista blanca de caracteres, sin red, corte a los 20 s | 2/2 fotos de ejemplo en 2.7 s |
+
+Cambiar el modelo o su configuración invalida las cifras de arriba. Por eso existe
+`npm run probar:proveedor`.
+
+## Requisitos mínimos
+
+| | Mínimo | Recomendado |
+|---|---|---|
+| Sistema | Windows 10/11, macOS o Linux | Windows 11 |
+| Node | **24** (`npm ci` falla por debajo; `engines` solo avisa, el lanzador sí se detiene) | 24.16 |
+| Memoria libre | 2 GB | 4 GB |
+| Disco | 500 MB (393 MB de dependencias + 100 MB de compilación + 5.4 MB del repositorio) | 1 GB |
+| Red | Solo para instalar. Para que la IA lea informes, una clave de modelo | — |
+
+## Instalación
+
+### Camino corto: doble clic (Windows)
+
+1. Descargar el proyecto (botón **Code → Download ZIP**, o el archivo de la
+   [última versión publicada](../../releases/latest)) y descomprimirlo.
+2. Doble clic en **`Iniciar-PRIOR-AI.cmd`**.
+3. El lanzador comprueba Node, comprueba que el puerto 3000 esté libre, instala, compila, arranca y
+   abre el navegador. Si algo falta, lo dice y se detiene.
+
+La primera vez tarda entre uno y dos minutos (instalación 50 s, compilación 12 s en la máquina de
+arriba). Las siguientes, unos segundos.
+
+### Camino desde el código
+
+```bash
+git clone https://github.com/pixeltabletop/hackiaton-reto-1
+cd hackiaton-reto-1
+npm ci
+npm run build && npm run start      # http://localhost:3000
+```
+
+Para desarrollo: `npm run dev`.
+
+**Para que la IA lea informes en prosa** (opcional, la web funciona sin esto):
+
+```bash
+cp .env.example .env.local     # y complete UNA clave de modelo
+npm run probar:proveedor       # comprueba que ese modelo sirve, antes de confiar en él
+```
+
+> **Trampa conocida:** si el puerto 3000 está ocupado por otro proyecto, Next arranca en otro puerto
+> y el navegador queda mirando la aplicación equivocada. El lanzador lo detecta y se detiene.
+
+## Verificación reproducible
+
+```bash
+npm run check                          # todo lo que no necesita red ni claves
+npm run check:trampas -- --estricto    # cero defectos conocidos: la puerta antes de entregar
+npm run probar:ocr                     # el OCR, sin red
+npm run probar:proveedor -- --simulado bueno   # la prueba del proveedor, sin clave
+```
+
+| Comando | Qué comprueba | Necesita |
+|---|---|---|
+| `npm test` | 92 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo, búsqueda por cédula y póliza, números en documentos, lectura desde Notion, pasos del flujo y la regla de salida del probador | nada |
+| `npm run check:decision` | Los cinco invariantes del contrato sobre los seis casos | nada |
+| `npm run check:trampas` | 24 informes trampa: negaciones, rótulos distintos, montos corregidos, órdenes escondidas. Falla si aparece una aprobación indebida | nada |
+| `npm run check:color` | Contraste WCAG AA de los 19 pares de color del tema | nada |
+| `npm run probar:ocr` | Lee la cédula y la póliza de ejemplo **y falla si el OCR intenta salir a la red o deja cachés** | nada |
+| `npm run probar:proveedor` | 13 informes con dictamen conocido por el mismo camino que `/leer`. Sale con 1 ante una aprobación indebida o si el modelo no está leyendo, y con 2 sin clave | una clave de modelo (o `--simulado`) |
+
+**Las puertas se prueban a sí mismas**: `probar:proveedor` tiene su regla de salida en
+`src/domain/prueba-proveedor.ts` con pruebas que la rompen a propósito, y `check:trampas` falla si
+una trampa deja de probar lo que decía.
+
+La integración continua corre todo lo anterior **más el build de producción**, instalando desde cero
+en Ubuntu, en cada push.
+
+## Resultados medidos
+
+| Qué se midió | Resultado |
+|---|---|
+| Pruebas automáticas | **92 de 92** |
+| Informes trampa | **24 de 24**, 0 aprobaciones indebidas, 0 en deuda |
+| Reglas del motor cubiertas por una prueba que falla si se quitan | **8 de 8** (eran 3 de 8) |
+| Banco de 36 informes, reglas + modelo | **36 de 36**, 0 aprobaciones indebidas (Haiku 4.5, Sonnet 5 y Codex) |
+| El mismo banco dejando decidir al modelo | **5 a 19 aprobaciones indebidas** según el modelo |
+| Prueba del proveedor con Sonnet 5 real | **13 de 13**, 0 indebidas, 0 caídas a reglas |
+| OCR sobre las fotos de ejemplo | **2 de 2**, sin red |
+| Contraste del tema | **19 pares**, 0 por debajo de AA |
+
+## Tiempos reales
+
+| Operación | Tiempo |
+|---|---|
+| Dictamen (motor solo) | 1 a 6 ms |
+| Lectura de un informe con Claude Sonnet 5 | 3.6 a 6.9 s (mediana 5.0 s) |
+| OCR de una foto | 1.3 a 2.7 s |
+| Página del buscador / del flujo | 70 a 173 ms |
+| Instalación (`npm ci`) | 50 s |
+| Compilación (`npm run build`) | 12 s |
+| Verificación (`npm run check`) | 5 s |
+
+## Limitaciones conocidas
+
+- **La póliza no se lee con modelo**: su estructura está escrita a mano; el texto legal sí es el que
+  se indexa y se cita. Es el siguiente paso más valioso.
+- **El deducible no acumula**: se aplica por caso, no contra el histórico anual del afiliado.
+- **Tres pólizas y seis casos.** Suficiente para demostrar el criterio, lejos de la variedad real.
+- **Sin autenticación real**: la escritura en Notion se limita por origen, por base y por estado del
+  caso, no por usuario.
+- **Los informes trampa los escribió el mismo equipo** que escribió el lector. Un informe de alguien
+  ajeno es la prueba que falta.
+- **Solo Claude está medido.** Gemini, Groq y OpenAI funcionan por código, pero sin banco detrás.
+- **El OCR reconoce documentos escritos con letra de imprenta**, no manuscritos, y propone un número
+  para buscar: nunca escribe en la base.
+
+## Trabajo futuro
+
+Leer la póliza con el modelo, historial del afiliado (deducible y tope acumulados), integración por
+HL7/FHIR con el hospital y el core de la aseguradora, y negativas firmadas por una persona.
+
+## Cumplimiento del reto
+
+| Requisito del reto | Cómo se cumple |
+|---|---|
+| Recibe el informe médico digital y la póliza **en una base de datos de Notion** | Bases `Pólizas`, `Casos` y `Decisiones` creadas por `npm run notion:preparar`; la pantalla `/notion` las lee |
+| **Con IA**, analiza si el procedimiento está cubierto | El modelo lee el informe de la fila y cita cada dato (`src/notion/lectura-del-caso.ts`); la cobertura la decide el motor |
+| Verifica las **carencias** | Pasos 5 y 6 del motor, cláusulas 3.1 y 3.2, con sus pruebas |
+| Emite **preaprobación o solicitud de documentos faltantes** | Seis estados posibles, incluida la lista de faltantes y el contrafactual |
+| **De forma instantánea** | 1 a 6 ms el motor; 5 s si además lee un informe en prosa con el modelo |
+| Enlace público del agente | Ver arriba, en la cabecera del repositorio |
+| Enlace del repositorio | Este |
+
+## Declaración de origen del trabajo
+
+- **Diego Laverde** (`pixeltabletop`): base del proyecto, corpus sintético, motor inicial, identidad
+  visual, buscador por cédula, modo ambulancia y OCR.
+- **Juan Andrés López** (`Crono15uru`): plantilla de variables de entorno e integración de Notion.
+- **Josué Carrillo** (`josweq`): lectura con modelo y la regla de la cita, informes trampa como
+  puerta, banco de modelos, lector de cédulas, OCR desplegable, prueba del proveedor y auditoría.
+
+El historial de `main` conserva los commits de las tres personas, con su autoría.
+
+### Lo que no escribimos nosotros
+
+| Qué | De dónde | Cómo se usa |
+|---|---|---|
+| Next.js 16, React 19 | Meta y Vercel (MIT) | Servidor y pantallas |
+| `@anthropic-ai/sdk` 0.125.0 | Anthropic (MIT) | Llamada al modelo |
+| `tesseract.js` 7 y `tesseract.js-core` | Apache 2.0 | OCR en el servidor |
+| `eng.traineddata` (modelo de idioma) | Proyecto Tesseract (Apache 2.0) | Incluido en `src/ocr/idioma/` |
+| Inter y JetBrains Mono | Google Fonts (SIL Open Font License) | Tipografía, servidas desde el propio sitio |
+| Modelos de lenguaje | Anthropic, Google, Groq, OpenAI | Leen el informe; no deciden cobertura |
+| **Asistencia de IA en el desarrollo** | Claude Code y Codex CLI | Se usaron para escribir, revisar y auditar parte del código, bajo revisión del equipo |
+
+## Licencias
+
+Código propio bajo **licencia MIT** (ver [`LICENSE`](LICENSE)). Las dependencias conservan la suya,
+listadas arriba. Los datos del corpus son sintéticos y del equipo.
+
+## Dónde está todo
+
+| Carpeta | Qué contiene |
+|---|---|
+| `app/` | Pantallas y rutas de Next.js; los informes y las fotos viajan por POST |
+| `src/domain/` | Motor, lectura, evidencia, dinero, flujo y búsqueda. Sin dependencias de la web |
+| `src/data/` | Corpus sintético: pólizas con su texto legal, casos, tarifario e informes trampa |
+| `src/notion/` | Cliente de Notion, mapeo de filas, seguridad de escritura y lectura del caso |
+| `src/ocr/` | OCR en el servidor y su modelo de idioma |
+| `scripts/` | Puertas de calidad y probadores (`check-*`, `probar-*`, `notion-preparar`) |
+| `docs/` | [Arquitectura](docs/ARQUITECTURA.md) y el [contrato de verificación](docs/verificacion/afirmaciones.md) |
