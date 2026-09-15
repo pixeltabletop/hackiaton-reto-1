@@ -56,3 +56,33 @@ test('sin números no se inventa nada', () => {
   assert.deepEqual(cedulas, []);
   assert.deepEqual(polizas, []);
 });
+
+test('cada ejemplo auditado produce solo las cédulas y pólizas que están escritas', () => {
+  const casos = [
+    ['Fecha: 10-09-2026', [], []],
+    ['Afiliación 15.03.2022', [], []],
+    ['Tel. 6123-4567', [], []],
+    ['Teléfono 507 6123 4567', [], []],
+    ['Registro médico 1234567', [], []],
+    ['Lote 2026 0871', [], []],
+    ['Cédula E-8-123456', ['E-8-123456'], []],
+    ['Cédula PE-12-345', ['PE-12-345'], []],
+    ['Cédula 8-AV-123-456', ['8-AV-123-456'], []],
+    ['Expediente 8-742-1593', ['8-742-1593'], []],
+    [
+      'Póliza IS-A-2025-0871 cédula 8-742-1593',
+      ['8-742-1593'],
+      ['IS-A-2025-0871'],
+    ],
+  ] as const;
+
+  for (const [texto, cedulas, polizas] of casos) {
+    assert.deepEqual(extraerNumeros(texto), { cedulas, polizas }, texto);
+  }
+});
+
+test('una cédula ordinaria sin sus dos separadores no es candidata del OCR', () => {
+  for (const texto of ['87421593', '8 742 1593', '8.742.1593']) {
+    assert.deepEqual(extraerNumeros(texto).cedulas, [], texto);
+  }
+});

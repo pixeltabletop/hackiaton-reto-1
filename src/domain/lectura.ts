@@ -28,6 +28,10 @@ const REGLAS = {
   montoEstimado: /Monto estimado del procedimiento:\s*((?:\$|USD|B\/\.)\s*[\d,]+\.\d{2})/gi,
   estudios: /Estudios adjuntos:\s*([^\n]+)/i,
   documentos: /Documentos adjuntos:\s*([^\n]+)/i,
+  cedula:
+    /(?:C[eé]dula(?: de identidad)?|C\.\s*I\.?|C[eé]d\.?)[^\S\r\n]*(?::[^\S\r\n]*)?((?:E|N|PE)-\d{1,2}-\d{3,6}|\d{1,2}-(?:AV|PI)-\d{1,4}-\d{3,6}|\d{1,2}-\d{1,4}-\d{3,6})/gi,
+  numeroPoliza:
+    /(?:P[oó]liza|N\.?\s*[º°o]\s*de\s+p[oó]liza|Certificado)[^\S\r\n]*(?::[^\S\r\n]*)?(IS[-.\s]?[A-Z][-.\s]?\d{4}[-.\s]?\d{3,5})/gi,
 };
 
 /** Rótulos bajo los que un hospital declara enfermedades previas. */
@@ -174,6 +178,9 @@ export function leerInforme(
   const cupsCrudo = unico('procedimientoCups', REGLAS.procedimientoCups, digitos);
   const montoCrudo = unico('montoEstimado', REGLAS.montoEstimado, digitos);
   const caracterCrudo = unico('caracter', REGLAS.caracter, (v) => CARACTER_DE[normalizar(v)] ?? v);
+  const cedula = unico('cedula', REGLAS.cedula);
+  const polizaCruda = unico('numeroPoliza', REGLAS.numeroPoliza);
+  const numeroPoliza = polizaCruda ? extraerNumeros(polizaCruda).polizas[0] ?? '' : '';
 
   const fecha = isoDe(fechaCruda);
   const fechaAfiliacion = isoDe(afiliacionCruda);
@@ -230,10 +237,10 @@ export function leerInforme(
     hospital,
     fecha,
     pacienteRef: buscar(informe, REGLAS.pacienteRef),
-    // La cédula y la póliza se leen del informe si están escritas: si no están, quedan
-    // vacías y el informe se dictamina igual. Lo que no se hace es inventarlas.
-    cedula: extraerNumeros(informe).cedulas[0] ?? '',
-    numeroPoliza: extraerNumeros(informe).polizas[0] ?? '',
+    // En informes médicos solo cuentan junto a su rótulo. El OCR usa el extractor
+    // general porque una foto recortada puede no conservar el encabezado.
+    cedula,
+    numeroPoliza,
     edad: Number(buscar(informe, REGLAS.edad) || 0),
     sexo: /sexo femenino/i.test(informe) ? 'F' : 'M',
     fechaAfiliacion,

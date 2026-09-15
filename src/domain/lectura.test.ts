@@ -69,3 +69,60 @@ test('un informe al que le falta un dato no se aprueba', () => {
   assert.ok(avisos.some((a) => a.toLowerCase().includes('monto')), 'debería avisar del monto');
   assert.equal(decision.estado, 'DOCUMENTOS_FALTANTES');
 });
+
+test('la cédula y la póliza del informe exigen un rótulo en la misma línea', () => {
+  const casos = [
+    ['Fecha: 10-09-2026', '', ''],
+    ['Afiliación 15.03.2022', '', ''],
+    ['Tel. 6123-4567', '', ''],
+    ['Teléfono 507 6123 4567', '', ''],
+    ['Registro médico 1234567', '', ''],
+    ['Lote 2026 0871', '', ''],
+    ['Cédula E-8-123456', 'E-8-123456', ''],
+    ['Cédula PE-12-345', 'PE-12-345', ''],
+    ['Cédula 8-AV-123-456', '8-AV-123-456', ''],
+    ['Expediente 8-742-1593', '', ''],
+    [
+      'Póliza IS-A-2025-0871 cédula 8-742-1593',
+      '8-742-1593',
+      'IS-A-2025-0871',
+    ],
+  ] as const;
+
+  for (const [informe, cedula, numeroPoliza] of casos) {
+    const lectura = leerInforme(informe, 'PLAN-A');
+    assert.equal(lectura.caso.cedula, cedula, informe + ': cédula');
+    assert.equal(lectura.caso.numeroPoliza, numeroPoliza, informe + ': póliza');
+  }
+});
+
+test('se aceptan los rótulos de identidad y certificado definidos por el contrato', () => {
+  const casos = [
+    ['Cédula de identidad: E-8-123456', 'E-8-123456', ''],
+    ['C.I. PE-12-345', 'PE-12-345', ''],
+    ['Céd.: 8-AV-123-456', '8-AV-123-456', ''],
+    ['N.º de póliza: IS-A-2025-0871', '', 'IS-A-2025-0871'],
+    ['Certificado IS-A-2025-0871', '', 'IS-A-2025-0871'],
+  ] as const;
+
+  for (const [informe, cedula, numeroPoliza] of casos) {
+    const lectura = leerInforme(informe, 'PLAN-A');
+    assert.equal(lectura.caso.cedula, cedula, informe + ': cédula');
+    assert.equal(lectura.caso.numeroPoliza, numeroPoliza, informe + ': póliza');
+  }
+});
+
+test('dos rótulos de identificación que se contradicen dejan el campo vacío', () => {
+  const informe = [
+    'Cédula: 8-742-1593',
+    'C.I.: PE-12-345',
+    'Póliza: IS-A-2025-0871',
+    'Certificado: IS-B-2026-0117',
+  ].join('\n');
+  const lectura = leerInforme(informe, 'PLAN-A');
+
+  assert.equal(lectura.caso.cedula, '');
+  assert.equal(lectura.caso.numeroPoliza, '');
+  assert.ok(lectura.conflictos.includes('cedula'));
+  assert.ok(lectura.conflictos.includes('numeroPoliza'));
+});

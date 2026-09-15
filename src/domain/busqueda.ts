@@ -28,6 +28,8 @@ export function normalizar(texto: string): string {
 export function tipoDeConsulta(texto: string): TipoConsulta {
   const limpio = normalizar(texto);
   if (limpio.length === 0) return 'desconocido';
+  if (/^(?:E|N|PE)\d{4,8}$/.test(limpio)) return 'cedula';
+  if (/^\d{1,2}(?:AV|PI)\d{4,10}$/.test(limpio)) return 'cedula';
   if (/^[A-Z]/.test(limpio)) return 'poliza';
   if (/^\d{6,12}$/.test(limpio)) return 'cedula';
   return 'desconocido';

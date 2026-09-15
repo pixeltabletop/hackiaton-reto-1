@@ -37,6 +37,11 @@ test('un número que no existe no se inventa: devuelve cero', () => {
 test('se distingue lo que es póliza de lo que es cédula, y no se adivina de más', () => {
   assert.equal(tipoDeConsulta('IS-A-2025-0871'), 'poliza');
   assert.equal(tipoDeConsulta('8-742-1593'), 'cedula');
+  assert.equal(tipoDeConsulta('E-8-123456'), 'cedula');
+  assert.equal(tipoDeConsulta('N-8-12345'), 'cedula');
+  assert.equal(tipoDeConsulta('PE-12-345'), 'cedula');
+  assert.equal(tipoDeConsulta('8-AV-123-456'), 'cedula');
+  assert.equal(tipoDeConsulta('8-PI-123-456'), 'cedula');
   assert.equal(tipoDeConsulta(''), 'desconocido');
   assert.equal(tipoDeConsulta('%$#'), 'desconocido');
 });

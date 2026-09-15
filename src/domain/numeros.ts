@@ -6,13 +6,36 @@
 
 import { tipoDeConsulta } from './busqueda';
 
-/** Cédula panameña: provincia, folio y serial, con o sin separadores. */
-const CEDULA_EN_TEXTO = /\b\d{1,2}[-.\s]?\d{1,4}[-.\s]?\d{3,6}\b/g;
+/**
+ * Cédulas panameñas escritas con su estructura visible. La forma ordinaria exige
+ * sus dos guiones: aceptar dígitos pegados aquí convierte fechas, teléfonos y
+ * registros internos en personas distintas.
+ */
+const CEDULA_EN_TEXTO =
+  /(?<![0-9A-Z])(?:(?:E|N|PE)-\d{1,2}-\d{3,6}|\d{1,2}-(?:AV|PI)-\d{1,4}-\d{3,6}|\d{1,2}-\d{1,4}-\d{3,6})(?![0-9A-Z-])/gi;
 /** Póliza de Istmo Salud: IS-A-2025-0871, con o sin separadores. */
 const POLIZA_EN_TEXTO = /\bIS[-.\s]?[A-Z][-.\s]?\d{4}[-.\s]?\d{3,5}\b/gi;
 
+const FECHA_DIA_PRIMERO = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
+
+function esFecha(valor: string): boolean {
+  const partes = FECHA_DIA_PRIMERO.exec(valor);
+  if (!partes) return false;
+  const dia = Number(partes[1]);
+  const mes = Number(partes[2]);
+  return dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12;
+}
+
 /** Arma la cédula en el formato del mostrador: 8-742-1593. */
 export function formarCedula(digitos: string): string | null {
+  const estructurada = digitos.trim().toUpperCase();
+  if (
+    /^(?:E|N|PE)-\d{1,2}-\d{3,6}$/.test(estructurada) ||
+    /^\d{1,2}-(?:AV|PI)-\d{1,4}-\d{3,6}$/.test(estructurada)
+  ) {
+    return estructurada;
+  }
+
   const solo = digitos.replace(/\D/g, '');
   if (solo.length < 7 || solo.length > 10) return null;
 
@@ -50,6 +73,7 @@ export function extraerNumeros(texto: string): { cedulas: string[]; polizas: str
   const digitosDePolizas = [...polizas].map((poliza) => poliza.replace(/\D/g, ''));
 
   for (const encontrado of texto.match(CEDULA_EN_TEXTO) ?? []) {
+    if (esFecha(encontrado)) continue;
     const formada = formarCedula(encontrado);
     if (formada === null) continue;
     if (tipoDeConsulta(formada) !== 'cedula') continue;
