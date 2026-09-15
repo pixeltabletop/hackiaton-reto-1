@@ -1,7 +1,7 @@
 # Arquitectura
 
-Para quien va a leer o tocar el código (Josué: esto está pensado para que no tengas que adivinar
-nada). Todo el dominio corre en Node sin transpiladores: `npm test` ejecuta los `.ts` directamente.
+Para quien va a leer o tocar el código, sin tener que adivinar nada. Todo el dominio corre en Node
+sin transpiladores: `npm test` ejecuta los `.ts` directamente.
 
 ## El flujo, de punta a punta
 
@@ -27,7 +27,11 @@ código decide**.
 | `motor.ts` | Aplica las reglas en orden y cierra el caso en el primer paso que falla | No llama a ningún modelo |
 | `lectura.ts` | Lee el informe con expresiones regulares y devuelve un caso con citas | No decide cobertura |
 | `lectura-modelo.ts` | Pide los campos a un modelo, acepta solo lo que se puede citar (cita en el informe **y** valor que sale de la cita; carácter dentro del catálogo; documentos con su propia cita) y cae a reglas si falla | No confía en el modelo |
-| `presentacion.ts` | Arma lo que la web pinta (segmentos con marcas, cláusulas usadas) | No calcula nada del dictamen |
+| `presentacion.ts`, `resumen.ts` | Arman lo que la web pinta (segmentos con marcas, cláusulas usadas, familia de cada regla y el veredicto en una línea) | No calculan nada del dictamen |
+| `busqueda.ts` | Encuentra al asegurado por cédula o póliza, con o sin guiones | No adivina coincidencias parecidas |
+| `numeros.ts` | Reconoce cédulas panameñas (con prefijos `E-`, `N-`, `PE-`, `AV`, `PI`) y pólizas dentro de un texto, sin tomar fechas ni teléfonos | No decide a quién pertenecen |
+| `ocr/leer-documento.ts` | OCR de una foto en el servidor con Tesseract, modelo de idioma local en `src/ocr/idioma`, sin red y con 20 s de tiempo máximo | Nunca escribe en la base: solo propone un número para buscar |
+| `prueba-proveedor.ts` | Decide si un proveedor de modelo sirve para publicar (cero aprobaciones indebidas, a lo sumo una caída a reglas) | No llama al modelo |
 | `notion/cliente.ts` | `fetch` contra la API de Notion (`2026-03-11`) | No conoce el dominio |
 | `notion/mapeo.ts` | Traduce fila ↔ póliza/caso/decisión | No decide nada |
 | `notion/seguridad.ts` | Antes de escribir en Notion: petición del mismo sitio, página de la base Casos y caso pendiente | No reemplaza una autenticación real |
@@ -75,7 +79,12 @@ faltantes o condiciones.
 |---|---|
 | `corpus.test.ts` | Que el corpus sea coherente y que todo dato estructurado esté en el texto legal |
 | `motor.test.ts` | Los seis dictámenes, la determinación, el cuadre de montos y el contrafactual |
-| `lectura.test.ts` | Que el lector por reglas reconstruya cada caso del corpus campo por campo |
+| `lectura.test.ts` | Que el lector por reglas reconstruya cada caso del corpus campo por campo, y que cédula y póliza solo se tomen junto a su rótulo |
 | `lectura-modelo.test.ts` | Que el modelo no pueda inventar: cita no verificable, valor que no sale de su cita, carácter fuera del catálogo o documento sin cita ⇒ se descarta |
 | `notion/seguridad.test.ts` | Que la escritura rechace otro sitio, otra base y un caso ya dictaminado |
+| `busqueda.test.ts`, `numeros.test.ts` | Cédulas y pólizas tecleadas de cualquier forma, provincias imposibles, y fechas, teléfonos y registros que no pasan por cédulas |
+| `resumen.test.ts` | El veredicto en una línea en palabras llanas, cuánto paga cada quién y la familia visual de cada regla |
+| `prueba-proveedor.test.ts` | Los códigos de salida de `probar:proveedor` |
+| `scripts/probar-ocr.mjs` | Que el OCR lea la cédula y la póliza de ejemplo sin red y sin escribir cachés |
+| `scripts/probar-proveedor.mjs` | Con una clave real, 13 informes con dictamen conocido por el mismo camino que `/leer`; con `--simulado`, sin red |
 | `scripts/check-informes-trampa.mjs` | Que variaciones reales del informe (negaciones, rótulos distintos, montos corregidos) no cambien el dictamen correcto. Casos en `src/data/trampas.ts`; los defectos sin arreglar van con `deuda` y la lista solo puede bajar |

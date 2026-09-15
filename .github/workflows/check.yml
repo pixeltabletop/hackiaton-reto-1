@@ -12,11 +12,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Corpus, evidencia y motor
+          cache: npm
+      - name: Dependencias
+        run: npm ci
+      - name: Corpus, evidencia, motor, lectura y búsqueda
         run: npm test
       - name: Puerta de calidad del dictamen
         run: npm run check:decision
-      - name: Informes trampa (aprobaciones indebidas y regresiones)
-        run: npm run check:trampas
+      - name: Informes trampa, sin deuda
+        run: npm run check:trampas -- --estricto
       - name: Contraste del tema (WCAG)
         run: npm run check:color
+      - name: OCR de las fotos de ejemplo, sin red
+        run: npm run probar:ocr
+      - name: Prueba del proveedor de modelo (simulada, sin clave)
+        run: npm run probar:proveedor -- --simulado bueno
+      - name: Build de producción
+        run: npx next build

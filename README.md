@@ -1,48 +1,49 @@
-# Prior IA — el dictamen con la póliza en la mano
+# PRIOR AI — el dictamen con la póliza en la mano
 
 Equipo **Jajanken** · Reto 1 del hackIAthon Panamá 2026 · **datos sintéticos**
 
 > **El agente no autoriza: dictamina con la póliza en la mano.**
 > El modelo lee el informe del hospital y cita; la cobertura la decide la póliza con reglas
-> deterministas. Si un dato no tiene cita textual en el documento, no existe: el caso cae a
-> «documentos faltantes» en vez de aprobarse.
+> deterministas. Si un dato no tiene cita textual en el documento, no existe: el caso no se aprueba.
 
-Un paciente no debería esperar días para saber si su cirugía está cubierta. Este agente recibe el
-informe del hospital y la póliza del paciente y devuelve, en milisegundos, **un dictamen con la
-cláusula que lo sostiene** — o la lista exacta de lo que falta y qué pasa si se adjunta.
+Un paciente no debería esperar días para saber si su cirugía está cubierta. PRIOR AI recibe el
+informe del hospital y la póliza del paciente y devuelve **un dictamen con la cláusula que lo
+sostiene**, o la lista exacta de lo que falta y qué pasa si se adjunta.
 
-## Las tres pantallas
+## Las pantallas
 
 | Ruta | Qué es |
 |---|---|
-| `/` | Los seis casos dictaminados: veredicto, cada regla con su cláusula, reparto del monto, informe con la cita de cada dato. |
-| `/leer` | **Pegue un informe y el agente lo dictamina.** Es el agente funcionando sobre un documento que nunca vio. |
-| `/notion` | Lee los casos pendientes desde la base **Casos** de Notion y escribe la decisión en **Decisiones**. |
+| `/` | **Buscar al asegurado** por cédula o número de póliza (tecleado o leído de una foto). Muestra su póliza, su vigencia y el dictamen de su caso. Desde aquí se entra a leer un informe nuevo. |
+| `/leer` | **Pegue un informe y el agente lo dictamina.** El modelo lee el informe en prosa, cada dato sale con su cita y el motor decide con la póliza. Es el agente sobre un documento que nunca vio. |
+| `/casos` | Los seis casos del corpus: veredicto, cada regla con su cláusula, reparto del monto e informe con la cita de cada dato. |
+| `/emergencia` | **Modo ambulancia**: una pantalla, un campo y un botón para escanear la cédula o la póliza con una mano. |
+| `/notion` | Lee los casos pendientes de la base **Casos** de Notion y escribe la decisión en **Decisiones**. |
+| `/api/dictaminar` | `POST caso=<id de la página de Notion>`: dictamina ese caso y escribe la decisión. |
 
 ## Cómo correrlo
 
+Requisitos: Node 24 o superior.
+
 ```bash
 npm ci
-npm run dev            # la web en http://localhost:3000
-npm test               # 54 pruebas: corpus, evidencia, motor, lectura, modelo y escritura en Notion
-npm run check:decision # dictamina los seis casos y audita el contrato
-npm run check:trampas  # informes trampa: variaciones reales que no pueden cambiar el dictamen
-npm run check          # las tres anteriores
+npm run dev                      # la web en http://localhost:3000
+npm run check                    # pruebas, puerta del dictamen, informes trampa y contraste
+npm run check:trampas -- --estricto   # cero defectos conocidos: la verificación antes de entregar
+npm run probar:ocr               # lee las dos fotos de ejemplo sin red
+npm run probar:proveedor         # con una clave de modelo: ver «Despliegue»
 ```
 
-### Informes trampa
+| Comando | Qué comprueba |
+|---|---|
+| `npm test` | 81 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo, búsqueda por cédula y póliza, números en documentos, escritura en Notion y la regla de salida de `probar:proveedor` |
+| `npm run check:decision` | Dictamina los seis casos y audita los invariantes del contrato |
+| `npm run check:trampas` | 24 informes trampa: variaciones reales (negaciones, rótulos distintos, montos corregidos, órdenes escondidas) que no pueden cambiar el dictamen correcto |
+| `npm run check:color` | Contraste WCAG AA de todos los pares de color del tema |
+| `npm run probar:ocr` | El OCR lee la cédula y la póliza de ejemplo con el modelo de idioma local, sin salir a la red |
 
-Los seis informes del corpus están escritos a la medida del lector. `src/data/trampas.ts` los
-modifica como los escribiría un hospital —negaciones («pendiente estudio de imagen»),
-preexistencias con otro rótulo, montos corregidos, fechas `dd/mm/aaaa`, texto que ordena aprobar—
-y fija el dictamen correcto de cada variación, con la cláusula que lo justifica.
-
-`npm run check:trampas` pasa cada una por el mismo camino que `/leer` sin clave de modelo y sale
-con 1 si alguna da un dictamen distinto. Los defectos conocidos y todavía sin arreglar llevan un
-campo `deuda`: la puerta los imprime, pero no frena el CI. **La deuda solo puede bajar**: cuando
-una trampa en deuda empieza a pasar, la puerta falla hasta que se le quita la marca.
-`npm run check:trampas -- --estricto` exige cero deuda; es la verificación para antes de entregar.
-Hoy son 24 trampas y ninguna en deuda.
+La integración continua de GitHub corre todo lo anterior, la prueba del proveedor en modo simulado y
+el build de producción en cada push.
 
 ## Los seis casos (corpus sintético)
 
@@ -58,73 +59,84 @@ Hoy son 24 trampas y ninguna en deuda.
 El caso `PR-2026-0701` además responde **qué falta para aprobar**: *«con esos documentos, el caso
 pasa a `PRE_APROBADO` y la aseguradora responde $ 2,400.00»*.
 
+Cédulas y pólizas de prueba para el buscador: `8-742-1593`, `8-315-8820`, `3-714-2296`,
+`4-118-5471`, `9-233-6604`, `2-641-9038` y la póliza familiar `IS-A-2025-0871`.
+
 ## Las reglas que no se negocian
 
-1. **El modelo lee y cita; el código decide.** La cobertura la resuelve la póliza, no un LLM.
+1. **El modelo lee y cita; el código decide.** La cobertura la resuelve la póliza, no un modelo.
 2. **Sin cita textual no hay dato.** Cada campo que el agente usa tiene que existir literalmente en
-   el documento, y su valor tiene que salir de esa cita. Si no se puede citar, el caso no se aprueba.
-   Si el informe se contradice (dos montos distintos), ese dato no se usa.
+   el documento, y su valor tiene que salir de esa cita. Si el informe se contradice (dos montos
+   distintos), ese dato no se usa.
 3. **El modelo no puede inventar.** Su respuesta se acepta campo por campo y solo si el fragmento
    que cita aparece en el informe **y el valor sale de ese fragmento**: un monto de $ 1,000.00 que
-   cita la línea de $ 4,200.00 se descarta. El carácter tiene que estar en el catálogo, los documentos
-   también se citan uno por uno, y el modelo nunca pisa lo que la lectura por reglas ya resolvió.
+   cita la línea de $ 4,200.00 se descarta. El carácter tiene que estar en el catálogo, los
+   documentos también se citan uno por uno, y el modelo nunca pisa lo que las reglas ya resolvieron.
 4. **Lo que el informe no declara no se adivina.** Sin carácter (electiva o urgencia) o sin
-   declaración de preexistencias dentro de su carencia, el caso deriva al médico auditor en vez
-   de asumir lo favorable. Un documento negado («pendiente estudio de imagen») no cuenta.
-5. **Todo en centavos enteros**, y deducible + coaseguro + aseguradora tiene que cuadrar contra lo
-   facturado. Lo verifica la puerta de calidad en cada push.
+   declaración de preexistencias dentro de su carencia, el caso deriva al médico auditor. Un
+   documento negado («pendiente estudio de imagen») no cuenta. La cédula y la póliza del informe
+   solo se toman junto a su rótulo: una fecha o un teléfono no se convierten en una persona.
+5. **Todo en centavos enteros**, y los montos de una aprobación cuadran contra lo facturado.
 
 ## Arquitectura
 
 ```
-src/domain/   dinero.ts      todo el dinero en centavos (el modelo nunca toca una cifra)
-              evidencia.ts   cita textual verificada como subcadena, con offset al original
-              poliza.ts      compilador: el texto legal pasa a cláusulas indexadas
-              motor.ts       motor determinista: evidencia → vigencia → cobertura → red →
-                             preexistencias → carencias → documentos → montos y umbral
-              lectura.ts     lector por reglas (determinista, sin costo, sin red)
-              lectura-modelo.ts  lector con modelo + la regla de la cita + red de seguridad
-              presentacion.ts    todo lo que la web necesita, ya resuelto
-src/data/     corpus sintético: 3 pólizas (con su texto legal), 6 casos, tarifario
-src/notion/   cliente.ts (fetch, sin SDK, API 2026-03-11) y mapeo.ts (Notion ↔ motor)
-app/          Next.js en el servidor; /leer envía el informe por POST (acción de servidor), nunca en la URL
-scripts/      check-decision.mjs (puerta de calidad), check-informes-trampa.mjs (informes trampa)
-              y notion-preparar.mjs (crea las bases)
+src/domain/   dinero.ts          todo el dinero en centavos (el modelo nunca toca una cifra)
+              evidencia.ts       cita textual verificada como subcadena, con offset al original
+              poliza.ts          compilador: el texto legal pasa a cláusulas indexadas
+              motor.ts           motor determinista: evidencia → vigencia → cobertura → red →
+                                 preexistencias → carencias → documentos → tope y umbral
+              lectura.ts         lector por reglas (determinista, sin costo, sin red)
+              lectura-modelo.ts  lector con modelo + la regla de la cita + respaldo por reglas
+              busqueda.ts        buscador por cédula o póliza, con o sin guiones
+              numeros.ts         cédulas panameñas y pólizas dentro de un texto
+              presentacion.ts    resumen.ts   lo que la web pinta, ya resuelto
+src/ocr/      leer-documento.ts  OCR en el servidor (Tesseract, modelo de idioma local, sin red)
+src/data/     corpus sintético: 3 pólizas con su texto legal, 6 casos, tarifario e informes trampa
+src/notion/   cliente.ts (fetch, API 2026-03-11), mapeo.ts y seguridad.ts (quién puede escribir)
+app/          Next.js en el servidor; los informes y las fotos viajan por POST, nunca en la URL
+scripts/      puertas de calidad, probar-ocr, probar-proveedor y notion-preparar (crea las bases)
 ```
 
-Más detalle en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md) y lo que falta por conectar en
-[`docs/PENDIENTES.md`](docs/PENDIENTES.md).
+Más detalle en [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md).
 
 ## Despliegue
 
-La web se publica en Vercel. Variables de entorno (nunca en el repositorio):
+La web se publica en Vercel. Variables de entorno (nunca en el repositorio; plantilla en
+[`.env.example`](.env.example)):
 
 ```
-ANTHROPIC_API_KEY           # lectura con Claude Sonnet 5 (elegido con el banco de la revisión). Tiene prioridad.
-MODELO_LECTURA              # opcional: otro modelo del mismo proveedor (por defecto claude-sonnet-5)
+ANTHROPIC_API_KEY           # lectura con Claude Sonnet 5 (medido: 36/36, 0 aprobaciones indebidas). Tiene prioridad.
 GOOGLE_API_KEY              # alternativa: Gemini (por defecto gemini-2.5-flash; Google la retira desde el 16-oct-2026)
 GROQ_API_KEY                # alternativa: Groq (por defecto openai/gpt-oss-120b)
-OPENAI_API_KEY              # alternativa: OpenAI (por defecto gpt-4o-mini). Sin ninguna clave, lee por reglas.
-NOTION_TOKEN                # opcional: integración de Notion
+OPENAI_API_KEY              # alternativa: OpenAI (por defecto gpt-4o-mini)
+MODELO_LECTURA              # opcional: otro modelo del proveedor elegido
+NOTION_TOKEN                # integración de Notion
 NOTION_FUENTE_CASOS         # id de la fuente de datos de la base Casos
 NOTION_FUENTE_POLIZAS       # id de la base Pólizas
 NOTION_FUENTE_DECISIONES    # id de la base Decisiones
 ```
 
-Sin ninguna variable el sitio funciona igual: `/` y `/leer` dictaminan con el corpus y con la
-lectura por reglas. Es deliberado: **el enlace público no depende de un token.** Pero sin clave
-los informes en prosa no se dictaminan bien, y el reto pide leer con IA.
+Sin ninguna variable el sitio funciona: el buscador, los casos y `/leer` dictaminan con la lectura
+por reglas. Pero **sin clave de modelo los informes en prosa no se dictaminan bien**, y el reto pide
+leer con IA.
 
-**Antes de publicar con una clave**, correr `npm run probar:proveedor` con esa clave en el entorno.
-Pasa 13 informes con dictamen conocido por el mismo camino que `/leer` y sale con 1 si hay una
-aprobación indebida o si el modelo no está leyendo (solo Claude Sonnet 5 está medido con el banco).
+**Antes de publicar con una clave**, correr con esa clave en el entorno:
+
+```bash
+npm run probar:proveedor
+```
+
+Pasa 13 informes con dictamen conocido (7 en prosa y 6 trampas) por el mismo camino que `/leer`.
+Sale con 1 si hay una aprobación indebida o si el modelo no está leyendo y todo cae a reglas; con 2
+si no hay clave. Solo Claude Sonnet 5 está medido con el banco completo.
+
+Las fotos se reducen en el teléfono antes de subir; el servidor acepta hasta 4 MB por foto.
 
 ## Aviso
 
-Todos los datos son **sintéticos**: pólizas, hospitales, pacientes y montos son inventados para la
-demostración. No hay datos reales de pacientes ni de ninguna aseguradora.
+Todos los datos son **sintéticos**: pólizas, hospitales, pacientes, cédulas y montos son inventados
+para la demostración, y las fotos de ejemplo están marcadas como documentos ficticios. No hay datos
+reales de pacientes ni de ninguna aseguradora.
 
-Este proyecto reutiliza aprendizajes (no código) de dos entregas anteriores del mismo equipo:
-`jajanken-hackathon` (MAM: evidencia citada como subcadena, hallazgos congelados como
-comprobaciones) y `Narukami-Hackathon` (Chen: dinero en centavos enteros, dominios separados para no
-contar dos veces).
+Licencia MIT.

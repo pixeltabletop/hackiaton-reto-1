@@ -362,8 +362,8 @@ interface ClienteMensajes {
 }
 
 /**
- * Claude (Sonnet 5 por defecto) con el SDK oficial. Elegido con el banco de la revisión
- * de Josué: 36/36 y 0 aprobaciones indebidas en 36 informes, mediana de 5 s con
+ * Claude (Sonnet 5 por defecto) con el SDK oficial. Elegido midiendo 36 informes con varios modelos:
+ * 36/36 y 0 aprobaciones indebidas, mediana de 5 s con
  * esfuerzo bajo. Salida estructurada con el esquema de lectura; Sonnet 5 no acepta
  * `temperature`. Una negativa del modelo o un error lanza, y la lectura cae a reglas.
  */
