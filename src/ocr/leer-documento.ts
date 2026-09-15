@@ -1,3 +1,5 @@
+import os from 'node:os';
+import path from 'node:path';
 import { buscar, normalizar, tipoDeConsulta } from '../domain/busqueda';
 import { extraerNumeros } from '../domain/numeros';
 
@@ -25,28 +27,60 @@ export interface LecturaFoto {
 /** Los números candidatos que el OCR alcanzó a ver. Las reglas viven en domain/numeros. */
 export { extraerNumeros };
 
+const TIEMPO_MAXIMO_OCR_MS = 20_000;
+const DIRECTORIO_OCR = path.join(process.cwd(), 'src', 'ocr');
+
 /**
  * OCR sobre una imagen. Tesseract corre en el servidor, así que el teléfono del
  * paramédico no tiene que descargar nada ni tener señal más allá de subir la foto.
  */
 export async function leerFoto(imagen: Buffer): Promise<LecturaFoto> {
   let worker: Awaited<ReturnType<typeof import('tesseract.js').createWorker>> | null = null;
+  let vencio = false;
+  let temporizador: ReturnType<typeof setTimeout> | undefined;
   try {
     const { createWorker } = await import('tesseract.js');
-    worker = await createWorker('eng');
-    // Los números son el objetivo: se le dice al OCR que no pierda tiempo con el resto.
-    await worker.setParameters({
-      tessedit_char_whitelist: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. ',
+    const trabajo = (async (): Promise<LecturaFoto> => {
+      // Es el modelo 4.0.0_best_int de 5,199,098 bytes: conserva la calidad del
+      // modelo LSTM por defecto con mucho menos peso que el modelo legacy completo.
+      const creado = await createWorker('eng', 1, {
+        langPath: path.join(DIRECTORIO_OCR, 'idioma'),
+        gzip: false,
+        cachePath: os.tmpdir(),
+        cacheMethod: 'none',
+        workerPath: path.join(DIRECTORIO_OCR, 'worker-node-local.cjs'),
+      });
+      if (vencio) {
+        await creado.terminate().catch(() => undefined);
+        throw new Error('el OCR excedió ' + TIEMPO_MAXIMO_OCR_MS / 1000 + ' segundos');
+      }
+      worker = creado;
+      // Los números son el objetivo: se le dice al OCR que no pierda tiempo con el resto.
+      await worker.setParameters({
+        tessedit_char_whitelist: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. ',
+      });
+      const { data } = await worker.recognize(imagen);
+      const texto = data.text ?? '';
+      const { cedulas, polizas } = extraerNumeros(texto);
+      return {
+        texto,
+        cedulas,
+        polizas,
+        propuesta: elegirPropuesta({ cedulas, polizas }),
+      };
+    })();
+
+    const limite = new Promise<never>((_, reject) => {
+      temporizador = setTimeout(() => {
+        vencio = true;
+        const activo = worker;
+        worker = null;
+        void activo?.terminate().catch(() => undefined);
+        reject(new Error('el OCR excedió ' + TIEMPO_MAXIMO_OCR_MS / 1000 + ' segundos'));
+      }, TIEMPO_MAXIMO_OCR_MS);
     });
-    const { data } = await worker.recognize(imagen);
-    const texto = data.text ?? '';
-    const { cedulas, polizas } = extraerNumeros(texto);
-    return {
-      texto,
-      cedulas,
-      polizas,
-      propuesta: elegirPropuesta({ cedulas, polizas }),
-    };
+
+    return await Promise.race([trabajo, limite]);
   } catch (error) {
     return {
       texto: '',
@@ -56,7 +90,9 @@ export async function leerFoto(imagen: Buffer): Promise<LecturaFoto> {
       error: error instanceof Error ? error.message : 'no se pudo leer la foto',
     };
   } finally {
-    await worker?.terminate().catch(() => undefined);
+    if (temporizador) clearTimeout(temporizador);
+    const activo = worker as Awaited<ReturnType<typeof import('tesseract.js').createWorker>> | null;
+    await activo?.terminate().catch(() => undefined);
   }
 }
 

@@ -4,7 +4,9 @@
  *
  *   node --import ./scripts/registro-ts.mjs scripts/probar-ocr.mjs
  */
-import { readFile } from 'node:fs/promises';
+import { access, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import { leerFoto } from '../src/ocr/leer-documento.ts';
 import { buscar } from '../src/domain/busqueda.ts';
 
@@ -20,6 +22,18 @@ const PRUEBAS = [
 ];
 
 let fallos = 0;
+const cacheTemporal = path.join(tmpdir(), 'eng.traineddata');
+const cacheEnRaiz = path.join(process.cwd(), 'eng.traineddata');
+
+await rm(cacheTemporal, { force: true });
+await rm(cacheTemporal + '.gz', { force: true });
+await access(cacheEnRaiz)
+  .then(() => {
+    throw new Error('la prueba exige que no exista eng.traineddata en la raíz');
+  })
+  .catch((error) => {
+    if (error?.code !== 'ENOENT') throw error;
+  });
 
 for (const prueba of PRUEBAS) {
   const imagen = await readFile(prueba.archivo);
@@ -55,4 +69,16 @@ for (const prueba of PRUEBAS) {
 }
 
 console.log(`\nresultado: ${PRUEBAS.length - fallos}/${PRUEBAS.length} fotos leídas`);
+for (const prohibido of [cacheEnRaiz, cacheTemporal, cacheTemporal + '.gz']) {
+  await access(prohibido)
+    .then(() => {
+      fallos += 1;
+      console.log('  ✗ el OCR creó una caché prohibida: ' + prohibido);
+    })
+    .catch((error) => {
+      if (error?.code !== 'ENOENT') throw error;
+    });
+}
+
+console.log('red usada por el OCR: no (worker local con fetch bloqueado y caché vacía)');
 process.exit(fallos === 0 ? 0 : 1);
