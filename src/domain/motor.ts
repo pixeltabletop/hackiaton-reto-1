@@ -171,7 +171,7 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
     );
     return cerrar('NO_CUBIERTO');
   }
-  motivos.push(motivo('vigencia', `Póliza vigente el ${caso.fecha}`, '1.1', cita('fecha')));
+  motivos.push(motivo('vigencia', `Póliza vigente el día del servicio (${caso.fecha})`, '1.1', cita('fecha')));
 
   // 3. Cobertura y exclusiones
   const exclusion = plan.exclusiones.find((e) => e.cups === caso.procedimientoCups);
@@ -342,7 +342,7 @@ export function dictaminar(caso: Caso, plan: Plan, opciones: Opciones = {}): Dec
   motivos.push(
     motivo(
       'montos',
-      `Deducible ${formato(montos.deducibleAplicado)} · coaseguro ${motivoPorcentaje(montos.coaseguroPct)} = ${formato(montos.coaseguroAplicado)}`,
+      `Deducible ${formato(montos.deducibleAplicado)} · coaseguro ${motivoPorcentaje(montos.coaseguroPct)} sobre ${formato(menos(montos.montoFacturado, montos.deducibleAplicado))} = ${formato(montos.coaseguroAplicado)}`,
       '7.2',
       cita('montoEstimado'),
     ),

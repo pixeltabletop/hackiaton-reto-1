@@ -55,12 +55,12 @@ export function Dinero({ vista }: { vista: VistaCaso }) {
             <td>{formato(decision.montoFacturado)}</td>
           </tr>
           <tr>
-            <td>Deducible anual aplicado</td>
+            <td>Deducible anual, lo paga el paciente</td>
             <td>− {formato(decision.deducibleAplicado)}</td>
           </tr>
           <tr>
             <td>
-              Coaseguro del paciente ({pct}% {decision.enRed ? 'en red' : 'fuera de red'})
+              Coaseguro del paciente ({pct}% de lo que queda tras el deducible)
             </td>
             <td>− {formato(decision.coaseguroAplicado)}</td>
           </tr>
@@ -75,8 +75,8 @@ export function Dinero({ vista }: { vista: VistaCaso }) {
         </tbody>
       </table>
       <p className="nota">
-        Todo en centavos enteros. Deducible + coaseguro + aseguradora = facturado, y se verifica en
-        cada corrida.
+        Montos en dólares. Lo que factura el hospital menos el deducible y el coaseguro es lo que
+        responde la aseguradora; la suma se verifica en cada corrida.
       </p>
     </section>
   );
