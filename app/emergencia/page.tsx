@@ -64,7 +64,7 @@ export default async function Page({
         </button>
       </form>
 
-      <Escanear />
+      <Escanear destino="emergencia" />
 
       {leido && <p className="ambulancia-aviso">Número leído de la foto: {q}. Confírmelo antes de actuar.</p>}
       {error === 'no-leido' && (
@@ -77,7 +77,7 @@ export default async function Page({
       )}
       {error === 'archivo-grande' && (
         <p className="ambulancia-aviso ambulancia-aviso-malo">
-          La foto pesa más de 12 MB. Tome otra más liviana.
+          La foto pesa más de 4 MB. Tómela de nuevo o recórtela.
         </p>
       )}
 
@@ -140,14 +140,23 @@ export default async function Page({
               </p>
             )}
 
-            <p className="ambulancia-montos">
-              <span>
-                Paga la aseguradora <b>{formato(decision.pagaAseguradora)}</b>
-              </span>
-              <span>
-                Paga el paciente <b>{formato(decision.pagaPaciente)}</b>
-              </span>
-            </p>
+            {/* Sin aprobación no hay reparto: dos montos en cero se leerían como «el paciente no paga». */}
+            {decision.estado.startsWith('PRE_APROBADO') ? (
+              <p className="ambulancia-montos">
+                <span>
+                  Paga la aseguradora <b>{formato(decision.pagaAseguradora)}</b>
+                </span>
+                <span>
+                  Paga el paciente <b>{formato(decision.pagaPaciente)}</b>
+                </span>
+              </p>
+            ) : (
+              <p className="ambulancia-montos">
+                <span>
+                  Sin reparto todavía: facturado <b>{formato(decision.montoFacturado)}</b>
+                </span>
+              </p>
+            )}
 
             <Link className="ambulancia-detalle" href={`/?q=${encodeURIComponent(caso.cedula)}`}>
               Ver el dictamen completo →

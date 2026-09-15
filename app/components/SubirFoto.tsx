@@ -1,5 +1,6 @@
 import { buscarPorFoto } from '../buscar/acciones';
 import { BotonEnviar } from './BotonEnviar';
+import { CampoFoto } from './CampoFoto';
 
 /**
  * Subir una foto en vez de teclear. Dos caminos: la foto que trae la persona, o una
@@ -12,14 +13,7 @@ export function SubirFoto() {
         <label className="archivo-etiqueta" htmlFor="foto">
           …o suba una foto de la cédula o de la póliza
         </label>
-        <input
-          className="archivo"
-          id="foto"
-          name="foto"
-          type="file"
-          accept="image/*"
-          capture="environment"
-        />
+        <CampoFoto />
         <BotonEnviar className="boton-secundario">Leer la foto</BotonEnviar>
       </form>
 

@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic';
 const AVISOS: Record<string, string> = {
   'sin-foto': 'No llegó ninguna foto. Elija una imagen o use la cédula de ejemplo.',
   'no-leido': 'No se pudo leer ningún número en la foto. Escriba la cédula a mano.',
-  'archivo-grande': 'La foto pesa más de 12 MB. Tome otra más liviana.',
+  'archivo-grande': 'La foto pesa más de 4 MB. Tómela de nuevo o recórtela.',
 };
 
 export default async function Page({
