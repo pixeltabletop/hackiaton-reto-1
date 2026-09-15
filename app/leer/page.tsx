@@ -27,12 +27,11 @@ export default function PaginaLeer() {
 
   return (
     <div className="hoja">
-      <h1>Nueva solicitud de pre-autorización</h1>
+      <h1>Dictaminar una solicitud</h1>
       <p className="tesis">
-        Pegue el informe del hospital y la póliza del paciente. Cada dato se toma{' '}
+        Pegue el informe del hospital y elija la póliza del paciente. Cada dato se toma{' '}
         <strong>con la cita textual de donde salió</strong> y la cobertura la resuelven las cláusulas.
-        Si un dato no está escrito en el expediente, la solicitud no se aprueba: queda a la espera de
-        documentación.
+        Si un papel falta, la solicitud no se aprueba: queda a la espera de documentación.
       </p>
 
       <FormularioLeer ejemplo={EJEMPLO} planes={planes} ejemplos={ejemplos} />

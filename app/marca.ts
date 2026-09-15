@@ -7,7 +7,7 @@
 export const MARCA = {
   nombre: 'Prior IA',
   corto: 'Prior IA',
-  lema: 'Cada dictamen, con su cláusula.',
+  lema: 'La cláusula manda.',
 };
 
 /** El equipo y el evento van juntos y solo al pie. */

@@ -21,15 +21,18 @@ export default function Page() {
   return (
     <div className="hoja">
       <header>
-        <h1>La pre-autorización quirúrgica, en segundos</h1>
+        <h1>La cirugía no espera. La carta aval tampoco.</h1>
+        <p className="problema">
+          Hoy el paciente espera horas o días por la autorización, y el hospital no agenda una cirugía
+          electiva hasta que llegue la carta aval.
+        </p>
         <p className="tesis">
-          <strong>Prior IA no autoriza: dictamina con la póliza en la mano.</strong> Cada decisión
-          cita la cláusula exacta que la sostiene y cada dato sale del informe del hospital. Lo que no
-          está escrito en el expediente, no se aprueba.
+          <strong>Prior IA no autoriza: dictamina.</strong> Lee el informe y la póliza, cita la
+          cláusula y dice quién paga qué —deducible, coaseguro y tope anual— sin llamadas de por medio.
         </p>
         <p>
           <Link className="chip chip-enlace" href="/leer">
-            Evaluar una nueva solicitud →
+            Dictaminar una solicitud →
           </Link>
         </p>
       </header>
@@ -84,6 +87,7 @@ export default function Page() {
       ))}
 
       <footer>
+        <p className="cierre">Aquí no se adivina: se cita la cláusula.</p>
         <p>
           Seis dictámenes · {formato(totalAseguradora)} respondidos por la aseguradora en los casos
           aprobados · ninguna decisión sin cláusula citada · el mismo caso da siempre el mismo

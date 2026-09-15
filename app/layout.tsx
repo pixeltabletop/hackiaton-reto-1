@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <ol className="lateral-pasos">
                 <li>Lee el informe del hospital y copia la cita de cada dato.</li>
                 <li>Aplica la póliza cláusula por cláusula.</li>
-                <li>Responde a la solicitud, o dice qué falta.</li>
+                <li>Dice si cubre, o qué papel falta.</li>
               </ol>
             </div>
           </aside>

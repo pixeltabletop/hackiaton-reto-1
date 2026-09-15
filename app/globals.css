@@ -282,6 +282,28 @@ h1 {
   margin: 0 0 28px;
 }
 
+/* El problema, contado como lo cuenta el reto: en la voz del que lo vive. */
+.problema {
+  max-width: 68ch;
+  margin: 0 0 20px;
+  padding: 14px 20px;
+  background: var(--fam-documentos-tinte);
+  border-left: 4px solid var(--fam-documentos);
+  border-radius: 0 var(--radio-chico) var(--radio-chico) 0;
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--fam-documentos);
+}
+
+/* La frase que cierra la portada. */
+.cierre {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  margin-bottom: 20px;
+}
+
 .tesis strong {
   color: var(--tinta);
 }
