@@ -42,7 +42,7 @@ export default async function Page({
 
       <h1>¿A quién llevamos?</h1>
       <p className="ambulancia-ayuda">
-        Cédula o número de póliza. Si no lo tiene a mano, escanee el documento.
+        Cédula o número de póliza. Si no tiene el número, escanee la cédula o la póliza.
       </p>
 
       <form className="ambulancia-form" action="/emergencia" method="get" role="search">
@@ -180,7 +180,8 @@ export default async function Page({
 
       <footer className="ambulancia-pie">
         <p>
-          Los datos de esta demostración son sintéticos. {MARCA.lema}
+          Datos sintéticos de una demostración: <b>no ingrese datos reales de nadie</b>. En producción,
+          esta pantalla pide credencial de la aseguradora.
         </p>
       </footer>
     </main>
