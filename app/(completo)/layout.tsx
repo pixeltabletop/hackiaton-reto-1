@@ -6,7 +6,9 @@ import { MARCA } from '../marca';
 import { CASOS } from '../../src/data/casos';
 import { planDe } from '../../src/data/planes';
 import { dictaminar } from '../../src/domain/motor';
+import { hayProveedor } from '../../src/domain/lectura-modelo';
 import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../src/domain/presentacion';
+import { hayToken } from '../../src/notion/cliente';
 
 /**
  * El armazón de trabajo: barra lateral fija con la marca, la navegación, el índice de
@@ -22,15 +24,35 @@ export default function LayoutCompleto({ children }: { children: ReactNode }) {
     caso,
     decision: dictaminar(caso, planDe(caso.planId)),
   }));
+  const modeloActivo = hayProveedor();
+  const notionConectado =
+    hayToken() &&
+    Boolean(
+      process.env.NOTION_FUENTE_CASOS &&
+        process.env.NOTION_FUENTE_POLIZAS &&
+        process.env.NOTION_FUENTE_DECISIONES,
+    );
 
   return (
     <div className="marco">
       <aside className="lateral">
-        <Link className="lateral-marca" href="/">
-          <SimboloMarca className="marca-simbolo" />
-          <span>{MARCA.nombre}</span>
-        </Link>
+        <div className="lateral-marca-fila">
+          <Link className="lateral-marca" href="/">
+            <SimboloMarca className="marca-simbolo" />
+            <span>{MARCA.nombre}</span>
+          </Link>
+          <span
+            className="distintivo-beta"
+            title="Beta: datos sintéticos y funciones en construcción."
+          >
+            Beta
+          </span>
+        </div>
         <p className="lateral-lema">{MARCA.lema}</p>
+        <p className="lateral-entorno" title="Beta: datos sintéticos y funciones en construcción.">
+          <span>{modeloActivo ? 'Modelo activo' : 'Modelo sin clave'}</span>
+          <span>{notionConectado ? 'Notion conectado' : 'Notion no conectado'}</span>
+        </p>
 
         <Navegacion />
 
@@ -61,6 +83,8 @@ export default function LayoutCompleto({ children }: { children: ReactNode }) {
             <li>Dice si cubre, o qué papel falta.</li>
           </ol>
         </div>
+
+        <p className="lateral-datos">Datos sintéticos; no ingrese datos reales.</p>
       </aside>
 
       <main className="contenido">{children}</main>

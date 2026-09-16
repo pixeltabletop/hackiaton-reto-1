@@ -80,8 +80,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
       <header>
         <h1>Cómo decide, paso a paso</h1>
         <p className="problema">
-          El motor evalúa ocho pasos, siempre en el mismo orden, y el primero que falla cierra el
-          caso: lo que viene después no se adivina. Elija una variante y vea dónde se detiene.
+          Elija una variante: el primer paso que falla cierra el caso y muestra la cláusula aplicada.
         </p>
       </header>
 
@@ -141,18 +140,6 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
           <p style={{ marginBottom: 0 }}>{decision.contrafactual}</p>
         </section>
       )}
-
-      <footer>
-        <p>
-          <Link href="/leer" style={{ color: 'var(--acento)' }}>
-            Probarlo con un informe suyo →
-          </Link>
-        </p>
-        <p>
-          Los ocho pasos viven en <code>src/domain/motor.ts</code> y esta pantalla no repite ninguna
-          regla: lee los motivos que el motor emitió.
-        </p>
-      </footer>
     </div>
   );
 }
