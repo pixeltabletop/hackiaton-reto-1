@@ -40,11 +40,11 @@ export default function PaginaLeer() {
           role="status"
           title={
             proveedor
-              ? 'El modelo extrae datos con citas; la póliza sigue decidiendo la cobertura.'
+              ? `${proveedor.nombre} extrae los datos con su cita; la póliza sigue decidiendo la cobertura.`
               : 'Sin clave de modelo, el lector usa reglas y necesita informes rotulados.'
           }
         >
-          {proveedor ? `Modelo activo · ${proveedor.nombre}` : 'Solo reglas'}
+          {proveedor ? 'Modelo activo' : 'Solo reglas'}
         </span>
       </div>
       <p className="tesis">

@@ -1693,7 +1693,9 @@ footer a {
 
   .lateral-lema,
   .lateral-grupo,
-  .lateral-tarjeta {
+  .lateral-tarjeta,
+  .lateral-entorno,
+  .lateral-datos {
     display: none;
   }
 
