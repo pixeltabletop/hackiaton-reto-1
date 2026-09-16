@@ -1,0 +1,6 @@
+.secrets/
+.env
+.env.*
+notion.config.json
+node_modules/
+.next/

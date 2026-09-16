@@ -6,8 +6,22 @@
 const ARCHIVOS_DEL_OCR = [
   './src/ocr/idioma/eng.traineddata',
   './src/ocr/worker-node-local.cjs',
-  './node_modules/tesseract.js/src/worker-script/node/**/*',
+  // El paquete ENTERO, no solo el worker: dentro del worker se requieren otros archivos
+  // del propio paquete, y si faltan el hilo muere sin error y la lectura se queda colgada.
+  './node_modules/tesseract.js/**/*',
   './node_modules/tesseract.js-core/**/*',
+  // Y sus dependencias, que el worker carga en caliente y el empaquetador no ve: la
+  // primera vez en Vercel el hilo moría con «Cannot find module 'bmp-js'».
+  './node_modules/bmp-js/**/*',
+  './node_modules/zlibjs/**/*',
+  './node_modules/is-url/**/*',
+  './node_modules/node-fetch/**/*',
+  './node_modules/whatwg-url/**/*',
+  './node_modules/tr46/**/*',
+  './node_modules/webidl-conversions/**/*',
+  './node_modules/regenerator-runtime/**/*',
+  './node_modules/wasm-feature-detect/**/*',
+  './node_modules/idb-keyval/**/*',
   './public/muestras/*',
 ];
 

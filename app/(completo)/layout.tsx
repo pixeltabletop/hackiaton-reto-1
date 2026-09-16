@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { Navegacion } from '../Navegacion';
+import { SimboloMarca } from '../SimboloMarca';
 import { MARCA } from '../marca';
 import { CASOS } from '../../src/data/casos';
 import { planDe } from '../../src/data/planes';
@@ -26,7 +27,7 @@ export default function LayoutCompleto({ children }: { children: ReactNode }) {
     <div className="marco">
       <aside className="lateral">
         <Link className="lateral-marca" href="/">
-          <span className="lateral-punto-marca" aria-hidden="true" />
+          <SimboloMarca className="marca-simbolo" />
           <span>{MARCA.nombre}</span>
         </Link>
         <p className="lateral-lema">{MARCA.lema}</p>

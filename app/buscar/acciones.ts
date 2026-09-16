@@ -45,7 +45,13 @@ export async function buscarPorFoto(datos: FormData): Promise<void> {
   if (imagen === null) redirect(`${destino}?error=sin-foto`);
 
   const lectura = await leerFoto(imagen);
-  if (lectura.propuesta === null) redirect(`${destino}?error=no-leido`);
+  if (lectura.propuesta === null) {
+    // Sin esto, un OCR que falla en el servidor se ve igual que una foto borrosa.
+    console.error(
+      `[ocr] sin número · error=${lectura.error ?? 'ninguno'} · texto=${JSON.stringify(lectura.texto.slice(0, 120))} · bytes=${imagen.length}`,
+    );
+    redirect(`${destino}?error=no-leido`);
+  }
 
   redirect(`${destino}?q=${encodeURIComponent(lectura.propuesta)}&leido=1`);
 }

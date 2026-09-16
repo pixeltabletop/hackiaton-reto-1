@@ -3,6 +3,8 @@
 Agente de **pre-autorización quirúrgica**: lee el informe del hospital con IA y dictamina contra la
 póliza, citando la cláusula que sostiene cada decisión.
 
+**▶ Agente en línea: https://prior-ai-tau.vercel.app** — abre sin credenciales, comprobado sin sesión iniciada.
+
 Equipo **Jajanken** · Reto 1 del hackIAthon Panamá 2026.
 
 > **El agente no autoriza: dictamina con la póliza en la mano.**
@@ -178,7 +180,8 @@ en Ubuntu, en cada push.
 | Dictamen (motor solo) | 1 a 6 ms |
 | Lectura de un informe con Claude Sonnet 5 | 3.6 a 6.9 s (mediana 5.0 s) |
 | OCR de una foto | 1.3 a 2.7 s |
-| Página del buscador / del flujo | 70 a 173 ms |
+| Página del buscador / del flujo | 70 a 173 ms en local; 273 ms en la URL pública |
+| OCR en la URL pública, primera foto tras un arranque en frío | hasta 30 s (Tesseract compila el wasm y carga el modelo dentro de la función); las siguientes, segundos |
 | Instalación (`npm ci`) | 50 s |
 | Compilación (`npm run build`) | 12 s |
 | Verificación (`npm run check`) | 5 s |

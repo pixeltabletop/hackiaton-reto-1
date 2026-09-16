@@ -27,7 +27,13 @@ export interface LecturaFoto {
 /** Los números candidatos que el OCR alcanzó a ver. Las reglas viven en domain/numeros. */
 export { extraerNumeros };
 
-const TIEMPO_MAXIMO_OCR_MS = 20_000;
+/**
+ * En esta máquina el OCR tarda 1.3 a 2.7 s. Dentro de una función de Vercel en frío hay
+ * que compilar el wasm de Tesseract y cargar 5 MB de modelo de idioma, y eso pasó de 20 s
+ * la primera vez. El corte existe para no dejar a nadie esperando sin respuesta, no para
+ * apretar: 45 s, por debajo del minuto que dura la función.
+ */
+const TIEMPO_MAXIMO_OCR_MS = 45_000;
 const DIRECTORIO_OCR = path.join(process.cwd(), 'src', 'ocr');
 
 /**

@@ -10,6 +10,10 @@ import { armarVista } from '../../src/domain/presentacion';
 // Cada consulta se resuelve contra el corpus en el momento: aquí no hay nada cacheado.
 export const dynamic = 'force-dynamic';
 
+// El OCR arranca Tesseract (wasm + modelo de idioma) dentro de la funcion: en frio
+// puede pasar de 20 s. El limite por defecto de Vercel lo mataria a mitad de camino.
+export const maxDuration = 60;
+
 const AVISOS: Record<string, string> = {
   'sin-foto': 'No llegó ninguna foto. Elija una imagen o use la cédula de ejemplo.',
   'no-leido': 'No se pudo leer ningún número en la foto. Escriba la cédula a mano.',

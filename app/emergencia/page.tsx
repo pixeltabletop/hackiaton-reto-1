@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Escanear } from '../components/Escanear';
+import { SimboloMarca } from '../SimboloMarca';
 import { MARCA } from '../marca';
 import { buscar, EJEMPLOS } from '../../src/domain/busqueda';
 import { CASOS } from '../../src/data/casos';
@@ -20,6 +21,10 @@ import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../src/domain/presentacion';
  */
 export const dynamic = 'force-dynamic';
 
+// El OCR arranca Tesseract (wasm + modelo de idioma) dentro de la funcion: en frio
+// puede pasar de 20 s. El limite por defecto de Vercel lo mataria a mitad de camino.
+export const maxDuration = 60;
+
 export default async function Page({
   searchParams,
 }: {
@@ -33,7 +38,7 @@ export default async function Page({
   return (
     <main className="ambulancia">
       <header className="ambulancia-barra">
-        <span className="lateral-punto-marca" aria-hidden="true" />
+        <SimboloMarca className="marca-simbolo" />
         <b>{MARCA.nombre}</b>
         <Link className="ambulancia-salir" href="/">
           Modo completo
