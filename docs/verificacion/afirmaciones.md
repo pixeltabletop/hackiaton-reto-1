@@ -3,7 +3,7 @@
 Cada afirmación que hace este proyecto, con la puerta que la defiende y cómo comprobarla. Si una
 afirmación no tiene puerta, se dice.
 
-Estado al 2026-09-15, medido en Windows 11 / Node 24.16 y repetido en Ubuntu (GitHub Actions).
+Estado al 2026-09-16, medido en Windows 11 / Node 24.16 y repetido en Ubuntu (GitHub Actions).
 
 | # | Afirmación | Puerta | Cómo se rompe a propósito | Estado |
 |---|---|---|---|---|
@@ -17,6 +17,12 @@ Estado al 2026-09-15, medido en Windows 11 / Node 24.16 y repetido en Ubuntu (Gi
 | 8 | El tema cumple contraste AA en sus 19 pares de color | `npm run check:color` | Bajar el contraste de un par: la puerta lo nombra | **verde** |
 | 9 | El README no promete comandos ni archivos que no existen | `npm run check:readme` | Citar un comando borrado: la puerta lo nombra | **verde** |
 | 10 | Todo lo anterior corre en una máquina limpia, no solo aquí | CI de GitHub (`.github/workflows/check.yml`), instala desde cero en Ubuntu | Romper cualquier puerta: el push sale en rojo | **verde** |
+| 11 | El desglose del copago cuadra al centavo con lo que calculó el motor | `npm test` (`atencion.test.ts`) | Cambiar una línea del desglose: la suma deja de dar `pagaPaciente` y la prueba lo dice | **verde** |
+| 12 | Ninguna pantalla muestra una cifra que la póliza todavía no respalda | `npm test` (`atencion.test.ts`) | Hacer que los destinos muestren el monto sin cobertura: la prueba que ata destinos y copago al mismo criterio falla | **verde** |
+| 13 | Lo que se dice de cada hospital sale del motor, no de texto escrito a mano | `npm test` (`atencion.test.ts`) | Cambiar un monto de destino: deja de coincidir con `calcularMontos` para esa condición de red | **verde** |
+| 14 | El borrador de solicitud de aval siempre declara que no es una autorización | `npm test` (`atencion.test.ts`) | Quitar la advertencia del pie: la prueba la exige en los seis casos del corpus | **verde** |
+| 15 | Siempre hay a quién llamar, y su teléfono es marcable | `npm test` (`atencion.test.ts`) | Quitar un contacto de un estado: la prueba exige al menos uno por dictamen y la línea 24/7 en todos | **verde** |
+| 16 | El directorio no se desincroniza de las pólizas | `npm test` (`atencion.test.ts`) | Añadir un hospital a la red de un plan sin ficha: la prueba lo nombra | **verde** |
 
 ## Lo que NO tiene puerta automática
 
@@ -29,6 +35,15 @@ Estado al 2026-09-15, medido en Windows 11 / Node 24.16 y repetido en Ubuntu (Gi
   lectura del caso desde una fila (`src/notion/lectura-del-caso.test.ts`) y quién puede escribir
   (`src/notion/seguridad.test.ts`).
 - **Los informes trampa los escribió el mismo equipo que escribió el lector**: sesgo declarado.
+- **Que un dato del directorio nunca se rotule como cláusula**: hay un solo componente que decide el
+  origen (`Origen` en `app/components/Atencion.tsx`, donde `null` significa «sin cláusula»), pero
+  nada impide automáticamente que alguien pase un número de cláusula donde no toca. Es regla de
+  revisión, no puerta. Se encontró y corrigió una violación el 2026-09-16.
+- **Que la bandeja de expedientes aguante a Notion caído**: el código degrada a solo-locales con
+  `try/catch` por caso y corta el `fetch` a los 8 s, y se comprobó a mano; no hay prueba automática
+  que simule la integración caída.
+- **Las hojas de impresión**: el CSS del reporte y el del borrador de aval están revisados a ojo en
+  pantalla, pero nadie ha mirado una impresión real en papel ni un PDF exportado.
 
 ## Cómo repetirlo entero
 

@@ -1,6 +1,7 @@
 {
   "name": "preautorizacion-quirurgica",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "description": "Agente de pre-autorización quirúrgica. El modelo lee y cita; la póliza decide. Reto 1 del hackIAthon Panamá 2026.",
