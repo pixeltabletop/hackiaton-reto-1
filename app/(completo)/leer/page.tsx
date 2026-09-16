@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { CASOS } from '../../../src/data/casos';
 import { PLANES } from '../../../src/data/planes';
 import { formato } from '../../../src/domain/dinero';
@@ -34,38 +33,25 @@ export default function PaginaLeer() {
 
   return (
     <div className="hoja">
-      <h1>Dictaminar una solicitud</h1>
+      <div className="titulo-con-modo">
+        <h1>Dictaminar una solicitud</h1>
+        <span
+          className={`modo-lectura ${proveedor ? 'modo-lectura-activo' : ''}`}
+          role="status"
+          title={
+            proveedor
+              ? 'El modelo extrae datos con citas; la póliza sigue decidiendo la cobertura.'
+              : 'Sin clave de modelo, el lector usa reglas y necesita informes rotulados.'
+          }
+        >
+          {proveedor ? `Modelo activo · ${proveedor.nombre}` : 'Solo reglas'}
+        </span>
+      </div>
       <p className="tesis">
-        Pegue el informe del hospital y elija la póliza del paciente. Cada dato se toma{' '}
-        <strong>con la cita textual de donde salió</strong> y la cobertura la resuelven las cláusulas.
-        Si un papel falta, la solicitud no se aprueba: queda a la espera de documentación.
-      </p>
-
-      <p className={`nota ${proveedor ? 'nota-buena' : ''}`} role="status">
-        {proveedor ? (
-          <>
-            <b>Lectura con modelo activa:</b> {proveedor.nombre}. El modelo extrae los datos del
-            informe con su cita; la cobertura la sigue decidiendo la póliza.
-          </>
-        ) : (
-          <>
-            <b>Modo sin modelo:</b> este servidor no tiene clave de IA, así que el informe lo lee el
-            lector por reglas. Funciona con informes rotulados; uno escrito en prosa quedará
-            incompleto. Para encenderlo, copie <code>.env.example</code> a <code>.env.local</code> y
-            complete una clave.
-          </>
-        )}
+        Pegue el informe del hospital: cada dato se respalda con una cita y la póliza decide la cobertura.
       </p>
 
       <FormularioLeer ejemplo={EJEMPLO} planes={planes} ejemplos={ejemplos} />
-
-      <footer>
-        <p>
-          <Link href="/" style={{ color: 'var(--acento)' }}>
-            Volver a los seis casos dictaminados
-          </Link>
-        </p>
-      </footer>
     </div>
   );
 }

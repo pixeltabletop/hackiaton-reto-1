@@ -193,10 +193,7 @@ export default async function Page({
       )}
 
       <footer className="ambulancia-pie">
-        <p>
-          Datos sintéticos de una demostración: <b>no ingrese datos reales de nadie</b>. En producción,
-          esta pantalla pide credencial de la aseguradora.
-        </p>
+        <p>Demostración con datos sintéticos; no ingrese datos reales y use credencial de la aseguradora en producción.</p>
       </footer>
     </main>
   );
