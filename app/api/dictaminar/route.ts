@@ -25,7 +25,7 @@ export const dynamic = 'force-dynamic';
 export async function POST(peticion: Request) {
   const datos = await peticion.formData();
   const paginaCaso = String(datos.get('caso') ?? '');
-  const destino = new URL('/notion', peticion.url);
+  const destino = new URL('/como-funciona/notion', peticion.url);
 
   if (!paginaCaso) {
     destino.searchParams.set('error', 'Falta el caso');

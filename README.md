@@ -162,7 +162,7 @@ npm run probar:proveedor -- --simulado bueno   # la prueba del proveedor, sin cl
 
 | Comando | Qué comprueba | Necesita |
 |---|---|---|
-| `npm test` | 92 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo, búsqueda por cédula y póliza, números en documentos, lectura desde Notion, pasos del flujo y la regla de salida del probador | nada |
+| `npm test` | 128 pruebas: corpus, evidencia, motor, lectura por reglas y con modelo, búsqueda por cédula y póliza, números en documentos, lectura desde Notion, pasos del flujo, el desglose del copago, los destinos, los contactos, el borrador de solicitud de aval y la regla de salida del probador | nada |
 | `npm run check:decision` | Los cinco invariantes del contrato sobre los seis casos | nada |
 | `npm run check:trampas` | 24 informes trampa: negaciones, rótulos distintos, montos corregidos, órdenes escondidas. Falla si aparece una aprobación indebida | nada |
 | `npm run check:color` | Contraste WCAG AA de los 19 pares de color del tema | nada |

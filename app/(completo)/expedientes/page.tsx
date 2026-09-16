@@ -32,16 +32,29 @@ const RESPONSABLE: Record<string, string> = {
 export default async function Page({ searchParams }: { searchParams: Promise<{ estado?: string }> }) {
   const { estado = 'todos' } = await searchParams;
 
-  const locales: { vista: VistaCaso; origen: string | null }[] = CASOS.map((caso) => ({
-    vista: armarVista(caso, planDe(caso.planId)),
-    origen: null,
-  }));
+  const locales: { vista: VistaCaso; origen: string | null; esLocal: boolean }[] = CASOS.map(
+    (caso) => ({ vista: armarVista(caso, planDe(caso.planId)), origen: null, esLocal: true }),
+  );
 
   const bandeja = await casosDeNotion();
-  const deNotion = bandeja.casos.map(({ caso, plan }) => ({
-    vista: armarVista(caso, plan),
-    origen: 'Notion',
-  }));
+
+  // El preparador de Notion sembró los seis casos del corpus con sus mismos identificadores,
+  // así que sin esto la bandeja los muestra dos veces, repite anclas `#PR-...` y le da a React
+  // dos hijos con la misma clave. El local manda: es el que tiene hoja imprimible propia.
+  const yaEstan = new Set(CASOS.map((c) => c.id));
+
+  const deNotion = bandeja.casos.flatMap(({ caso, plan }) => {
+    if (yaEstan.has(caso.id)) return [];
+    yaEstan.add(caso.id);
+    // `armarVista` dictamina, y una póliza de Notion mal formada revienta dentro de
+    // `clausulaDe`. Fuera del try la excepción se lleva por delante la página entera y con
+    // ella los expedientes locales, que es justo lo que no puede pasar.
+    try {
+      return [{ vista: armarVista(caso, plan), origen: 'Notion', esLocal: false }];
+    } catch {
+      return [];
+    }
+  });
 
   const todos = [...locales, ...deNotion];
   const decisiones = todos.map((t) => t.vista.decision);
@@ -142,8 +155,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ e
         </p>
       )}
 
-      {visibles.map(({ vista }) => (
-        <Caso key={vista.caso.id} vista={vista} />
+      {visibles.map(({ vista, esLocal }) => (
+        <Caso key={vista.caso.id} vista={vista} hojaPropia={esLocal} />
       ))}
 
       <footer>

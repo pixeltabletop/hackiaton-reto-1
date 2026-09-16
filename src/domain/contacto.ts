@@ -78,9 +78,24 @@ export function aQuienLlamar(caso: Caso, plan: Plan, decision: Decision): Contac
       break;
   }
 
-  // Invariante: nunca se devuelve una lista vacía. Aunque el directorio no conozca el
-  // hospital, la línea de la aseguradora siempre está.
-  if (lista.length === 0) linea24h('Atención al asegurado, las 24 horas.', 1);
+  // Si el directorio no conoce ni al hospital ni a la aseguradora, no hay teléfono que
+  // inventar. Repetir aquí la línea 24/7 no arregla nada —es la misma que ya faltó— y
+  // dejaría el bloque en blanco, que se lee como «no hay a quién llamar». Se dice qué
+  // pasa y adónde mirar: un correo de autorizaciones sí puede existir sin teléfono.
+  if (lista.length === 0) {
+    const correo = aseguradora?.correoAutorizaciones;
+    return [
+      {
+        quien: correo ? `Escribir a ${correo}` : `Sin teléfono en el directorio`,
+        telefono: correo ?? '—',
+        porQue: correo
+          ? 'El directorio no tiene teléfono para esta póliza; el correo de autorizaciones sí.'
+          : 'El directorio no tiene contactos para esta aseguradora ni para este hospital.',
+        prioridad: 1,
+        marcable: '',
+      },
+    ];
+  }
 
   return lista.sort((a, b) => a.prioridad - b.prioridad);
 }

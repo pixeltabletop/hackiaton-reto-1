@@ -100,7 +100,7 @@ export default async function Page({
                   </div>
                 </dl>
 
-                <Caso vista={armarVista(caso, plan)} />
+                <Caso vista={armarVista(caso, plan)} hojaPropia />
               </section>
             );
           })}

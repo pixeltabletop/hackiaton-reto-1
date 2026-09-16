@@ -273,3 +273,24 @@ test('el borrador sabe a qué correo va, y el folio identifica el caso', () => {
     assert.equal(solicitud.folio, `SA-${caso.id}`);
   }
 });
+
+/* ---------- degradaciones que Codex encontró en la auditoría del 16-sep ---------- */
+
+test('un hospital y una aseguradora que el directorio no conoce no dejan el bloque vacío', () => {
+  const { caso, plan, decision } = todos[0];
+  const desconocido = {
+    ...plan,
+    id: 'PLAN-INVENTADO',
+    aseguradora: 'Aseguradora Que No Existe',
+  };
+  const contactos = aQuienLlamar({ ...caso, hospital: 'Hospital Que No Existe' }, desconocido, decision);
+  assert.ok(contactos.length > 0, 'se quedó sin contactos y sin explicación');
+  assert.ok(contactos[0].porQue.length > 20, 'no dice por qué no hay a quién llamar');
+  assert.equal(contactos[0].marcable, '', 'no puede ofrecer un número que no tiene');
+});
+
+test('cuando falta el teléfono pero hay correo de autorizaciones, se ofrece el correo', () => {
+  const { caso, plan, decision } = todos[0];
+  const contactos = aQuienLlamar({ ...caso, hospital: 'Hospital Que No Existe' }, { ...plan, id: 'PLAN-INVENTADO' }, decision);
+  assert.ok(contactos.some((c) => c.telefono.includes('@') || c.marcable.length > 0));
+});

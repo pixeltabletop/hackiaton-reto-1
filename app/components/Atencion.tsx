@@ -136,11 +136,17 @@ export function Destinos({ caso, plan, decision }: { caso: Caso; plan: Plan; dec
           </li>
         ))}
       </ul>
+      {/* Dos frases y dos orígenes distintos: mezclarlos rotularía como cláusula lo que
+          en realidad sale del directorio, que es justo lo que este producto no hace. */}
       <p className="nota">
         {aplicaElDinero
-          ? 'Dentro de la red el plan cobra igual en todos: lo que cambia entre estos hospitales es la especialidad, la urgencia y la distancia.'
+          ? 'Dentro de la red el plan cobra igual en todos.'
           : 'Sin cobertura resuelta no se muestra cuánto pagaría en cada uno: sería una cifra que la póliza todavía no respalda.'}{' '}
         <Origen clausula="4.1" />
+      </p>
+      <p className="nota nota-ceñida">
+        Lo que cambia entre estos hospitales es la especialidad, la urgencia y la distancia.{' '}
+        <Origen clausula={null} />
       </p>
     </section>
   );
@@ -157,13 +163,23 @@ export function Contactos({ caso, plan, decision }: { caso: Caso; plan: Plan; de
       <ul className="contactos-lista">
         {contactos.map((contacto) => (
           <li key={contacto.quien + contacto.telefono}>
-            <a className="contacto-boton" href={`tel:${contacto.marcable}`}>
-              <IconoTelefono />
-              <span>
-                <b>{contacto.quien}</b>
-                <em>{contacto.telefono}</em>
-              </span>
-            </a>
+            {/* Sin número marcable no se pinta un enlace `tel:` vacío, que en un teléfono
+                abre el marcador en blanco: se muestra el mismo bloque, sin enlace. */}
+            {contacto.marcable ? (
+              <a className="contacto-boton" href={`tel:${contacto.marcable}`}>
+                <IconoTelefono />
+                <span>
+                  <b>{contacto.quien}</b>
+                  <em>{contacto.telefono}</em>
+                </span>
+              </a>
+            ) : (
+              <div className="contacto-boton contacto-sin-numero">
+                <span>
+                  <b>{contacto.quien}</b>
+                </span>
+              </div>
+            )}
             <p>{contacto.porQue}</p>
           </li>
         ))}

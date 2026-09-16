@@ -2623,3 +2623,8 @@ footer a {
   letter-spacing: 0.02em;
   color: var(--tinta-3);
 }
+
+.contacto-sin-numero {
+  border-style: dashed;
+  color: var(--tinta-3);
+}

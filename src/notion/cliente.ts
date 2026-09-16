@@ -37,6 +37,10 @@ async function llamar(
     },
     body: cuerpo === undefined ? undefined : JSON.stringify(cuerpo),
     cache: 'no-store',
+    // Sin tiempo maximo, una conexion que acepta y no contesta deja el render de la
+    // pagina esperando hasta que Vercel mate la funcion. La bandeja prefiere quedarse
+    // con los expedientes locales antes que no pintar nada.
+    signal: AbortSignal.timeout(8000),
   });
 
   const texto = await respuesta.text();

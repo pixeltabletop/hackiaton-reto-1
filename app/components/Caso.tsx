@@ -1,7 +1,6 @@
 import { CLASE_ESTADO, ETIQUETA_ESTADO, type VistaCaso } from '../../src/domain/presentacion';
 import { familiaDe, resumenDe } from '../../src/domain/resumen';
 import { Contactos, Destinos, Dinero, Papel } from './Atencion';
-import { CASOS } from '../../src/data/casos';
 
 /**
  * La respuesta completa a un caso, en seis preguntas y en el orden en que alguien las hace
@@ -17,12 +16,22 @@ import { CASOS } from '../../src/data/casos';
  * Componente de servidor: se renderiza completo en el HTML, sin JavaScript en el cliente.
  */
 
-export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
+export function Caso({
+  vista,
+  titulo,
+  hojaPropia = false,
+}: {
+  vista: VistaCaso;
+  titulo?: string;
+  /**
+   * ¿Este caso tiene hoja imprimible en /aval/<id>? Solo los del corpus local la tienen, y
+   * quien pinta la ficha es el único que sabe de dónde vino: un caso de Notion puede traer
+   * el mismo identificador que uno local y el enlace armaría el borrador del caso equivocado.
+   */
+  hojaPropia?: boolean;
+}) {
   const { caso, plan, decision, segmentos, clausulas, procedimiento } = vista;
   const clase = CLASE_ESTADO[decision.estado];
-  // La hoja imprimible se arma desde el corpus local: un caso traído de Notion o pegado
-  // en /leer no tiene ruta propia, así que no se ofrece un botón que llevaría a un 404.
-  const tieneHojaPropia = CASOS.some((c) => c.id === caso.id);
 
   // Una cláusula se explica una vez: si dos reglas la usan, la segunda solo la referencia.
   const yaCitadas = new Set<string>();
@@ -55,7 +64,7 @@ export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
         {/* 4. ¿A quién llamar? */}
         <Contactos caso={caso} plan={plan} decision={decision} />
         {/* 5. ¿Qué papel llevar? */}
-        <Papel caso={caso} plan={plan} decision={decision} enlaceAval={tieneHojaPropia} />
+        <Papel caso={caso} plan={plan} decision={decision} enlaceAval={hojaPropia} />
       </div>
 
       {/* 6. ¿Cómo se decidió? Entero, y plegado. */}
