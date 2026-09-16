@@ -107,14 +107,38 @@ test('los montos de cada destino son los del motor, no un cálculo paralelo', ()
   }
 });
 
-test('las opciones salen ordenadas por lo que paga el paciente', () => {
+test('cuando hay reparto, las opciones salen ordenadas por lo que paga el paciente', () => {
   for (const { caso, plan, decision } of todos) {
-    const { opciones } = opcionesDeAtencion(caso, plan, decision);
+    const { opciones, aplicaElDinero } = opcionesDeAtencion(caso, plan, decision);
+    if (!aplicaElDinero) continue;
     for (let i = 1; i < opciones.length; i += 1) {
       assert.ok(
         opciones[i - 1].pagaPaciente <= opciones[i].pagaPaciente,
         `desordenado en ${caso.id}`,
       );
+    }
+  }
+});
+
+test('los destinos callan el monto cuando el bloque del dinero dice que no hay reparto', () => {
+  for (const { caso, plan, decision } of todos) {
+    const { aplicaElDinero } = opcionesDeAtencion(caso, plan, decision);
+    assert.equal(
+      aplicaElDinero,
+      desgloseDe(decision, plan).aplica,
+      `destinos y copago se contradicen en ${caso.id} (${decision.estado})`,
+    );
+  }
+});
+
+test('sin reparto, los hospitales de la red van primero: lo que decide es si el sitio sirve', () => {
+  for (const { caso, plan, decision } of todos) {
+    const { opciones, aplicaElDinero } = opcionesDeAtencion(caso, plan, decision);
+    if (aplicaElDinero) continue;
+    const primerFuera = opciones.findIndex((o) => !o.enRed);
+    const ultimoEnRed = opciones.map((o) => o.enRed).lastIndexOf(true);
+    if (primerFuera !== -1 && ultimoEnRed !== -1) {
+      assert.ok(primerFuera > ultimoEnRed, `red mezclada con fuera de red en ${caso.id}`);
     }
   }
 });

@@ -40,6 +40,13 @@ export interface OpcionDeAtencion {
 
 export interface Destinos {
   especialidad: string | null;
+  /**
+   * Si el caso no está aprobado no hay reparto que mostrar, y una cifra aquí se
+   * contradiría con el bloque del dinero, que dice que todavía no hay cobertura. Los
+   * hospitales siguen sirviendo —la pregunta «¿a dónde puedo ir?» no depende de eso—
+   * pero el monto se calla.
+   */
+  aplicaElDinero: boolean;
   opciones: OpcionDeAtencion[];
   /** El plan no declara red: no hay nada que ofrecer y se dice, en vez de mostrar una lista vacía. */
   sinRed: boolean;
@@ -97,11 +104,15 @@ export function opcionesDeAtencion(caso: Caso, plan: Plan, decision: Decision): 
     });
   }
 
-  // Primero lo más barato para el paciente; a igual precio, el que atiende la especialidad.
+  const aplicaElDinero = decision.estado.startsWith('PRE_APROBADO');
+
+  // Con dinero sobre la mesa manda el bolsillo; sin él, manda si el sitio sirve: primero
+  // los de la red y, dentro de la red, los que atienden la especialidad que hace falta.
   opciones.sort((a, b) => {
-    if (a.pagaPaciente !== b.pagaPaciente) return a.pagaPaciente - b.pagaPaciente;
+    if (aplicaElDinero && a.pagaPaciente !== b.pagaPaciente) return a.pagaPaciente - b.pagaPaciente;
+    if (a.enRed !== b.enRed) return Number(b.enRed) - Number(a.enRed);
     return Number(b.atiendeLaEspecialidad ?? false) - Number(a.atiendeLaEspecialidad ?? false);
   });
 
-  return { especialidad, opciones, sinRed: plan.red.length === 0 };
+  return { especialidad, opciones, aplicaElDinero, sinRed: plan.red.length === 0 };
 }

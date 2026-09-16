@@ -83,7 +83,7 @@ export function Dinero({ decision, plan }: { decision: Decision; plan: Plan }) {
 /* ---------- 3. ¿A dónde puede ir? ---------- */
 
 export function Destinos({ caso, plan, decision }: { caso: Caso; plan: Plan; decision: Decision }) {
-  const { opciones, especialidad, sinRed } = opcionesDeAtencion(caso, plan, decision);
+  const { opciones, especialidad, sinRed, aplicaElDinero } = opcionesDeAtencion(caso, plan, decision);
 
   if (sinRed) {
     return (
@@ -117,15 +117,17 @@ export function Destinos({ caso, plan, decision }: { caso: Caso; plan: Plan; dec
               {opcion.urgencias24h !== null && ` · ${opcion.urgencias24h ? 'urgencias 24 h' : 'sin urgencias 24 h'}`}
               {opcion.atiendeLaEspecialidad === false && especialidad && ` · no atiende ${especialidad.toLowerCase()}`}
             </span>
-            <span className="destino-cifra">
-              paga <b>{formato(opcion.pagaPaciente)}</b>
-              {opcion.diferenciaVsActual !== 0 && (
-                <em className={opcion.diferenciaVsActual < 0 ? 'ahorra' : 'cuesta'}>
-                  {opcion.diferenciaVsActual < 0 ? '−' : '+'}
-                  {formato(Math.abs(opcion.diferenciaVsActual)).replace('$ ', '$')}
-                </em>
-              )}
-            </span>
+            {aplicaElDinero && (
+              <span className="destino-cifra">
+                paga <b>{formato(opcion.pagaPaciente)}</b>
+                {opcion.diferenciaVsActual !== 0 && (
+                  <em className={opcion.diferenciaVsActual < 0 ? 'ahorra' : 'cuesta'}>
+                    {opcion.diferenciaVsActual < 0 ? '−' : '+'}
+                    {formato(Math.abs(opcion.diferenciaVsActual)).replace('$ ', '$')}
+                  </em>
+                )}
+              </span>
+            )}
             {opcion.telefono && (
               <a className="destino-tel" href={`tel:${opcion.telefono.replace(/[^+\d]/g, '')}`}>
                 <IconoTelefono /> {opcion.telefono}
@@ -135,8 +137,10 @@ export function Destinos({ caso, plan, decision }: { caso: Caso; plan: Plan; dec
         ))}
       </ul>
       <p className="nota">
-        Dentro de la red el plan cobra igual en todos: lo que cambia entre estos hospitales es la
-        especialidad, la urgencia y la distancia. <Origen clausula="4.1" />
+        {aplicaElDinero
+          ? 'Dentro de la red el plan cobra igual en todos: lo que cambia entre estos hospitales es la especialidad, la urgencia y la distancia.'
+          : 'Sin cobertura resuelta no se muestra cuánto pagaría en cada uno: sería una cifra que la póliza todavía no respalda.'}{' '}
+        <Origen clausula="4.1" />
       </p>
     </section>
   );
