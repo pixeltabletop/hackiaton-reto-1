@@ -1,6 +1,7 @@
 import { formato } from '../../src/domain/dinero';
 import { CLASE_ESTADO, ETIQUETA_ESTADO, type VistaCaso } from '../../src/domain/presentacion';
 import { familiaDe, resumenDe } from '../../src/domain/resumen';
+import { alternativasDe } from '../../src/domain/alternativas';
 
 /**
  * La ficha de un caso: el veredicto en una línea, el porqué con sus cláusulas
@@ -85,6 +86,8 @@ export function Dinero({ vista }: { vista: VistaCaso }) {
 export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
   const { caso, plan, decision, segmentos, clausulas, procedimiento } = vista;
   const clase = CLASE_ESTADO[decision.estado];
+  // Cuando la respuesta no es un sí, lo útil es qué se puede hacer. Sale del motor.
+  const alternativas = alternativasDe(caso, plan, decision);
 
   // Una cláusula se explica una vez: si dos reglas la usan, la segunda solo la referencia.
   const yaCitadas = new Set<string>();
@@ -150,6 +153,24 @@ export function Caso({ vista, titulo }: { vista: VistaCaso; titulo?: string }) {
         </section>
         <Dinero vista={vista} />
       </div>
+
+      {alternativas.length > 0 && (
+        <section className="bloque alternativas" style={{ marginTop: 20 }}>
+          <h4>Qué puede hacer el paciente</h4>
+          <ul className="alternativas-lista">
+            {alternativas.map((alternativa) => (
+              <li key={alternativa.titulo}>
+                <b>{alternativa.titulo}</b>
+                <p>{alternativa.detalle}</p>
+                {alternativa.cifra && <span className="alternativa-cifra">{alternativa.cifra}</span>}
+                {alternativa.clausula && (
+                  <span className="referencia">cláusula {alternativa.clausula}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {decision.faltantes.length > 0 && (
         <section className="bloque" style={{ marginTop: 20 }}>

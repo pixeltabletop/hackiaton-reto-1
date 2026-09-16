@@ -18,6 +18,13 @@ Equipo **Jajanken** · Reto 1 del hackIAthon Panamá 2026.
   inventados. Las fotos de ejemplo llevan impreso «MUESTRA · DATOS FICTICIOS».
 - No sustituye el criterio del médico auditor: cuando hay criterio médico o un monto alto, **deriva**.
 
+## Por qué se llama PRIOR AI
+
+Por dos cosas a la vez. **Prior** es la pre-autorización, el permiso que la aseguradora da antes de
+operar (*prior authorization*). Y prioridad es lo que falta cuando alguien llega a urgencias: quien
+atiende necesita saber **en el momento** si esa persona está cubierta, cuánto paga, y a qué hospital
+de su red puede llevarla. Eso es lo que el modo ambulancia responde con la cédula o una foto.
+
 ## Qué problema resuelve
 
 Hoy el hospital manda el informe a la aseguradora y la respuesta tarda horas o días. El paciente no

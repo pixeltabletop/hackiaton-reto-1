@@ -19,7 +19,8 @@
     "probar:proveedor": "node --import ./scripts/registro-ts.mjs scripts/probar-proveedor.mjs",
     "notion:preparar": "node --import ./scripts/registro-ts.mjs scripts/notion-preparar.mjs",
     "check": "npm run test && npm run check:decision && npm run check:trampas && npm run check:color && npm run check:readme",
-    "check:readme": "node scripts/check-readme.mjs"
+    "check:readme": "node scripts/check-readme.mjs",
+    "notion:sembrar": "node --import ./scripts/registro-ts.mjs scripts/notion-sembrar-prosa.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.125.0",
