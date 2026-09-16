@@ -3,12 +3,19 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+/**
+ * Tres entradas, no cinco.
+ *
+ * Las dos que sobraban —«Bandeja de entrada», que en realidad era la integración con
+ * Notion, y «Cómo decide, paso a paso»— mostraban el motor y la plomería como si fueran
+ * producto. Ahora viven juntas en «Cómo funciona», declaradas como lo que son: la
+ * explicación de la máquina, para quien la quiera auditar.
+ */
 const ENLACES = [
-  { href: '/', texto: 'Buscar asegurado' },
-  { href: '/leer', texto: 'Subir un informe' },
-  { href: '/flujo', texto: 'Cómo decide, paso a paso' },
-  { href: '/casos', texto: 'Casos dictaminados' },
-  { href: '/notion', texto: 'Bandeja de entrada' },
+  { href: '/', texto: 'Atender' },
+  { href: '/leer', texto: 'Leer un informe' },
+  { href: '/expedientes', texto: 'Expedientes' },
+  { href: '/como-funciona', texto: 'Cómo funciona' },
 ];
 
 /** Marca dónde está uno parado. Es lo único que necesita JavaScript en toda la app. */

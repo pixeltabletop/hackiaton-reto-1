@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { formato } from '../../../src/domain/dinero';
-import { dictaminar } from '../../../src/domain/motor';
-import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../../src/domain/presentacion';
-import type { Caso, Plan } from '../../../src/domain/tipos';
-import { consultarFuente, hayToken, leerRelacion } from '../../../src/notion/cliente';
-import { casoDesdeFila, planDesdeFila } from '../../../src/notion/mapeo';
-import { casoDeLaFila } from '../../../src/notion/lectura-del-caso';
+import { formato } from '../../../../src/domain/dinero';
+import { dictaminar } from '../../../../src/domain/motor';
+import { CLASE_ESTADO, ETIQUETA_ESTADO } from '../../../../src/domain/presentacion';
+import type { Caso, Plan } from '../../../../src/domain/tipos';
+import { consultarFuente, hayToken, leerRelacion } from '../../../../src/notion/cliente';
+import { casoDesdeFila, planDesdeFila } from '../../../../src/notion/mapeo';
+import { casoDeLaFila } from '../../../../src/notion/lectura-del-caso';
 
 export const dynamic = 'force-dynamic';
 
@@ -196,8 +196,8 @@ export default async function PaginaNotion({
 
         <footer>
           <p>
-            <Link href="/" style={{ color: 'var(--acento)' }}>
-              Ver los seis casos dictaminados
+            <Link href="/como-funciona" style={{ color: 'var(--acento)' }}>
+              Volver a Cómo funciona
             </Link>
           </p>
         </footer>

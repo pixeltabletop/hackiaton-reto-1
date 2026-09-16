@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { buscarPorFoto } from '../buscar/acciones';
 import { reemplazarPorReducida } from './reducirFoto';
 
@@ -13,19 +13,25 @@ export function Escanear({
   etiqueta = 'Escanear la cédula o la póliza',
   className = 'boton-grande-secundario',
   destino = 'inicio',
+  ocupado = 'Leyendo la foto…',
+  titulo,
 }: {
-  etiqueta?: string;
+  etiqueta?: ReactNode;
   className?: string;
   /** Adónde vuelve el resultado: el modo ambulancia no debe sacar a nadie de su pantalla. */
   destino?: 'inicio' | 'emergencia';
+  /** Lo que se anuncia mientras sube la foto. En un botón de ícono no cabe una frase. */
+  ocupado?: ReactNode;
+  /** Nombre accesible cuando la etiqueta es solo un ícono. */
+  titulo?: string;
 }) {
   const [enviando, setEnviando] = useState(false);
 
   return (
     <form action={buscarPorFoto} className="escanear">
       <input type="hidden" name="destino" value={destino} />
-      <label className={`${className} ${enviando ? 'ocupado' : ''}`}>
-        {enviando ? 'Leyendo la foto…' : etiqueta}
+      <label aria-label={titulo} className={`${className} ${enviando ? 'ocupado' : ''}`} title={titulo}>
+        {enviando ? ocupado : etiqueta}
         <input
           accept="image/*"
           capture="environment"

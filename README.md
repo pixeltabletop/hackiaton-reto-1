@@ -51,20 +51,29 @@ que el modelo decida solo, entre **5 y 19 aprobaciones indebidas**.
 5. **Salida**: estado, motivos con su cláusula citada, reparto del monto y, si falta un documento,
    el contrafactual («con esos documentos pasa a PRE_APROBADO y la aseguradora responde $ 2,400.00»).
 
-La pantalla **«Cómo decide, paso a paso»** (`/flujo`) enseña ese recorrido con diez variantes, e
+6. **Después del dictamen**: a qué hospitales de la red puede ir y cuánto paga en cada uno, a
+   quién llamar según el estado, y el borrador de solicitud de aval para adelantar el trámite.
+
+La pantalla **«Cómo funciona»** (`/como-funciona`) enseña ese recorrido con diez variantes, e
 incluye informes trampa: el mismo informe con una negación, una orden escondida o un rótulo distinto,
 para ver que el camino cambia por lo que dice el documento.
+
+Los teléfonos, las especialidades por hospital y los contactos salen del **directorio**
+(`src/data/directorio.ts`), que vive **fuera** del texto de la póliza: la interfaz marca con su
+número de cláusula lo que sale del contrato y con la etiqueta «directorio» lo que sale de la
+operación. Nunca se disfraza uno de otro.
 
 ### Las pantallas
 
 | Ruta | Qué es |
 |---|---|
-| `/` | **Buscar al asegurado** por cédula o póliza, tecleada o leída de una foto (OCR en el servidor) |
+| `/` | **Atender**: cédula o póliza, tecleada o leída de una foto (OCR en el servidor). La respuesta sale en seis bloques: si cubre, cuánto paga, a dónde puede ir, a quién llamar, qué papel llevar y —plegado— cómo se decidió |
 | `/leer` | **Pegue un informe y el agente lo dictamina.** Dice arriba si hay modelo activo o si lee por reglas |
-| `/flujo` | **Cómo decide, paso a paso**, con diez variantes y los informes trampa |
-| `/casos` | Los seis casos del corpus, con el porqué de cada uno y el informe con la cita de cada dato |
+| `/expedientes` | Todos los expedientes en una bandeja, filtrados por estado: los seis del corpus y los de Notion si la integración responde |
+| `/aval/<caso>` | **Borrador de solicitud de aval**, en una hoja que se imprime. Es una solicitud, no una autorización |
+| `/como-funciona` | La máquina por dentro: los ocho pasos con diez variantes, los informes trampa, de dónde salen los casos y las puertas |
 | `/emergencia` | **Modo ambulancia**: una pantalla, un campo, un botón para escanear |
-| `/notion` | Los casos pendientes de la base **Casos** de Notion; al dictaminar, el modelo lee el informe de la fila y la decisión se escribe en **Decisiones** |
+| `/como-funciona/notion` | Los casos pendientes de la base **Casos** de Notion; al dictaminar, el modelo lee el informe de la fila y la decisión se escribe en **Decisiones** |
 | `/api/dictaminar` | `POST caso=<id de página de Notion>`: la misma ruta, sin interfaz |
 
 ## Qué sale a la red y qué no
@@ -216,7 +225,7 @@ HL7/FHIR con el hospital y el core de la aseguradora, y negativas firmadas por u
 
 | Requisito del reto | Cómo se cumple |
 |---|---|
-| Recibe el informe médico digital y la póliza **en una base de datos de Notion** | Bases `Pólizas`, `Casos` y `Decisiones` creadas por `npm run notion:preparar`; la pantalla `/notion` las lee |
+| Recibe el informe médico digital y la póliza **en una base de datos de Notion** | Bases `Pólizas`, `Casos` y `Decisiones` creadas por `npm run notion:preparar`; la pantalla `/como-funciona/notion` las lee |
 | **Con IA**, analiza si el procedimiento está cubierto | El modelo lee el informe de la fila y cita cada dato (`src/notion/lectura-del-caso.ts`); la cobertura la decide el motor |
 | Verifica las **carencias** | Pasos 5 y 6 del motor, cláusulas 3.1 y 3.2, con sus pruebas |
 | Emite **preaprobación o solicitud de documentos faltantes** | Seis estados posibles, incluida la lista de faltantes y el contrafactual |

@@ -65,7 +65,7 @@ export default function LayoutCompleto({ children }: { children: ReactNode }) {
           {casos.map(({ caso, decision }) => (
             <Link
               className={`lateral-caso ${CLASE_ESTADO[decision.estado]}`}
-              href={`/casos/#${caso.id}`}
+              href={`/expedientes/#${caso.id}`}
               key={caso.id}
               title={ETIQUETA_ESTADO[decision.estado]}
             >

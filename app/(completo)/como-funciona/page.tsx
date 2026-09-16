@@ -78,17 +78,39 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
   return (
     <div className="hoja">
       <header>
-        <h1>Cómo decide, paso a paso</h1>
+        <h1>Cómo funciona</h1>
         <p className="problema">
-          Elija una variante: el primer paso que falla cierra el caso y muestra la cláusula aplicada.
+          La máquina por dentro. Todo lo de esta página es proceso interno, no producto.
         </p>
       </header>
+
+      <section className="bloque">
+        <h4>El recorrido completo</h4>
+        <ol className="lateral-pasos">
+          <li>Entra un informe: pegado, leído de una foto o traído de la base de casos.</li>
+          <li>El modelo lo lee y copia la cita textual de cada dato.</li>
+          <li>El motor aplica la póliza en ocho pasos, en orden fijo.</li>
+          <li>Sale el dictamen; el directorio añade a dónde ir y a quién llamar.</li>
+          <li>Se arma el borrador de solicitud de aval para adelantar el trámite.</li>
+        </ol>
+        <p className="nota">
+          El modelo lee y cita; nunca decide. Quien decide es el motor, y cada decisión suya queda
+          atada al número de cláusula que la sostiene.
+        </p>
+      </section>
+
+      <h2>Los ocho pasos, sobre un caso real</h2>
+      <p className="nota nota-ceñida">
+        Elija una variante: el primer paso que falla cierra el caso. Las variantes <b>TR-</b> son el
+        mismo informe con un cambio pequeño, para ver que el camino cambia por lo que dice el
+        documento y no por quién lo mira.
+      </p>
 
       <div className="chips">
         {todas.map((x) => (
           <Link
             className={`chip chip-enlace ${x.id === elegida.id ? 'chip-activo' : ''}`}
-            href={`/flujo?v=${encodeURIComponent(x.id)}`}
+            href={`/como-funciona?v=${encodeURIComponent(x.id)}`}
             key={x.id}
           >
             {x.etiqueta}
@@ -140,6 +162,44 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ v
           <p style={{ marginBottom: 0 }}>{decision.contrafactual}</p>
         </section>
       )}
+
+      <h2>De dónde salen los casos</h2>
+      <div className="rejilla">
+        <section className="bloque">
+          <h4>La base de casos</h4>
+          <p>
+            Los casos pendientes viven en una base de Notion que hace de bandeja de la aseguradora.
+            PRIOR AI lee el informe de cada fila, lo dictamina y escribe la decisión de vuelta con
+            sus cláusulas.
+          </p>
+          <Link className="boton" href="/como-funciona/notion">
+            Ver la integración
+          </Link>
+          <p className="nota">
+            La web pública nunca depende de ese token: si Notion no responde, los expedientes locales
+            se siguen viendo.
+          </p>
+        </section>
+
+        <section className="bloque">
+          <h4>Las puertas</h4>
+          <ul className="clausulas">
+            <li>
+              <span className="id">npm run check</span>
+              pruebas del motor, dictamen, informes trampa, contraste y README
+            </li>
+            <li>
+              <span className="id">check:trampas --estricto</span>
+              exige cero aprobaciones y cero negativas indebidas
+            </li>
+            <li>
+              <span className="id">probar:proveedor</span>
+              comprueba contra el modelo real que la lectura cita de verdad
+            </li>
+          </ul>
+          <p className="nota">Las tres corren en la integración continua en cada cambio.</p>
+        </section>
+      </div>
     </div>
   );
 }
